@@ -1,0 +1,9 @@
+__pycache__/VhdlLexer.cpython-34.pyc
+*.pyc
+.idea/.name
+.idea/GraphVHDL.iml
+.idea/vcs.xml
+.idea/misc.xml
+.idea/modules.xml
+testfiles/RegisterMultipleClockDomains.vhd
+.idea/workspace.xml

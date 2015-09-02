@@ -1471,7 +1471,7 @@ def serializedATN():
         return buf.getvalue()
 
 
-class vhdlParser ( Parser ):
+class VhdlParser ( Parser ):
 
     grammarFileName = "vhdl.g4"
 
@@ -2077,16 +2077,16 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def INTEGER(self):
-            return self.getToken(vhdlParser.INTEGER, 0)
+            return self.getToken(VhdlParser.INTEGER, 0)
 
         def REAL_LITERAL(self):
-            return self.getToken(vhdlParser.REAL_LITERAL, 0)
+            return self.getToken(VhdlParser.REAL_LITERAL, 0)
 
         def BASE_LITERAL(self):
-            return self.getToken(vhdlParser.BASE_LITERAL, 0)
+            return self.getToken(VhdlParser.BASE_LITERAL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_abstract_literal
+            return VhdlParser.RULE_abstract_literal
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAbstract_literal" ):
@@ -2107,14 +2107,14 @@ class vhdlParser ( Parser ):
 
     def abstract_literal(self):
 
-        localctx = vhdlParser.Abstract_literalContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Abstract_literalContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_abstract_literal)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 508
             _la = self._input.LA(1)
-            if not(((((_la - 112)) & ~0x3f) == 0 and ((1 << (_la - 112)) & ((1 << (vhdlParser.BASE_LITERAL - 112)) | (1 << (vhdlParser.REAL_LITERAL - 112)) | (1 << (vhdlParser.INTEGER - 112)))) != 0)):
+            if not(((((_la - 112)) & ~0x3f) == 0 and ((1 << (_la - 112)) & ((1 << (VhdlParser.BASE_LITERAL - 112)) | (1 << (VhdlParser.REAL_LITERAL - 112)) | (1 << (VhdlParser.INTEGER - 112)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -2133,14 +2133,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ACCESS(self):
-            return self.getToken(vhdlParser.ACCESS, 0)
+            return self.getToken(VhdlParser.ACCESS, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_access_type_definition
+            return VhdlParser.RULE_access_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAccess_type_definition" ):
@@ -2161,12 +2161,12 @@ class vhdlParser ( Parser ):
 
     def access_type_definition(self):
 
-        localctx = vhdlParser.Access_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Access_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_access_type_definition)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 510
-            self.match(vhdlParser.ACCESS)
+            self.match(VhdlParser.ACCESS)
             self.state = 511
             self.subtype_indication()
         except RecognitionException as re:
@@ -2184,25 +2184,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def ACROSS(self):
-            return self.getToken(vhdlParser.ACROSS, 0)
+            return self.getToken(VhdlParser.ACROSS, 0)
 
         def tolerance_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Tolerance_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Tolerance_aspectContext,0)
 
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_across_aspect
+            return VhdlParser.RULE_across_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAcross_aspect" ):
@@ -2223,7 +2223,7 @@ class vhdlParser ( Parser ):
 
     def across_aspect(self):
 
-        localctx = vhdlParser.Across_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Across_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_across_aspect)
         self._la = 0 # Token type
         try:
@@ -2232,22 +2232,22 @@ class vhdlParser ( Parser ):
             self.identifier_list()
             self.state = 515
             _la = self._input.LA(1)
-            if _la==vhdlParser.TOLERANCE:
+            if _la==VhdlParser.TOLERANCE:
                 self.state = 514
                 self.tolerance_aspect()
 
 
             self.state = 519
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 517
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 518
                 self.expression()
 
 
             self.state = 521
-            self.match(vhdlParser.ACROSS)
+            self.match(VhdlParser.ACROSS)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2263,14 +2263,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def OPEN(self):
-            return self.getToken(vhdlParser.OPEN, 0)
+            return self.getToken(VhdlParser.OPEN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_actual_designator
+            return VhdlParser.RULE_actual_designator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterActual_designator" ):
@@ -2291,20 +2291,20 @@ class vhdlParser ( Parser ):
 
     def actual_designator(self):
 
-        localctx = vhdlParser.Actual_designatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Actual_designatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_actual_designator)
         try:
             self.state = 525
             token = self._input.LA(1)
-            if token in [vhdlParser.ABS, vhdlParser.NEW, vhdlParser.NOT, vhdlParser.NULL, vhdlParser.BASE_LITERAL, vhdlParser.BIT_STRING_LITERAL, vhdlParser.REAL_LITERAL, vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER, vhdlParser.CHARACTER_LITERAL, vhdlParser.STRING_LITERAL, vhdlParser.LPAREN, vhdlParser.PLUS, vhdlParser.MINUS, vhdlParser.INTEGER]:
+            if token in [VhdlParser.ABS, VhdlParser.NEW, VhdlParser.NOT, VhdlParser.NULL, VhdlParser.BASE_LITERAL, VhdlParser.BIT_STRING_LITERAL, VhdlParser.REAL_LITERAL, VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER, VhdlParser.CHARACTER_LITERAL, VhdlParser.STRING_LITERAL, VhdlParser.LPAREN, VhdlParser.PLUS, VhdlParser.MINUS, VhdlParser.INTEGER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 523
                 self.expression()
 
-            elif token in [vhdlParser.OPEN]:
+            elif token in [VhdlParser.OPEN]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 524
-                self.match(vhdlParser.OPEN)
+                self.match(VhdlParser.OPEN)
 
             else:
                 raise NoViableAltException(self)
@@ -2324,11 +2324,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def association_list(self):
-            return self.getTypedRuleContext(vhdlParser.Association_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Association_listContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_actual_parameter_part
+            return VhdlParser.RULE_actual_parameter_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterActual_parameter_part" ):
@@ -2349,7 +2349,7 @@ class vhdlParser ( Parser ):
 
     def actual_parameter_part(self):
 
-        localctx = vhdlParser.Actual_parameter_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Actual_parameter_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_actual_parameter_part)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2370,21 +2370,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def actual_designator(self):
-            return self.getTypedRuleContext(vhdlParser.Actual_designatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.Actual_designatorContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_actual_part
+            return VhdlParser.RULE_actual_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterActual_part" ):
@@ -2405,7 +2405,7 @@ class vhdlParser ( Parser ):
 
     def actual_part(self):
 
-        localctx = vhdlParser.Actual_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Actual_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_actual_part)
         try:
             self.state = 535
@@ -2415,11 +2415,11 @@ class vhdlParser ( Parser ):
                 self.state = 529
                 self.name()
                 self.state = 530
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 531
                 self.actual_designator()
                 self.state = 532
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
                 pass
 
             elif la_ == 2:
@@ -2444,16 +2444,16 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def PLUS(self):
-            return self.getToken(vhdlParser.PLUS, 0)
+            return self.getToken(VhdlParser.PLUS, 0)
 
         def MINUS(self):
-            return self.getToken(vhdlParser.MINUS, 0)
+            return self.getToken(VhdlParser.MINUS, 0)
 
         def AMPERSAND(self):
-            return self.getToken(vhdlParser.AMPERSAND, 0)
+            return self.getToken(VhdlParser.AMPERSAND, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_adding_operator
+            return VhdlParser.RULE_adding_operator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAdding_operator" ):
@@ -2474,14 +2474,14 @@ class vhdlParser ( Parser ):
 
     def adding_operator(self):
 
-        localctx = vhdlParser.Adding_operatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Adding_operatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_adding_operator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 537
             _la = self._input.LA(1)
-            if not(((((_la - 140)) & ~0x3f) == 0 and ((1 << (_la - 140)) & ((1 << (vhdlParser.AMPERSAND - 140)) | (1 << (vhdlParser.PLUS - 140)) | (1 << (vhdlParser.MINUS - 140)))) != 0)):
+            if not(((((_la - 140)) & ~0x3f) == 0 and ((1 << (_la - 140)) & ((1 << (VhdlParser.AMPERSAND - 140)) | (1 << (VhdlParser.PLUS - 140)) | (1 << (VhdlParser.MINUS - 140)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -2500,26 +2500,26 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def element_association(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Element_associationContext)
+                return self.getTypedRuleContexts(VhdlParser.Element_associationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Element_associationContext,i)
+                return self.getTypedRuleContext(VhdlParser.Element_associationContext,i)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_aggregate
+            return VhdlParser.RULE_aggregate
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAggregate" ):
@@ -2540,21 +2540,21 @@ class vhdlParser ( Parser ):
 
     def aggregate(self):
 
-        localctx = vhdlParser.AggregateContext(self, self._ctx, self.state)
+        localctx = VhdlParser.AggregateContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_aggregate)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 539
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 540
             self.element_association()
             self.state = 545
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 541
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 542
                 self.element_association()
                 self.state = 547
@@ -2562,7 +2562,7 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 548
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2578,35 +2578,35 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ALIAS(self):
-            return self.getToken(vhdlParser.ALIAS, 0)
+            return self.getToken(VhdlParser.ALIAS, 0)
 
         def alias_designator(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_designatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_designatorContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def alias_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_indicationContext,0)
 
 
         def signature(self):
-            return self.getTypedRuleContext(vhdlParser.SignatureContext,0)
+            return self.getTypedRuleContext(VhdlParser.SignatureContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_alias_declaration
+            return VhdlParser.RULE_alias_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAlias_declaration" ):
@@ -2627,37 +2627,37 @@ class vhdlParser ( Parser ):
 
     def alias_declaration(self):
 
-        localctx = vhdlParser.Alias_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Alias_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_alias_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 550
-            self.match(vhdlParser.ALIAS)
+            self.match(VhdlParser.ALIAS)
             self.state = 551
             self.alias_designator()
             self.state = 554
             _la = self._input.LA(1)
-            if _la==vhdlParser.COLON:
+            if _la==VhdlParser.COLON:
                 self.state = 552
-                self.match(vhdlParser.COLON)
+                self.match(VhdlParser.COLON)
                 self.state = 553
                 self.alias_indication()
 
 
             self.state = 556
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 557
             self.name()
             self.state = 559
             _la = self._input.LA(1)
-            if _la==vhdlParser.LBRACKET:
+            if _la==VhdlParser.LBRACKET:
                 self.state = 558
                 self.signature()
 
 
             self.state = 561
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2673,17 +2673,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def CHARACTER_LITERAL(self):
-            return self.getToken(vhdlParser.CHARACTER_LITERAL, 0)
+            return self.getToken(VhdlParser.CHARACTER_LITERAL, 0)
 
         def STRING_LITERAL(self):
-            return self.getToken(vhdlParser.STRING_LITERAL, 0)
+            return self.getToken(VhdlParser.STRING_LITERAL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_alias_designator
+            return VhdlParser.RULE_alias_designator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAlias_designator" ):
@@ -2704,25 +2704,25 @@ class vhdlParser ( Parser ):
 
     def alias_designator(self):
 
-        localctx = vhdlParser.Alias_designatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Alias_designatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_alias_designator)
         try:
             self.state = 566
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 563
                 self.identifier()
 
-            elif token in [vhdlParser.CHARACTER_LITERAL]:
+            elif token in [VhdlParser.CHARACTER_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 564
-                self.match(vhdlParser.CHARACTER_LITERAL)
+                self.match(VhdlParser.CHARACTER_LITERAL)
 
-            elif token in [vhdlParser.STRING_LITERAL]:
+            elif token in [VhdlParser.STRING_LITERAL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 565
-                self.match(vhdlParser.STRING_LITERAL)
+                self.match(VhdlParser.STRING_LITERAL)
 
             else:
                 raise NoViableAltException(self)
@@ -2742,15 +2742,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subnature_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_indicationContext,0)
 
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_alias_indication
+            return VhdlParser.RULE_alias_indication
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAlias_indication" ):
@@ -2771,7 +2771,7 @@ class vhdlParser ( Parser ):
 
     def alias_indication(self):
 
-        localctx = vhdlParser.Alias_indicationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Alias_indicationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_alias_indication)
         try:
             self.state = 570
@@ -2804,18 +2804,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def NEW(self):
-            return self.getToken(vhdlParser.NEW, 0)
+            return self.getToken(VhdlParser.NEW, 0)
 
         def qualified_expression(self):
-            return self.getTypedRuleContext(vhdlParser.Qualified_expressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Qualified_expressionContext,0)
 
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_allocator
+            return VhdlParser.RULE_allocator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAllocator" ):
@@ -2836,12 +2836,12 @@ class vhdlParser ( Parser ):
 
     def allocator(self):
 
-        localctx = vhdlParser.AllocatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.AllocatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_allocator)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 572
-            self.match(vhdlParser.NEW)
+            self.match(VhdlParser.NEW)
             self.state = 575
             la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
@@ -2871,42 +2871,42 @@ class vhdlParser ( Parser ):
 
         def ARCHITECTURE(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.ARCHITECTURE)
+                return self.getTokens(VhdlParser.ARCHITECTURE)
             else:
-                return self.getToken(vhdlParser.ARCHITECTURE, i)
+                return self.getToken(VhdlParser.ARCHITECTURE, i)
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def architecture_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Architecture_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Architecture_declarative_partContext,0)
 
 
         def BEGIN(self):
-            return self.getToken(vhdlParser.BEGIN, 0)
+            return self.getToken(VhdlParser.BEGIN, 0)
 
         def architecture_statement_part(self):
-            return self.getTypedRuleContext(vhdlParser.Architecture_statement_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Architecture_statement_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_architecture_body
+            return VhdlParser.RULE_architecture_body
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArchitecture_body" ):
@@ -2927,45 +2927,45 @@ class vhdlParser ( Parser ):
 
     def architecture_body(self):
 
-        localctx = vhdlParser.Architecture_bodyContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Architecture_bodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_architecture_body)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 577
-            self.match(vhdlParser.ARCHITECTURE)
+            self.match(VhdlParser.ARCHITECTURE)
             self.state = 578
             self.identifier()
             self.state = 579
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 580
             self.identifier()
             self.state = 581
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 582
             self.architecture_declarative_part()
             self.state = 583
-            self.match(vhdlParser.BEGIN)
+            self.match(VhdlParser.BEGIN)
             self.state = 584
             self.architecture_statement_part()
             self.state = 585
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 587
             _la = self._input.LA(1)
-            if _la==vhdlParser.ARCHITECTURE:
+            if _la==VhdlParser.ARCHITECTURE:
                 self.state = 586
-                self.match(vhdlParser.ARCHITECTURE)
+                self.match(VhdlParser.ARCHITECTURE)
 
 
             self.state = 590
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 589
                 self.identifier()
 
 
             self.state = 592
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2982,13 +2982,13 @@ class vhdlParser ( Parser ):
 
         def block_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Block_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Block_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Block_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Block_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_architecture_declarative_part
+            return VhdlParser.RULE_architecture_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArchitecture_declarative_part" ):
@@ -3009,7 +3009,7 @@ class vhdlParser ( Parser ):
 
     def architecture_declarative_part(self):
 
-        localctx = vhdlParser.Architecture_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Architecture_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_architecture_declarative_part)
         self._la = 0 # Token type
         try:
@@ -3017,7 +3017,7 @@ class vhdlParser ( Parser ):
             self.state = 597
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.COMPONENT) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.DISCONNECT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FOR) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE) | (1 << vhdlParser.LIMIT) | (1 << vhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.QUANTITY - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SIGNAL - 68)) | (1 << (vhdlParser.SUBNATURE - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TERMINAL - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.COMPONENT) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.DISCONNECT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FOR) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE) | (1 << VhdlParser.LIMIT) | (1 << VhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.QUANTITY - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SIGNAL - 68)) | (1 << (VhdlParser.SUBNATURE - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TERMINAL - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 594
                 self.block_declarative_item()
                 self.state = 599
@@ -3039,50 +3039,50 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def block_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Block_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_statementContext,0)
 
 
         def process_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Process_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Process_statementContext,0)
 
 
         def concurrent_procedure_call_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Concurrent_procedure_call_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Concurrent_procedure_call_statementContext,0)
 
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def concurrent_assertion_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Concurrent_assertion_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Concurrent_assertion_statementContext,0)
 
 
         def concurrent_signal_assignment_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Concurrent_signal_assignment_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Concurrent_signal_assignment_statementContext,0)
 
 
         def POSTPONED(self):
-            return self.getToken(vhdlParser.POSTPONED, 0)
+            return self.getToken(VhdlParser.POSTPONED, 0)
 
         def component_instantiation_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Component_instantiation_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Component_instantiation_statementContext,0)
 
 
         def generate_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Generate_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generate_statementContext,0)
 
 
         def concurrent_break_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Concurrent_break_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Concurrent_break_statementContext,0)
 
 
         def simultaneous_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Simultaneous_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Simultaneous_statementContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_architecture_statement
+            return VhdlParser.RULE_architecture_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArchitecture_statement" ):
@@ -3103,7 +3103,7 @@ class vhdlParser ( Parser ):
 
     def architecture_statement(self):
 
-        localctx = vhdlParser.Architecture_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Architecture_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 28, self.RULE_architecture_statement)
         try:
             self.state = 621
@@ -3159,7 +3159,7 @@ class vhdlParser ( Parser ):
                 la_ = self._interp.adaptivePredict(self._input,16,self._ctx)
                 if la_ == 1:
                     self.state = 613
-                    self.match(vhdlParser.POSTPONED)
+                    self.match(VhdlParser.POSTPONED)
 
 
                 self.state = 616
@@ -3207,13 +3207,13 @@ class vhdlParser ( Parser ):
 
         def architecture_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Architecture_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Architecture_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Architecture_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Architecture_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_architecture_statement_part
+            return VhdlParser.RULE_architecture_statement_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArchitecture_statement_part" ):
@@ -3234,7 +3234,7 @@ class vhdlParser ( Parser ):
 
     def architecture_statement_part(self):
 
-        localctx = vhdlParser.Architecture_statement_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Architecture_statement_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_architecture_statement_part)
         self._la = 0 # Token type
         try:
@@ -3242,7 +3242,7 @@ class vhdlParser ( Parser ):
             self.state = 626
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ABS) | (1 << vhdlParser.ASSERT) | (1 << vhdlParser.BREAK) | (1 << vhdlParser.CASE) | (1 << vhdlParser.IF) | (1 << vhdlParser.NEW) | (1 << vhdlParser.NOT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (vhdlParser.POSTPONED - 66)) | (1 << (vhdlParser.PROCESS - 66)) | (1 << (vhdlParser.PROCEDURAL - 66)) | (1 << (vhdlParser.WITH - 66)) | (1 << (vhdlParser.BASE_LITERAL - 66)) | (1 << (vhdlParser.BIT_STRING_LITERAL - 66)) | (1 << (vhdlParser.REAL_LITERAL - 66)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 66)) | (1 << (vhdlParser.CHARACTER_LITERAL - 66)) | (1 << (vhdlParser.STRING_LITERAL - 66)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (vhdlParser.LPAREN - 141)) | (1 << (vhdlParser.PLUS - 141)) | (1 << (vhdlParser.MINUS - 141)) | (1 << (vhdlParser.INTEGER - 141)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ABS) | (1 << VhdlParser.ASSERT) | (1 << VhdlParser.BREAK) | (1 << VhdlParser.CASE) | (1 << VhdlParser.IF) | (1 << VhdlParser.NEW) | (1 << VhdlParser.NOT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (VhdlParser.POSTPONED - 66)) | (1 << (VhdlParser.PROCESS - 66)) | (1 << (VhdlParser.PROCEDURAL - 66)) | (1 << (VhdlParser.WITH - 66)) | (1 << (VhdlParser.BASE_LITERAL - 66)) | (1 << (VhdlParser.BIT_STRING_LITERAL - 66)) | (1 << (VhdlParser.REAL_LITERAL - 66)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 66)) | (1 << (VhdlParser.CHARACTER_LITERAL - 66)) | (1 << (VhdlParser.STRING_LITERAL - 66)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (VhdlParser.LPAREN - 141)) | (1 << (VhdlParser.PLUS - 141)) | (1 << (VhdlParser.MINUS - 141)) | (1 << (VhdlParser.INTEGER - 141)))) != 0):
                 self.state = 623
                 self.architecture_statement()
                 self.state = 628
@@ -3264,15 +3264,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def unconstrained_nature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Unconstrained_nature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Unconstrained_nature_definitionContext,0)
 
 
         def constrained_nature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Constrained_nature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constrained_nature_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_array_nature_definition
+            return VhdlParser.RULE_array_nature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArray_nature_definition" ):
@@ -3293,7 +3293,7 @@ class vhdlParser ( Parser ):
 
     def array_nature_definition(self):
 
-        localctx = vhdlParser.Array_nature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Array_nature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_array_nature_definition)
         try:
             self.state = 631
@@ -3326,15 +3326,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def unconstrained_array_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Unconstrained_array_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Unconstrained_array_definitionContext,0)
 
 
         def constrained_array_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Constrained_array_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constrained_array_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_array_type_definition
+            return VhdlParser.RULE_array_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArray_type_definition" ):
@@ -3355,7 +3355,7 @@ class vhdlParser ( Parser ):
 
     def array_type_definition(self):
 
-        localctx = vhdlParser.Array_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Array_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 34, self.RULE_array_type_definition)
         try:
             self.state = 635
@@ -3388,27 +3388,27 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ASSERT(self):
-            return self.getToken(vhdlParser.ASSERT, 0)
+            return self.getToken(VhdlParser.ASSERT, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def REPORT(self):
-            return self.getToken(vhdlParser.REPORT, 0)
+            return self.getToken(VhdlParser.REPORT, 0)
 
         def expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ExpressionContext)
+                return self.getTypedRuleContexts(VhdlParser.ExpressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ExpressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.ExpressionContext,i)
 
 
         def SEVERITY(self):
-            return self.getToken(vhdlParser.SEVERITY, 0)
+            return self.getToken(VhdlParser.SEVERITY, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_assertion
+            return VhdlParser.RULE_assertion
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssertion" ):
@@ -3429,29 +3429,29 @@ class vhdlParser ( Parser ):
 
     def assertion(self):
 
-        localctx = vhdlParser.AssertionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.AssertionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 36, self.RULE_assertion)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 637
-            self.match(vhdlParser.ASSERT)
+            self.match(VhdlParser.ASSERT)
             self.state = 638
             self.condition()
             self.state = 641
             _la = self._input.LA(1)
-            if _la==vhdlParser.REPORT:
+            if _la==VhdlParser.REPORT:
                 self.state = 639
-                self.match(vhdlParser.REPORT)
+                self.match(VhdlParser.REPORT)
                 self.state = 640
                 self.expression()
 
 
             self.state = 645
             _la = self._input.LA(1)
-            if _la==vhdlParser.SEVERITY:
+            if _la==VhdlParser.SEVERITY:
                 self.state = 643
-                self.match(vhdlParser.SEVERITY)
+                self.match(VhdlParser.SEVERITY)
                 self.state = 644
                 self.expression()
 
@@ -3471,18 +3471,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def assertion(self):
-            return self.getTypedRuleContext(vhdlParser.AssertionContext,0)
+            return self.getTypedRuleContext(VhdlParser.AssertionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_assertion_statement
+            return VhdlParser.RULE_assertion_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssertion_statement" ):
@@ -3503,14 +3503,14 @@ class vhdlParser ( Parser ):
 
     def assertion_statement(self):
 
-        localctx = vhdlParser.Assertion_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Assertion_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_assertion_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 648
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 647
                 self.label_colon()
 
@@ -3518,7 +3518,7 @@ class vhdlParser ( Parser ):
             self.state = 650
             self.assertion()
             self.state = 651
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3534,18 +3534,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def actual_part(self):
-            return self.getTypedRuleContext(vhdlParser.Actual_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Actual_partContext,0)
 
 
         def formal_part(self):
-            return self.getTypedRuleContext(vhdlParser.Formal_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Formal_partContext,0)
 
 
         def ARROW(self):
-            return self.getToken(vhdlParser.ARROW, 0)
+            return self.getToken(VhdlParser.ARROW, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_association_element
+            return VhdlParser.RULE_association_element
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssociation_element" ):
@@ -3566,7 +3566,7 @@ class vhdlParser ( Parser ):
 
     def association_element(self):
 
-        localctx = vhdlParser.Association_elementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Association_elementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 40, self.RULE_association_element)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -3576,7 +3576,7 @@ class vhdlParser ( Parser ):
                 self.state = 653
                 self.formal_part()
                 self.state = 654
-                self.match(vhdlParser.ARROW)
+                self.match(VhdlParser.ARROW)
 
 
             self.state = 658
@@ -3597,19 +3597,19 @@ class vhdlParser ( Parser ):
 
         def association_element(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Association_elementContext)
+                return self.getTypedRuleContexts(VhdlParser.Association_elementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Association_elementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Association_elementContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_association_list
+            return VhdlParser.RULE_association_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssociation_list" ):
@@ -3630,7 +3630,7 @@ class vhdlParser ( Parser ):
 
     def association_list(self):
 
-        localctx = vhdlParser.Association_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Association_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_association_list)
         self._la = 0 # Token type
         try:
@@ -3640,9 +3640,9 @@ class vhdlParser ( Parser ):
             self.state = 665
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 661
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 662
                 self.association_element()
                 self.state = 667
@@ -3664,21 +3664,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ATTRIBUTE(self):
-            return self.getToken(vhdlParser.ATTRIBUTE, 0)
+            return self.getToken(VhdlParser.ATTRIBUTE, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_attribute_declaration
+            return VhdlParser.RULE_attribute_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAttribute_declaration" ):
@@ -3699,18 +3699,18 @@ class vhdlParser ( Parser ):
 
     def attribute_declaration(self):
 
-        localctx = vhdlParser.Attribute_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Attribute_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 44, self.RULE_attribute_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 668
-            self.match(vhdlParser.ATTRIBUTE)
+            self.match(VhdlParser.ATTRIBUTE)
             self.state = 669
             self.label_colon()
             self.state = 670
             self.name()
             self.state = 671
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3726,29 +3726,29 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def RANGE(self):
-            return self.getToken(vhdlParser.RANGE, 0)
+            return self.getToken(VhdlParser.RANGE, 0)
 
         def REVERSE_RANGE(self):
-            return self.getToken(vhdlParser.REVERSE_RANGE, 0)
+            return self.getToken(VhdlParser.REVERSE_RANGE, 0)
 
         def ACROSS(self):
-            return self.getToken(vhdlParser.ACROSS, 0)
+            return self.getToken(VhdlParser.ACROSS, 0)
 
         def THROUGH(self):
-            return self.getToken(vhdlParser.THROUGH, 0)
+            return self.getToken(VhdlParser.THROUGH, 0)
 
         def REFERENCE(self):
-            return self.getToken(vhdlParser.REFERENCE, 0)
+            return self.getToken(VhdlParser.REFERENCE, 0)
 
         def TOLERANCE(self):
-            return self.getToken(vhdlParser.TOLERANCE, 0)
+            return self.getToken(VhdlParser.TOLERANCE, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_attribute_designator
+            return VhdlParser.RULE_attribute_designator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAttribute_designator" ):
@@ -3769,45 +3769,45 @@ class vhdlParser ( Parser ):
 
     def attribute_designator(self):
 
-        localctx = vhdlParser.Attribute_designatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Attribute_designatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_attribute_designator)
         try:
             self.state = 680
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 673
                 self.identifier()
 
-            elif token in [vhdlParser.RANGE]:
+            elif token in [VhdlParser.RANGE]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 674
-                self.match(vhdlParser.RANGE)
+                self.match(VhdlParser.RANGE)
 
-            elif token in [vhdlParser.REVERSE_RANGE]:
+            elif token in [VhdlParser.REVERSE_RANGE]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 675
-                self.match(vhdlParser.REVERSE_RANGE)
+                self.match(VhdlParser.REVERSE_RANGE)
 
-            elif token in [vhdlParser.ACROSS]:
+            elif token in [VhdlParser.ACROSS]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 676
-                self.match(vhdlParser.ACROSS)
+                self.match(VhdlParser.ACROSS)
 
-            elif token in [vhdlParser.THROUGH]:
+            elif token in [VhdlParser.THROUGH]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 677
-                self.match(vhdlParser.THROUGH)
+                self.match(VhdlParser.THROUGH)
 
-            elif token in [vhdlParser.REFERENCE]:
+            elif token in [VhdlParser.REFERENCE]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 678
-                self.match(vhdlParser.REFERENCE)
+                self.match(VhdlParser.REFERENCE)
 
-            elif token in [vhdlParser.TOLERANCE]:
+            elif token in [VhdlParser.TOLERANCE]:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 679
-                self.match(vhdlParser.TOLERANCE)
+                self.match(VhdlParser.TOLERANCE)
 
             else:
                 raise NoViableAltException(self)
@@ -3827,31 +3827,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ATTRIBUTE(self):
-            return self.getToken(vhdlParser.ATTRIBUTE, 0)
+            return self.getToken(VhdlParser.ATTRIBUTE, 0)
 
         def attribute_designator(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_designatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_designatorContext,0)
 
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def entity_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_specificationContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_attribute_specification
+            return VhdlParser.RULE_attribute_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAttribute_specification" ):
@@ -3872,24 +3872,24 @@ class vhdlParser ( Parser ):
 
     def attribute_specification(self):
 
-        localctx = vhdlParser.Attribute_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Attribute_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 48, self.RULE_attribute_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 682
-            self.match(vhdlParser.ATTRIBUTE)
+            self.match(VhdlParser.ATTRIBUTE)
             self.state = 683
             self.attribute_designator()
             self.state = 684
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 685
             self.entity_specification()
             self.state = 686
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 687
             self.expression()
             self.state = 688
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3905,14 +3905,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_base_unit_declaration
+            return VhdlParser.RULE_base_unit_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBase_unit_declaration" ):
@@ -3933,14 +3933,14 @@ class vhdlParser ( Parser ):
 
     def base_unit_declaration(self):
 
-        localctx = vhdlParser.Base_unit_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Base_unit_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 50, self.RULE_base_unit_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 690
             self.identifier()
             self.state = 691
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3956,22 +3956,22 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def USE(self):
-            return self.getToken(vhdlParser.USE, 0)
+            return self.getToken(VhdlParser.USE, 0)
 
         def entity_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_aspectContext,0)
 
 
         def generic_map_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Generic_map_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generic_map_aspectContext,0)
 
 
         def port_map_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Port_map_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Port_map_aspectContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_binding_indication
+            return VhdlParser.RULE_binding_indication
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBinding_indication" ):
@@ -3992,30 +3992,30 @@ class vhdlParser ( Parser ):
 
     def binding_indication(self):
 
-        localctx = vhdlParser.Binding_indicationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Binding_indicationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 52, self.RULE_binding_indication)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 695
             _la = self._input.LA(1)
-            if _la==vhdlParser.USE:
+            if _la==VhdlParser.USE:
                 self.state = 693
-                self.match(vhdlParser.USE)
+                self.match(VhdlParser.USE)
                 self.state = 694
                 self.entity_aspect()
 
 
             self.state = 698
             _la = self._input.LA(1)
-            if _la==vhdlParser.GENERIC:
+            if _la==VhdlParser.GENERIC:
                 self.state = 697
                 self.generic_map_aspect()
 
 
             self.state = 701
             _la = self._input.LA(1)
-            if _la==vhdlParser.PORT:
+            if _la==VhdlParser.PORT:
                 self.state = 700
                 self.port_map_aspect()
 
@@ -4036,36 +4036,36 @@ class vhdlParser ( Parser ):
 
         def FOR(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.FOR)
+                return self.getTokens(VhdlParser.FOR)
             else:
-                return self.getToken(vhdlParser.FOR, i)
+                return self.getToken(VhdlParser.FOR, i)
 
         def block_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Block_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_specificationContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def use_clause(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Use_clauseContext)
+                return self.getTypedRuleContexts(VhdlParser.Use_clauseContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Use_clauseContext,i)
+                return self.getTypedRuleContext(VhdlParser.Use_clauseContext,i)
 
 
         def configuration_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Configuration_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Configuration_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Configuration_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Configuration_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_block_configuration
+            return VhdlParser.RULE_block_configuration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock_configuration" ):
@@ -4086,19 +4086,19 @@ class vhdlParser ( Parser ):
 
     def block_configuration(self):
 
-        localctx = vhdlParser.Block_configurationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Block_configurationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 54, self.RULE_block_configuration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 703
-            self.match(vhdlParser.FOR)
+            self.match(VhdlParser.FOR)
             self.state = 704
             self.block_specification()
             self.state = 708
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.USE:
+            while _la==VhdlParser.USE:
                 self.state = 705
                 self.use_clause()
                 self.state = 710
@@ -4108,7 +4108,7 @@ class vhdlParser ( Parser ):
             self.state = 714
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.FOR:
+            while _la==VhdlParser.FOR:
                 self.state = 711
                 self.configuration_item()
                 self.state = 716
@@ -4116,11 +4116,11 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 717
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 718
-            self.match(vhdlParser.FOR)
+            self.match(VhdlParser.FOR)
             self.state = 719
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4136,95 +4136,95 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarationContext,0)
 
 
         def subprogram_body(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_bodyContext,0)
 
 
         def type_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Type_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_declarationContext,0)
 
 
         def subtype_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_declarationContext,0)
 
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def signal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.File_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_declarationContext,0)
 
 
         def alias_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_declarationContext,0)
 
 
         def component_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Component_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Component_declarationContext,0)
 
 
         def attribute_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_declarationContext,0)
 
 
         def attribute_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_specificationContext,0)
 
 
         def configuration_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Configuration_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Configuration_specificationContext,0)
 
 
         def disconnection_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Disconnection_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Disconnection_specificationContext,0)
 
 
         def step_limit_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Step_limit_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Step_limit_specificationContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def group_template_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_template_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_template_declarationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def nature_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Nature_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Nature_declarationContext,0)
 
 
         def subnature_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_declarationContext,0)
 
 
         def quantity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Quantity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Quantity_declarationContext,0)
 
 
         def terminal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Terminal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Terminal_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_block_declarative_item
+            return VhdlParser.RULE_block_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock_declarative_item" ):
@@ -4245,7 +4245,7 @@ class vhdlParser ( Parser ):
 
     def block_declarative_item(self):
 
-        localctx = vhdlParser.Block_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Block_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 56, self.RULE_block_declarative_item)
         try:
             self.state = 743
@@ -4399,13 +4399,13 @@ class vhdlParser ( Parser ):
 
         def block_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Block_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Block_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Block_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Block_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_block_declarative_part
+            return VhdlParser.RULE_block_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock_declarative_part" ):
@@ -4426,7 +4426,7 @@ class vhdlParser ( Parser ):
 
     def block_declarative_part(self):
 
-        localctx = vhdlParser.Block_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Block_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 58, self.RULE_block_declarative_part)
         self._la = 0 # Token type
         try:
@@ -4434,7 +4434,7 @@ class vhdlParser ( Parser ):
             self.state = 748
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.COMPONENT) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.DISCONNECT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FOR) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE) | (1 << vhdlParser.LIMIT) | (1 << vhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.QUANTITY - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SIGNAL - 68)) | (1 << (vhdlParser.SUBNATURE - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TERMINAL - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.COMPONENT) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.DISCONNECT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FOR) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE) | (1 << VhdlParser.LIMIT) | (1 << VhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.QUANTITY - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SIGNAL - 68)) | (1 << (VhdlParser.SUBNATURE - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TERMINAL - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 745
                 self.block_declarative_item()
                 self.state = 750
@@ -4456,29 +4456,29 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def generic_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Generic_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generic_clauseContext,0)
 
 
         def port_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Port_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Port_clauseContext,0)
 
 
         def generic_map_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Generic_map_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generic_map_aspectContext,0)
 
 
         def SEMI(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.SEMI)
+                return self.getTokens(VhdlParser.SEMI)
             else:
-                return self.getToken(vhdlParser.SEMI, i)
+                return self.getToken(VhdlParser.SEMI, i)
 
         def port_map_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Port_map_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Port_map_aspectContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_block_header
+            return VhdlParser.RULE_block_header
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock_header" ):
@@ -4499,39 +4499,39 @@ class vhdlParser ( Parser ):
 
     def block_header(self):
 
-        localctx = vhdlParser.Block_headerContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Block_headerContext(self, self._ctx, self.state)
         self.enterRule(localctx, 60, self.RULE_block_header)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 757
             _la = self._input.LA(1)
-            if _la==vhdlParser.GENERIC:
+            if _la==VhdlParser.GENERIC:
                 self.state = 751
                 self.generic_clause()
                 self.state = 755
                 _la = self._input.LA(1)
-                if _la==vhdlParser.GENERIC:
+                if _la==VhdlParser.GENERIC:
                     self.state = 752
                     self.generic_map_aspect()
                     self.state = 753
-                    self.match(vhdlParser.SEMI)
+                    self.match(VhdlParser.SEMI)
 
 
 
 
             self.state = 765
             _la = self._input.LA(1)
-            if _la==vhdlParser.PORT:
+            if _la==VhdlParser.PORT:
                 self.state = 759
                 self.port_clause()
                 self.state = 763
                 _la = self._input.LA(1)
-                if _la==vhdlParser.PORT:
+                if _la==VhdlParser.PORT:
                     self.state = 760
                     self.port_map_aspect()
                     self.state = 761
-                    self.match(vhdlParser.SEMI)
+                    self.match(VhdlParser.SEMI)
 
 
 
@@ -4551,25 +4551,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def index_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Index_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Index_specificationContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_block_specification
+            return VhdlParser.RULE_block_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock_specification" ):
@@ -4590,7 +4590,7 @@ class vhdlParser ( Parser ):
 
     def block_specification(self):
 
-        localctx = vhdlParser.Block_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Block_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 62, self.RULE_block_specification)
         self._la = 0 # Token type
         try:
@@ -4602,13 +4602,13 @@ class vhdlParser ( Parser ):
                 self.identifier()
                 self.state = 772
                 _la = self._input.LA(1)
-                if _la==vhdlParser.LPAREN:
+                if _la==VhdlParser.LPAREN:
                     self.state = 768
-                    self.match(vhdlParser.LPAREN)
+                    self.match(VhdlParser.LPAREN)
                     self.state = 769
                     self.index_specification()
                     self.state = 770
-                    self.match(vhdlParser.RPAREN)
+                    self.match(VhdlParser.RPAREN)
 
 
                 pass
@@ -4635,55 +4635,55 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def BLOCK(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.BLOCK)
+                return self.getTokens(VhdlParser.BLOCK)
             else:
-                return self.getToken(vhdlParser.BLOCK, i)
+                return self.getToken(VhdlParser.BLOCK, i)
 
         def block_header(self):
-            return self.getTypedRuleContext(vhdlParser.Block_headerContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_headerContext,0)
 
 
         def block_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Block_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_declarative_partContext,0)
 
 
         def BEGIN(self):
-            return self.getToken(vhdlParser.BEGIN, 0)
+            return self.getToken(VhdlParser.BEGIN, 0)
 
         def block_statement_part(self):
-            return self.getTypedRuleContext(vhdlParser.Block_statement_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_statement_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_block_statement
+            return VhdlParser.RULE_block_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock_statement" ):
@@ -4704,7 +4704,7 @@ class vhdlParser ( Parser ):
 
     def block_statement(self):
 
-        localctx = vhdlParser.Block_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Block_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 64, self.RULE_block_statement)
         self._la = 0 # Token type
         try:
@@ -4712,23 +4712,23 @@ class vhdlParser ( Parser ):
             self.state = 777
             self.label_colon()
             self.state = 778
-            self.match(vhdlParser.BLOCK)
+            self.match(VhdlParser.BLOCK)
             self.state = 783
             _la = self._input.LA(1)
-            if _la==vhdlParser.LPAREN:
+            if _la==VhdlParser.LPAREN:
                 self.state = 779
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 780
                 self.expression()
                 self.state = 781
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
 
 
             self.state = 786
             _la = self._input.LA(1)
-            if _la==vhdlParser.IS:
+            if _la==VhdlParser.IS:
                 self.state = 785
-                self.match(vhdlParser.IS)
+                self.match(VhdlParser.IS)
 
 
             self.state = 788
@@ -4736,22 +4736,22 @@ class vhdlParser ( Parser ):
             self.state = 789
             self.block_declarative_part()
             self.state = 790
-            self.match(vhdlParser.BEGIN)
+            self.match(VhdlParser.BEGIN)
             self.state = 791
             self.block_statement_part()
             self.state = 792
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 793
-            self.match(vhdlParser.BLOCK)
+            self.match(VhdlParser.BLOCK)
             self.state = 795
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 794
                 self.identifier()
 
 
             self.state = 797
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4768,13 +4768,13 @@ class vhdlParser ( Parser ):
 
         def architecture_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Architecture_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Architecture_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Architecture_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Architecture_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_block_statement_part
+            return VhdlParser.RULE_block_statement_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBlock_statement_part" ):
@@ -4795,7 +4795,7 @@ class vhdlParser ( Parser ):
 
     def block_statement_part(self):
 
-        localctx = vhdlParser.Block_statement_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Block_statement_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_block_statement_part)
         self._la = 0 # Token type
         try:
@@ -4803,7 +4803,7 @@ class vhdlParser ( Parser ):
             self.state = 802
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ABS) | (1 << vhdlParser.ASSERT) | (1 << vhdlParser.BREAK) | (1 << vhdlParser.CASE) | (1 << vhdlParser.IF) | (1 << vhdlParser.NEW) | (1 << vhdlParser.NOT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (vhdlParser.POSTPONED - 66)) | (1 << (vhdlParser.PROCESS - 66)) | (1 << (vhdlParser.PROCEDURAL - 66)) | (1 << (vhdlParser.WITH - 66)) | (1 << (vhdlParser.BASE_LITERAL - 66)) | (1 << (vhdlParser.BIT_STRING_LITERAL - 66)) | (1 << (vhdlParser.REAL_LITERAL - 66)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 66)) | (1 << (vhdlParser.CHARACTER_LITERAL - 66)) | (1 << (vhdlParser.STRING_LITERAL - 66)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (vhdlParser.LPAREN - 141)) | (1 << (vhdlParser.PLUS - 141)) | (1 << (vhdlParser.MINUS - 141)) | (1 << (vhdlParser.INTEGER - 141)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ABS) | (1 << VhdlParser.ASSERT) | (1 << VhdlParser.BREAK) | (1 << VhdlParser.CASE) | (1 << VhdlParser.IF) | (1 << VhdlParser.NEW) | (1 << VhdlParser.NOT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (VhdlParser.POSTPONED - 66)) | (1 << (VhdlParser.PROCESS - 66)) | (1 << (VhdlParser.PROCEDURAL - 66)) | (1 << (VhdlParser.WITH - 66)) | (1 << (VhdlParser.BASE_LITERAL - 66)) | (1 << (VhdlParser.BIT_STRING_LITERAL - 66)) | (1 << (VhdlParser.REAL_LITERAL - 66)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 66)) | (1 << (VhdlParser.CHARACTER_LITERAL - 66)) | (1 << (VhdlParser.STRING_LITERAL - 66)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (VhdlParser.LPAREN - 141)) | (1 << (VhdlParser.PLUS - 141)) | (1 << (VhdlParser.MINUS - 141)) | (1 << (VhdlParser.INTEGER - 141)))) != 0):
                 self.state = 799
                 self.architecture_statement()
                 self.state = 804
@@ -4825,25 +4825,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def QUANTITY(self):
-            return self.getToken(vhdlParser.QUANTITY, 0)
+            return self.getToken(VhdlParser.QUANTITY, 0)
 
         def terminal_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Terminal_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Terminal_aspectContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def across_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Across_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Across_aspectContext,0)
 
 
         def through_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Through_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Through_aspectContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_branch_quantity_declaration
+            return VhdlParser.RULE_branch_quantity_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBranch_quantity_declaration" ):
@@ -4864,12 +4864,12 @@ class vhdlParser ( Parser ):
 
     def branch_quantity_declaration(self):
 
-        localctx = vhdlParser.Branch_quantity_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Branch_quantity_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 68, self.RULE_branch_quantity_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 805
-            self.match(vhdlParser.QUANTITY)
+            self.match(VhdlParser.QUANTITY)
             self.state = 807
             la_ = self._interp.adaptivePredict(self._input,44,self._ctx)
             if la_ == 1:
@@ -4887,7 +4887,7 @@ class vhdlParser ( Parser ):
             self.state = 812
             self.terminal_aspect()
             self.state = 813
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -4903,22 +4903,22 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def ARROW(self):
-            return self.getToken(vhdlParser.ARROW, 0)
+            return self.getToken(VhdlParser.ARROW, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def break_selector_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Break_selector_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Break_selector_clauseContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_break_element
+            return VhdlParser.RULE_break_element
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBreak_element" ):
@@ -4939,14 +4939,14 @@ class vhdlParser ( Parser ):
 
     def break_element(self):
 
-        localctx = vhdlParser.Break_elementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Break_elementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 70, self.RULE_break_element)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 816
             _la = self._input.LA(1)
-            if _la==vhdlParser.FOR:
+            if _la==VhdlParser.FOR:
                 self.state = 815
                 self.break_selector_clause()
 
@@ -4954,7 +4954,7 @@ class vhdlParser ( Parser ):
             self.state = 818
             self.name()
             self.state = 819
-            self.match(vhdlParser.ARROW)
+            self.match(VhdlParser.ARROW)
             self.state = 820
             self.expression()
         except RecognitionException as re:
@@ -4973,19 +4973,19 @@ class vhdlParser ( Parser ):
 
         def break_element(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Break_elementContext)
+                return self.getTypedRuleContexts(VhdlParser.Break_elementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Break_elementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Break_elementContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_break_list
+            return VhdlParser.RULE_break_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBreak_list" ):
@@ -5006,7 +5006,7 @@ class vhdlParser ( Parser ):
 
     def break_list(self):
 
-        localctx = vhdlParser.Break_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Break_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 72, self.RULE_break_list)
         self._la = 0 # Token type
         try:
@@ -5016,9 +5016,9 @@ class vhdlParser ( Parser ):
             self.state = 827
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 823
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 824
                 self.break_element()
                 self.state = 829
@@ -5040,17 +5040,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FOR(self):
-            return self.getToken(vhdlParser.FOR, 0)
+            return self.getToken(VhdlParser.FOR, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def USE(self):
-            return self.getToken(vhdlParser.USE, 0)
+            return self.getToken(VhdlParser.USE, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_break_selector_clause
+            return VhdlParser.RULE_break_selector_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBreak_selector_clause" ):
@@ -5071,16 +5071,16 @@ class vhdlParser ( Parser ):
 
     def break_selector_clause(self):
 
-        localctx = vhdlParser.Break_selector_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Break_selector_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 74, self.RULE_break_selector_clause)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 830
-            self.match(vhdlParser.FOR)
+            self.match(VhdlParser.FOR)
             self.state = 831
             self.name()
             self.state = 832
-            self.match(vhdlParser.USE)
+            self.match(VhdlParser.USE)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5096,28 +5096,28 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def BREAK(self):
-            return self.getToken(vhdlParser.BREAK, 0)
+            return self.getToken(VhdlParser.BREAK, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def break_list(self):
-            return self.getTypedRuleContext(vhdlParser.Break_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Break_listContext,0)
 
 
         def WHEN(self):
-            return self.getToken(vhdlParser.WHEN, 0)
+            return self.getToken(VhdlParser.WHEN, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_break_statement
+            return VhdlParser.RULE_break_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBreak_statement" ):
@@ -5138,38 +5138,38 @@ class vhdlParser ( Parser ):
 
     def break_statement(self):
 
-        localctx = vhdlParser.Break_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Break_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 76, self.RULE_break_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 835
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 834
                 self.label_colon()
 
 
             self.state = 837
-            self.match(vhdlParser.BREAK)
+            self.match(VhdlParser.BREAK)
             self.state = 839
             _la = self._input.LA(1)
-            if _la==vhdlParser.FOR or _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.FOR or _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 838
                 self.break_list()
 
 
             self.state = 843
             _la = self._input.LA(1)
-            if _la==vhdlParser.WHEN:
+            if _la==VhdlParser.WHEN:
                 self.state = 841
-                self.match(vhdlParser.WHEN)
+                self.match(VhdlParser.WHEN)
                 self.state = 842
                 self.condition()
 
 
             self.state = 845
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5186,40 +5186,40 @@ class vhdlParser ( Parser ):
 
         def CASE(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.CASE)
+                return self.getTokens(VhdlParser.CASE)
             else:
-                return self.getToken(vhdlParser.CASE, i)
+                return self.getToken(VhdlParser.CASE, i)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def case_statement_alternative(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Case_statement_alternativeContext)
+                return self.getTypedRuleContexts(VhdlParser.Case_statement_alternativeContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Case_statement_alternativeContext,i)
+                return self.getTypedRuleContext(VhdlParser.Case_statement_alternativeContext,i)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_case_statement
+            return VhdlParser.RULE_case_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterCase_statement" ):
@@ -5240,24 +5240,24 @@ class vhdlParser ( Parser ):
 
     def case_statement(self):
 
-        localctx = vhdlParser.Case_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Case_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 78, self.RULE_case_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 848
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 847
                 self.label_colon()
 
 
             self.state = 850
-            self.match(vhdlParser.CASE)
+            self.match(VhdlParser.CASE)
             self.state = 851
             self.expression()
             self.state = 852
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 854 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
@@ -5267,22 +5267,22 @@ class vhdlParser ( Parser ):
                 self.state = 856 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==vhdlParser.WHEN):
+                if not (_la==VhdlParser.WHEN):
                     break
 
             self.state = 858
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 859
-            self.match(vhdlParser.CASE)
+            self.match(VhdlParser.CASE)
             self.state = 861
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 860
                 self.identifier()
 
 
             self.state = 863
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5298,21 +5298,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def WHEN(self):
-            return self.getToken(vhdlParser.WHEN, 0)
+            return self.getToken(VhdlParser.WHEN, 0)
 
         def choices(self):
-            return self.getTypedRuleContext(vhdlParser.ChoicesContext,0)
+            return self.getTypedRuleContext(VhdlParser.ChoicesContext,0)
 
 
         def ARROW(self):
-            return self.getToken(vhdlParser.ARROW, 0)
+            return self.getToken(VhdlParser.ARROW, 0)
 
         def sequence_of_statements(self):
-            return self.getTypedRuleContext(vhdlParser.Sequence_of_statementsContext,0)
+            return self.getTypedRuleContext(VhdlParser.Sequence_of_statementsContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_case_statement_alternative
+            return VhdlParser.RULE_case_statement_alternative
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterCase_statement_alternative" ):
@@ -5333,16 +5333,16 @@ class vhdlParser ( Parser ):
 
     def case_statement_alternative(self):
 
-        localctx = vhdlParser.Case_statement_alternativeContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Case_statement_alternativeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 80, self.RULE_case_statement_alternative)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 865
-            self.match(vhdlParser.WHEN)
+            self.match(VhdlParser.WHEN)
             self.state = 866
             self.choices()
             self.state = 867
-            self.match(vhdlParser.ARROW)
+            self.match(VhdlParser.ARROW)
             self.state = 868
             self.sequence_of_statements()
         except RecognitionException as re:
@@ -5360,22 +5360,22 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def discrete_range(self):
-            return self.getTypedRuleContext(vhdlParser.Discrete_rangeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Discrete_rangeContext,0)
 
 
         def simple_expression(self):
-            return self.getTypedRuleContext(vhdlParser.Simple_expressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Simple_expressionContext,0)
 
 
         def OTHERS(self):
-            return self.getToken(vhdlParser.OTHERS, 0)
+            return self.getToken(VhdlParser.OTHERS, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_choice
+            return VhdlParser.RULE_choice
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterChoice" ):
@@ -5396,7 +5396,7 @@ class vhdlParser ( Parser ):
 
     def choice(self):
 
-        localctx = vhdlParser.ChoiceContext(self, self._ctx, self.state)
+        localctx = VhdlParser.ChoiceContext(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_choice)
         try:
             self.state = 874
@@ -5422,7 +5422,7 @@ class vhdlParser ( Parser ):
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 873
-                self.match(vhdlParser.OTHERS)
+                self.match(VhdlParser.OTHERS)
                 pass
 
 
@@ -5442,19 +5442,19 @@ class vhdlParser ( Parser ):
 
         def choice(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ChoiceContext)
+                return self.getTypedRuleContexts(VhdlParser.ChoiceContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ChoiceContext,i)
+                return self.getTypedRuleContext(VhdlParser.ChoiceContext,i)
 
 
         def BAR(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.BAR)
+                return self.getTokens(VhdlParser.BAR)
             else:
-                return self.getToken(vhdlParser.BAR, i)
+                return self.getToken(VhdlParser.BAR, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_choices
+            return VhdlParser.RULE_choices
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterChoices" ):
@@ -5475,7 +5475,7 @@ class vhdlParser ( Parser ):
 
     def choices(self):
 
-        localctx = vhdlParser.ChoicesContext(self, self._ctx, self.state)
+        localctx = VhdlParser.ChoicesContext(self, self._ctx, self.state)
         self.enterRule(localctx, 84, self.RULE_choices)
         self._la = 0 # Token type
         try:
@@ -5485,9 +5485,9 @@ class vhdlParser ( Parser ):
             self.state = 881
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.BAR:
+            while _la==VhdlParser.BAR:
                 self.state = 877
-                self.match(vhdlParser.BAR)
+                self.match(VhdlParser.BAR)
                 self.state = 878
                 self.choice()
                 self.state = 883
@@ -5510,33 +5510,33 @@ class vhdlParser ( Parser ):
 
         def FOR(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.FOR)
+                return self.getTokens(VhdlParser.FOR)
             else:
-                return self.getToken(vhdlParser.FOR, i)
+                return self.getToken(VhdlParser.FOR, i)
 
         def component_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Component_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Component_specificationContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.SEMI)
+                return self.getTokens(VhdlParser.SEMI)
             else:
-                return self.getToken(vhdlParser.SEMI, i)
+                return self.getToken(VhdlParser.SEMI, i)
 
         def binding_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Binding_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Binding_indicationContext,0)
 
 
         def block_configuration(self):
-            return self.getTypedRuleContext(vhdlParser.Block_configurationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_configurationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_component_configuration
+            return VhdlParser.RULE_component_configuration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComponent_configuration" ):
@@ -5557,37 +5557,37 @@ class vhdlParser ( Parser ):
 
     def component_configuration(self):
 
-        localctx = vhdlParser.Component_configurationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Component_configurationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 86, self.RULE_component_configuration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 884
-            self.match(vhdlParser.FOR)
+            self.match(VhdlParser.FOR)
             self.state = 885
             self.component_specification()
             self.state = 889
             _la = self._input.LA(1)
-            if _la==vhdlParser.GENERIC or _la==vhdlParser.PORT or _la==vhdlParser.USE or _la==vhdlParser.SEMI:
+            if _la==VhdlParser.GENERIC or _la==VhdlParser.PORT or _la==VhdlParser.USE or _la==VhdlParser.SEMI:
                 self.state = 886
                 self.binding_indication()
                 self.state = 887
-                self.match(vhdlParser.SEMI)
+                self.match(VhdlParser.SEMI)
 
 
             self.state = 892
             _la = self._input.LA(1)
-            if _la==vhdlParser.FOR:
+            if _la==VhdlParser.FOR:
                 self.state = 891
                 self.block_configuration()
 
 
             self.state = 894
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 895
-            self.match(vhdlParser.FOR)
+            self.match(VhdlParser.FOR)
             self.state = 896
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5604,36 +5604,36 @@ class vhdlParser ( Parser ):
 
         def COMPONENT(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMPONENT)
+                return self.getTokens(VhdlParser.COMPONENT)
             else:
-                return self.getToken(vhdlParser.COMPONENT, i)
+                return self.getToken(VhdlParser.COMPONENT, i)
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def generic_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Generic_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generic_clauseContext,0)
 
 
         def port_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Port_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Port_clauseContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_component_declaration
+            return VhdlParser.RULE_component_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComponent_declaration" ):
@@ -5654,49 +5654,49 @@ class vhdlParser ( Parser ):
 
     def component_declaration(self):
 
-        localctx = vhdlParser.Component_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Component_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 88, self.RULE_component_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 898
-            self.match(vhdlParser.COMPONENT)
+            self.match(VhdlParser.COMPONENT)
             self.state = 899
             self.identifier()
             self.state = 901
             _la = self._input.LA(1)
-            if _la==vhdlParser.IS:
+            if _la==VhdlParser.IS:
                 self.state = 900
-                self.match(vhdlParser.IS)
+                self.match(VhdlParser.IS)
 
 
             self.state = 904
             _la = self._input.LA(1)
-            if _la==vhdlParser.GENERIC:
+            if _la==VhdlParser.GENERIC:
                 self.state = 903
                 self.generic_clause()
 
 
             self.state = 907
             _la = self._input.LA(1)
-            if _la==vhdlParser.PORT:
+            if _la==VhdlParser.PORT:
                 self.state = 906
                 self.port_clause()
 
 
             self.state = 909
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 910
-            self.match(vhdlParser.COMPONENT)
+            self.match(VhdlParser.COMPONENT)
             self.state = 912
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 911
                 self.identifier()
 
 
             self.state = 914
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5712,26 +5712,26 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def instantiated_unit(self):
-            return self.getTypedRuleContext(vhdlParser.Instantiated_unitContext,0)
+            return self.getTypedRuleContext(VhdlParser.Instantiated_unitContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def generic_map_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Generic_map_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generic_map_aspectContext,0)
 
 
         def port_map_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Port_map_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Port_map_aspectContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_component_instantiation_statement
+            return VhdlParser.RULE_component_instantiation_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComponent_instantiation_statement" ):
@@ -5752,7 +5752,7 @@ class vhdlParser ( Parser ):
 
     def component_instantiation_statement(self):
 
-        localctx = vhdlParser.Component_instantiation_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Component_instantiation_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 90, self.RULE_component_instantiation_statement)
         self._la = 0 # Token type
         try:
@@ -5763,20 +5763,20 @@ class vhdlParser ( Parser ):
             self.instantiated_unit()
             self.state = 919
             _la = self._input.LA(1)
-            if _la==vhdlParser.GENERIC:
+            if _la==VhdlParser.GENERIC:
                 self.state = 918
                 self.generic_map_aspect()
 
 
             self.state = 922
             _la = self._input.LA(1)
-            if _la==vhdlParser.PORT:
+            if _la==VhdlParser.PORT:
                 self.state = 921
                 self.port_map_aspect()
 
 
             self.state = 924
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5792,18 +5792,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def instantiation_list(self):
-            return self.getTypedRuleContext(vhdlParser.Instantiation_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Instantiation_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_component_specification
+            return VhdlParser.RULE_component_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComponent_specification" ):
@@ -5824,14 +5824,14 @@ class vhdlParser ( Parser ):
 
     def component_specification(self):
 
-        localctx = vhdlParser.Component_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Component_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 92, self.RULE_component_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 926
             self.instantiation_list()
             self.state = 927
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 928
             self.name()
         except RecognitionException as re:
@@ -5849,15 +5849,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def array_nature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Array_nature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Array_nature_definitionContext,0)
 
 
         def record_nature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Record_nature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Record_nature_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_composite_nature_definition
+            return VhdlParser.RULE_composite_nature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComposite_nature_definition" ):
@@ -5878,17 +5878,17 @@ class vhdlParser ( Parser ):
 
     def composite_nature_definition(self):
 
-        localctx = vhdlParser.Composite_nature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Composite_nature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 94, self.RULE_composite_nature_definition)
         try:
             self.state = 932
             token = self._input.LA(1)
-            if token in [vhdlParser.ARRAY]:
+            if token in [VhdlParser.ARRAY]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 930
                 self.array_nature_definition()
 
-            elif token in [vhdlParser.RECORD]:
+            elif token in [VhdlParser.RECORD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 931
                 self.record_nature_definition()
@@ -5911,15 +5911,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def array_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Array_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Array_type_definitionContext,0)
 
 
         def record_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Record_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Record_type_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_composite_type_definition
+            return VhdlParser.RULE_composite_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComposite_type_definition" ):
@@ -5940,17 +5940,17 @@ class vhdlParser ( Parser ):
 
     def composite_type_definition(self):
 
-        localctx = vhdlParser.Composite_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Composite_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 96, self.RULE_composite_type_definition)
         try:
             self.state = 936
             token = self._input.LA(1)
-            if token in [vhdlParser.ARRAY]:
+            if token in [VhdlParser.ARRAY]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 934
                 self.array_type_definition()
 
-            elif token in [vhdlParser.RECORD]:
+            elif token in [VhdlParser.RECORD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 935
                 self.record_type_definition()
@@ -5973,21 +5973,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def assertion(self):
-            return self.getTypedRuleContext(vhdlParser.AssertionContext,0)
+            return self.getTypedRuleContext(VhdlParser.AssertionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def POSTPONED(self):
-            return self.getToken(vhdlParser.POSTPONED, 0)
+            return self.getToken(VhdlParser.POSTPONED, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_concurrent_assertion_statement
+            return VhdlParser.RULE_concurrent_assertion_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConcurrent_assertion_statement" ):
@@ -6008,29 +6008,29 @@ class vhdlParser ( Parser ):
 
     def concurrent_assertion_statement(self):
 
-        localctx = vhdlParser.Concurrent_assertion_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Concurrent_assertion_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 98, self.RULE_concurrent_assertion_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 939
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 938
                 self.label_colon()
 
 
             self.state = 942
             _la = self._input.LA(1)
-            if _la==vhdlParser.POSTPONED:
+            if _la==VhdlParser.POSTPONED:
                 self.state = 941
-                self.match(vhdlParser.POSTPONED)
+                self.match(VhdlParser.POSTPONED)
 
 
             self.state = 944
             self.assertion()
             self.state = 945
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6046,32 +6046,32 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def BREAK(self):
-            return self.getToken(vhdlParser.BREAK, 0)
+            return self.getToken(VhdlParser.BREAK, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def break_list(self):
-            return self.getTypedRuleContext(vhdlParser.Break_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Break_listContext,0)
 
 
         def sensitivity_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Sensitivity_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Sensitivity_clauseContext,0)
 
 
         def WHEN(self):
-            return self.getToken(vhdlParser.WHEN, 0)
+            return self.getToken(VhdlParser.WHEN, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_concurrent_break_statement
+            return VhdlParser.RULE_concurrent_break_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConcurrent_break_statement" ):
@@ -6092,45 +6092,45 @@ class vhdlParser ( Parser ):
 
     def concurrent_break_statement(self):
 
-        localctx = vhdlParser.Concurrent_break_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Concurrent_break_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 100, self.RULE_concurrent_break_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 948
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 947
                 self.label_colon()
 
 
             self.state = 950
-            self.match(vhdlParser.BREAK)
+            self.match(VhdlParser.BREAK)
             self.state = 952
             _la = self._input.LA(1)
-            if _la==vhdlParser.FOR or _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.FOR or _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 951
                 self.break_list()
 
 
             self.state = 955
             _la = self._input.LA(1)
-            if _la==vhdlParser.ON:
+            if _la==VhdlParser.ON:
                 self.state = 954
                 self.sensitivity_clause()
 
 
             self.state = 959
             _la = self._input.LA(1)
-            if _la==vhdlParser.WHEN:
+            if _la==VhdlParser.WHEN:
                 self.state = 957
-                self.match(vhdlParser.WHEN)
+                self.match(VhdlParser.WHEN)
                 self.state = 958
                 self.condition()
 
 
             self.state = 961
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6146,21 +6146,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def procedure_call(self):
-            return self.getTypedRuleContext(vhdlParser.Procedure_callContext,0)
+            return self.getTypedRuleContext(VhdlParser.Procedure_callContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def POSTPONED(self):
-            return self.getToken(vhdlParser.POSTPONED, 0)
+            return self.getToken(VhdlParser.POSTPONED, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_concurrent_procedure_call_statement
+            return VhdlParser.RULE_concurrent_procedure_call_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConcurrent_procedure_call_statement" ):
@@ -6181,7 +6181,7 @@ class vhdlParser ( Parser ):
 
     def concurrent_procedure_call_statement(self):
 
-        localctx = vhdlParser.Concurrent_procedure_call_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Concurrent_procedure_call_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 102, self.RULE_concurrent_procedure_call_statement)
         self._la = 0 # Token type
         try:
@@ -6195,15 +6195,15 @@ class vhdlParser ( Parser ):
 
             self.state = 967
             _la = self._input.LA(1)
-            if _la==vhdlParser.POSTPONED:
+            if _la==VhdlParser.POSTPONED:
                 self.state = 966
-                self.match(vhdlParser.POSTPONED)
+                self.match(VhdlParser.POSTPONED)
 
 
             self.state = 969
             self.procedure_call()
             self.state = 970
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6219,22 +6219,22 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def conditional_signal_assignment(self):
-            return self.getTypedRuleContext(vhdlParser.Conditional_signal_assignmentContext,0)
+            return self.getTypedRuleContext(VhdlParser.Conditional_signal_assignmentContext,0)
 
 
         def selected_signal_assignment(self):
-            return self.getTypedRuleContext(vhdlParser.Selected_signal_assignmentContext,0)
+            return self.getTypedRuleContext(VhdlParser.Selected_signal_assignmentContext,0)
 
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def POSTPONED(self):
-            return self.getToken(vhdlParser.POSTPONED, 0)
+            return self.getToken(VhdlParser.POSTPONED, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_concurrent_signal_assignment_statement
+            return VhdlParser.RULE_concurrent_signal_assignment_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConcurrent_signal_assignment_statement" ):
@@ -6255,7 +6255,7 @@ class vhdlParser ( Parser ):
 
     def concurrent_signal_assignment_statement(self):
 
-        localctx = vhdlParser.Concurrent_signal_assignment_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Concurrent_signal_assignment_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 104, self.RULE_concurrent_signal_assignment_statement)
         self._la = 0 # Token type
         try:
@@ -6269,18 +6269,18 @@ class vhdlParser ( Parser ):
 
             self.state = 976
             _la = self._input.LA(1)
-            if _la==vhdlParser.POSTPONED:
+            if _la==VhdlParser.POSTPONED:
                 self.state = 975
-                self.match(vhdlParser.POSTPONED)
+                self.match(VhdlParser.POSTPONED)
 
 
             self.state = 980
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER, vhdlParser.LPAREN]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER, VhdlParser.LPAREN]:
                 self.state = 978
                 self.conditional_signal_assignment()
 
-            elif token in [vhdlParser.WITH]:
+            elif token in [VhdlParser.WITH]:
                 self.state = 979
                 self.selected_signal_assignment()
 
@@ -6302,11 +6302,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_condition
+            return VhdlParser.RULE_condition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterCondition" ):
@@ -6327,7 +6327,7 @@ class vhdlParser ( Parser ):
 
     def condition(self):
 
-        localctx = vhdlParser.ConditionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.ConditionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 106, self.RULE_condition)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -6348,14 +6348,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def UNTIL(self):
-            return self.getToken(vhdlParser.UNTIL, 0)
+            return self.getToken(VhdlParser.UNTIL, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_condition_clause
+            return VhdlParser.RULE_condition_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterCondition_clause" ):
@@ -6376,12 +6376,12 @@ class vhdlParser ( Parser ):
 
     def condition_clause(self):
 
-        localctx = vhdlParser.Condition_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Condition_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 108, self.RULE_condition_clause)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 984
-            self.match(vhdlParser.UNTIL)
+            self.match(VhdlParser.UNTIL)
             self.state = 985
             self.condition()
         except RecognitionException as re:
@@ -6399,25 +6399,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def target(self):
-            return self.getTypedRuleContext(vhdlParser.TargetContext,0)
+            return self.getTypedRuleContext(VhdlParser.TargetContext,0)
 
 
         def LE(self):
-            return self.getToken(vhdlParser.LE, 0)
+            return self.getToken(VhdlParser.LE, 0)
 
         def opts(self):
-            return self.getTypedRuleContext(vhdlParser.OptsContext,0)
+            return self.getTypedRuleContext(VhdlParser.OptsContext,0)
 
 
         def conditional_waveforms(self):
-            return self.getTypedRuleContext(vhdlParser.Conditional_waveformsContext,0)
+            return self.getTypedRuleContext(VhdlParser.Conditional_waveformsContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_conditional_signal_assignment
+            return VhdlParser.RULE_conditional_signal_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConditional_signal_assignment" ):
@@ -6438,20 +6438,20 @@ class vhdlParser ( Parser ):
 
     def conditional_signal_assignment(self):
 
-        localctx = vhdlParser.Conditional_signal_assignmentContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Conditional_signal_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 110, self.RULE_conditional_signal_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 987
             self.target()
             self.state = 988
-            self.match(vhdlParser.LE)
+            self.match(VhdlParser.LE)
             self.state = 989
             self.opts()
             self.state = 990
             self.conditional_waveforms()
             self.state = 991
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6467,25 +6467,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def waveform(self):
-            return self.getTypedRuleContext(vhdlParser.WaveformContext,0)
+            return self.getTypedRuleContext(VhdlParser.WaveformContext,0)
 
 
         def WHEN(self):
-            return self.getToken(vhdlParser.WHEN, 0)
+            return self.getToken(VhdlParser.WHEN, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def ELSE(self):
-            return self.getToken(vhdlParser.ELSE, 0)
+            return self.getToken(VhdlParser.ELSE, 0)
 
         def conditional_waveforms(self):
-            return self.getTypedRuleContext(vhdlParser.Conditional_waveformsContext,0)
+            return self.getTypedRuleContext(VhdlParser.Conditional_waveformsContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_conditional_waveforms
+            return VhdlParser.RULE_conditional_waveforms
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConditional_waveforms" ):
@@ -6506,7 +6506,7 @@ class vhdlParser ( Parser ):
 
     def conditional_waveforms(self):
 
-        localctx = vhdlParser.Conditional_waveformsContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Conditional_waveformsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 112, self.RULE_conditional_waveforms)
         self._la = 0 # Token type
         try:
@@ -6515,16 +6515,16 @@ class vhdlParser ( Parser ):
             self.waveform()
             self.state = 1000
             _la = self._input.LA(1)
-            if _la==vhdlParser.WHEN:
+            if _la==VhdlParser.WHEN:
                 self.state = 994
-                self.match(vhdlParser.WHEN)
+                self.match(VhdlParser.WHEN)
                 self.state = 995
                 self.condition()
                 self.state = 998
                 _la = self._input.LA(1)
-                if _la==vhdlParser.ELSE:
+                if _la==VhdlParser.ELSE:
                     self.state = 996
-                    self.match(vhdlParser.ELSE)
+                    self.match(VhdlParser.ELSE)
                     self.state = 997
                     self.conditional_waveforms()
 
@@ -6547,43 +6547,43 @@ class vhdlParser ( Parser ):
 
         def CONFIGURATION(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.CONFIGURATION)
+                return self.getTokens(VhdlParser.CONFIGURATION)
             else:
-                return self.getToken(vhdlParser.CONFIGURATION, i)
+                return self.getToken(VhdlParser.CONFIGURATION, i)
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def configuration_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Configuration_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Configuration_declarative_partContext,0)
 
 
         def block_configuration(self):
-            return self.getTypedRuleContext(vhdlParser.Block_configurationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_configurationContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_configuration_declaration
+            return VhdlParser.RULE_configuration_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConfiguration_declaration" ):
@@ -6604,43 +6604,43 @@ class vhdlParser ( Parser ):
 
     def configuration_declaration(self):
 
-        localctx = vhdlParser.Configuration_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Configuration_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 114, self.RULE_configuration_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1002
-            self.match(vhdlParser.CONFIGURATION)
+            self.match(VhdlParser.CONFIGURATION)
             self.state = 1003
             self.identifier()
             self.state = 1004
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 1005
             self.name()
             self.state = 1006
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 1007
             self.configuration_declarative_part()
             self.state = 1008
             self.block_configuration()
             self.state = 1009
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1011
             _la = self._input.LA(1)
-            if _la==vhdlParser.CONFIGURATION:
+            if _la==VhdlParser.CONFIGURATION:
                 self.state = 1010
-                self.match(vhdlParser.CONFIGURATION)
+                self.match(VhdlParser.CONFIGURATION)
 
 
             self.state = 1014
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1013
                 self.identifier()
 
 
             self.state = 1016
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6656,19 +6656,19 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def attribute_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_specificationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_configuration_declarative_item
+            return VhdlParser.RULE_configuration_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConfiguration_declarative_item" ):
@@ -6689,22 +6689,22 @@ class vhdlParser ( Parser ):
 
     def configuration_declarative_item(self):
 
-        localctx = vhdlParser.Configuration_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Configuration_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 116, self.RULE_configuration_declarative_item)
         try:
             self.state = 1021
             token = self._input.LA(1)
-            if token in [vhdlParser.USE]:
+            if token in [VhdlParser.USE]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1018
                 self.use_clause()
 
-            elif token in [vhdlParser.ATTRIBUTE]:
+            elif token in [VhdlParser.ATTRIBUTE]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1019
                 self.attribute_specification()
 
-            elif token in [vhdlParser.GROUP]:
+            elif token in [VhdlParser.GROUP]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1020
                 self.group_declaration()
@@ -6728,13 +6728,13 @@ class vhdlParser ( Parser ):
 
         def configuration_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Configuration_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Configuration_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Configuration_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Configuration_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_configuration_declarative_part
+            return VhdlParser.RULE_configuration_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConfiguration_declarative_part" ):
@@ -6755,7 +6755,7 @@ class vhdlParser ( Parser ):
 
     def configuration_declarative_part(self):
 
-        localctx = vhdlParser.Configuration_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Configuration_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 118, self.RULE_configuration_declarative_part)
         self._la = 0 # Token type
         try:
@@ -6763,7 +6763,7 @@ class vhdlParser ( Parser ):
             self.state = 1026
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.ATTRIBUTE or _la==vhdlParser.GROUP or _la==vhdlParser.USE:
+            while _la==VhdlParser.ATTRIBUTE or _la==VhdlParser.GROUP or _la==VhdlParser.USE:
                 self.state = 1023
                 self.configuration_declarative_item()
                 self.state = 1028
@@ -6785,15 +6785,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def block_configuration(self):
-            return self.getTypedRuleContext(vhdlParser.Block_configurationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Block_configurationContext,0)
 
 
         def component_configuration(self):
-            return self.getTypedRuleContext(vhdlParser.Component_configurationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Component_configurationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_configuration_item
+            return VhdlParser.RULE_configuration_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConfiguration_item" ):
@@ -6814,7 +6814,7 @@ class vhdlParser ( Parser ):
 
     def configuration_item(self):
 
-        localctx = vhdlParser.Configuration_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Configuration_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 120, self.RULE_configuration_item)
         try:
             self.state = 1031
@@ -6847,21 +6847,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FOR(self):
-            return self.getToken(vhdlParser.FOR, 0)
+            return self.getToken(VhdlParser.FOR, 0)
 
         def component_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Component_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Component_specificationContext,0)
 
 
         def binding_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Binding_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Binding_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_configuration_specification
+            return VhdlParser.RULE_configuration_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConfiguration_specification" ):
@@ -6882,18 +6882,18 @@ class vhdlParser ( Parser ):
 
     def configuration_specification(self):
 
-        localctx = vhdlParser.Configuration_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Configuration_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 122, self.RULE_configuration_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1033
-            self.match(vhdlParser.FOR)
+            self.match(VhdlParser.FOR)
             self.state = 1034
             self.component_specification()
             self.state = 1035
             self.binding_indication()
             self.state = 1036
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6909,31 +6909,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def CONSTANT(self):
-            return self.getToken(vhdlParser.CONSTANT, 0)
+            return self.getToken(VhdlParser.CONSTANT, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_constant_declaration
+            return VhdlParser.RULE_constant_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConstant_declaration" ):
@@ -6954,30 +6954,30 @@ class vhdlParser ( Parser ):
 
     def constant_declaration(self):
 
-        localctx = vhdlParser.Constant_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Constant_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 124, self.RULE_constant_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1038
-            self.match(vhdlParser.CONSTANT)
+            self.match(VhdlParser.CONSTANT)
             self.state = 1039
             self.identifier_list()
             self.state = 1040
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1041
             self.subtype_indication()
             self.state = 1044
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 1042
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 1043
                 self.expression()
 
 
             self.state = 1046
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6993,21 +6993,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ARRAY(self):
-            return self.getToken(vhdlParser.ARRAY, 0)
+            return self.getToken(VhdlParser.ARRAY, 0)
 
         def index_constraint(self):
-            return self.getTypedRuleContext(vhdlParser.Index_constraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.Index_constraintContext,0)
 
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_constrained_array_definition
+            return VhdlParser.RULE_constrained_array_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConstrained_array_definition" ):
@@ -7028,16 +7028,16 @@ class vhdlParser ( Parser ):
 
     def constrained_array_definition(self):
 
-        localctx = vhdlParser.Constrained_array_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Constrained_array_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 126, self.RULE_constrained_array_definition)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1048
-            self.match(vhdlParser.ARRAY)
+            self.match(VhdlParser.ARRAY)
             self.state = 1049
             self.index_constraint()
             self.state = 1050
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 1051
             self.subtype_indication()
         except RecognitionException as re:
@@ -7055,21 +7055,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ARRAY(self):
-            return self.getToken(vhdlParser.ARRAY, 0)
+            return self.getToken(VhdlParser.ARRAY, 0)
 
         def index_constraint(self):
-            return self.getTypedRuleContext(vhdlParser.Index_constraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.Index_constraintContext,0)
 
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def subnature_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_constrained_nature_definition
+            return VhdlParser.RULE_constrained_nature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConstrained_nature_definition" ):
@@ -7090,16 +7090,16 @@ class vhdlParser ( Parser ):
 
     def constrained_nature_definition(self):
 
-        localctx = vhdlParser.Constrained_nature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Constrained_nature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 128, self.RULE_constrained_nature_definition)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1053
-            self.match(vhdlParser.ARRAY)
+            self.match(VhdlParser.ARRAY)
             self.state = 1054
             self.index_constraint()
             self.state = 1055
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 1056
             self.subnature_indication()
         except RecognitionException as re:
@@ -7117,15 +7117,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def range_constraint(self):
-            return self.getTypedRuleContext(vhdlParser.Range_constraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.Range_constraintContext,0)
 
 
         def index_constraint(self):
-            return self.getTypedRuleContext(vhdlParser.Index_constraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.Index_constraintContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_constraint
+            return VhdlParser.RULE_constraint
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterConstraint" ):
@@ -7146,17 +7146,17 @@ class vhdlParser ( Parser ):
 
     def constraint(self):
 
-        localctx = vhdlParser.ConstraintContext(self, self._ctx, self.state)
+        localctx = VhdlParser.ConstraintContext(self, self._ctx, self.state)
         self.enterRule(localctx, 130, self.RULE_constraint)
         try:
             self.state = 1060
             token = self._input.LA(1)
-            if token in [vhdlParser.RANGE]:
+            if token in [VhdlParser.RANGE]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1058
                 self.range_constraint()
 
-            elif token in [vhdlParser.LPAREN]:
+            elif token in [VhdlParser.LPAREN]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1059
                 self.index_constraint()
@@ -7180,13 +7180,13 @@ class vhdlParser ( Parser ):
 
         def context_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Context_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Context_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Context_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Context_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_context_clause
+            return VhdlParser.RULE_context_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterContext_clause" ):
@@ -7207,7 +7207,7 @@ class vhdlParser ( Parser ):
 
     def context_clause(self):
 
-        localctx = vhdlParser.Context_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Context_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 132, self.RULE_context_clause)
         self._la = 0 # Token type
         try:
@@ -7215,7 +7215,7 @@ class vhdlParser ( Parser ):
             self.state = 1065
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.LIBRARY or _la==vhdlParser.USE:
+            while _la==VhdlParser.LIBRARY or _la==VhdlParser.USE:
                 self.state = 1062
                 self.context_item()
                 self.state = 1067
@@ -7237,15 +7237,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def library_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Library_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Library_clauseContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_context_item
+            return VhdlParser.RULE_context_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterContext_item" ):
@@ -7266,17 +7266,17 @@ class vhdlParser ( Parser ):
 
     def context_item(self):
 
-        localctx = vhdlParser.Context_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Context_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 134, self.RULE_context_item)
         try:
             self.state = 1070
             token = self._input.LA(1)
-            if token in [vhdlParser.LIBRARY]:
+            if token in [VhdlParser.LIBRARY]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1068
                 self.library_clause()
 
-            elif token in [vhdlParser.USE]:
+            elif token in [VhdlParser.USE]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1069
                 self.use_clause()
@@ -7299,20 +7299,20 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def TRANSPORT(self):
-            return self.getToken(vhdlParser.TRANSPORT, 0)
+            return self.getToken(VhdlParser.TRANSPORT, 0)
 
         def INERTIAL(self):
-            return self.getToken(vhdlParser.INERTIAL, 0)
+            return self.getToken(VhdlParser.INERTIAL, 0)
 
         def REJECT(self):
-            return self.getToken(vhdlParser.REJECT, 0)
+            return self.getToken(VhdlParser.REJECT, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_delay_mechanism
+            return VhdlParser.RULE_delay_mechanism
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDelay_mechanism" ):
@@ -7333,30 +7333,30 @@ class vhdlParser ( Parser ):
 
     def delay_mechanism(self):
 
-        localctx = vhdlParser.Delay_mechanismContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Delay_mechanismContext(self, self._ctx, self.state)
         self.enterRule(localctx, 136, self.RULE_delay_mechanism)
         self._la = 0 # Token type
         try:
             self.state = 1078
             token = self._input.LA(1)
-            if token in [vhdlParser.TRANSPORT]:
+            if token in [VhdlParser.TRANSPORT]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1072
-                self.match(vhdlParser.TRANSPORT)
+                self.match(VhdlParser.TRANSPORT)
 
-            elif token in [vhdlParser.INERTIAL, vhdlParser.REJECT]:
+            elif token in [VhdlParser.INERTIAL, VhdlParser.REJECT]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1075
                 _la = self._input.LA(1)
-                if _la==vhdlParser.REJECT:
+                if _la==VhdlParser.REJECT:
                     self.state = 1073
-                    self.match(vhdlParser.REJECT)
+                    self.match(VhdlParser.REJECT)
                     self.state = 1074
                     self.expression()
 
 
                 self.state = 1077
-                self.match(vhdlParser.INERTIAL)
+                self.match(VhdlParser.INERTIAL)
 
             else:
                 raise NoViableAltException(self)
@@ -7376,17 +7376,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def EOF(self):
-            return self.getToken(vhdlParser.EOF, 0)
+            return self.getToken(VhdlParser.EOF, 0)
 
         def design_unit(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Design_unitContext)
+                return self.getTypedRuleContexts(VhdlParser.Design_unitContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Design_unitContext,i)
+                return self.getTypedRuleContext(VhdlParser.Design_unitContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_design_file
+            return VhdlParser.RULE_design_file
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDesign_file" ):
@@ -7407,7 +7407,7 @@ class vhdlParser ( Parser ):
 
     def design_file(self):
 
-        localctx = vhdlParser.Design_fileContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Design_fileContext(self, self._ctx, self.state)
         self.enterRule(localctx, 138, self.RULE_design_file)
         self._la = 0 # Token type
         try:
@@ -7415,7 +7415,7 @@ class vhdlParser ( Parser ):
             self.state = 1083
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ARCHITECTURE) | (1 << vhdlParser.CONFIGURATION) | (1 << vhdlParser.ENTITY) | (1 << vhdlParser.LIBRARY))) != 0) or _la==vhdlParser.PACKAGE or _la==vhdlParser.USE:
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ARCHITECTURE) | (1 << VhdlParser.CONFIGURATION) | (1 << VhdlParser.ENTITY) | (1 << VhdlParser.LIBRARY))) != 0) or _la==VhdlParser.PACKAGE or _la==VhdlParser.USE:
                 self.state = 1080
                 self.design_unit()
                 self.state = 1085
@@ -7423,7 +7423,7 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 1086
-            self.match(vhdlParser.EOF)
+            self.match(VhdlParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -7439,15 +7439,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def context_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Context_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Context_clauseContext,0)
 
 
         def library_unit(self):
-            return self.getTypedRuleContext(vhdlParser.Library_unitContext,0)
+            return self.getTypedRuleContext(VhdlParser.Library_unitContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_design_unit
+            return VhdlParser.RULE_design_unit
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDesign_unit" ):
@@ -7468,7 +7468,7 @@ class vhdlParser ( Parser ):
 
     def design_unit(self):
 
-        localctx = vhdlParser.Design_unitContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Design_unitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 140, self.RULE_design_unit)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -7491,14 +7491,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def STRING_LITERAL(self):
-            return self.getToken(vhdlParser.STRING_LITERAL, 0)
+            return self.getToken(VhdlParser.STRING_LITERAL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_designator
+            return VhdlParser.RULE_designator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDesignator" ):
@@ -7519,20 +7519,20 @@ class vhdlParser ( Parser ):
 
     def designator(self):
 
-        localctx = vhdlParser.DesignatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.DesignatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 142, self.RULE_designator)
         try:
             self.state = 1093
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1091
                 self.identifier()
 
-            elif token in [vhdlParser.STRING_LITERAL]:
+            elif token in [VhdlParser.STRING_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1092
-                self.match(vhdlParser.STRING_LITERAL)
+                self.match(VhdlParser.STRING_LITERAL)
 
             else:
                 raise NoViableAltException(self)
@@ -7552,13 +7552,13 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def TO(self):
-            return self.getToken(vhdlParser.TO, 0)
+            return self.getToken(VhdlParser.TO, 0)
 
         def DOWNTO(self):
-            return self.getToken(vhdlParser.DOWNTO, 0)
+            return self.getToken(VhdlParser.DOWNTO, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_direction
+            return VhdlParser.RULE_direction
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDirection" ):
@@ -7579,14 +7579,14 @@ class vhdlParser ( Parser ):
 
     def direction(self):
 
-        localctx = vhdlParser.DirectionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.DirectionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 144, self.RULE_direction)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1095
             _la = self._input.LA(1)
-            if not(_la==vhdlParser.DOWNTO or _la==vhdlParser.TO):
+            if not(_la==VhdlParser.DOWNTO or _la==VhdlParser.TO):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -7605,24 +7605,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def DISCONNECT(self):
-            return self.getToken(vhdlParser.DISCONNECT, 0)
+            return self.getToken(VhdlParser.DISCONNECT, 0)
 
         def guarded_signal_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Guarded_signal_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Guarded_signal_specificationContext,0)
 
 
         def AFTER(self):
-            return self.getToken(vhdlParser.AFTER, 0)
+            return self.getToken(VhdlParser.AFTER, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_disconnection_specification
+            return VhdlParser.RULE_disconnection_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDisconnection_specification" ):
@@ -7643,20 +7643,20 @@ class vhdlParser ( Parser ):
 
     def disconnection_specification(self):
 
-        localctx = vhdlParser.Disconnection_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Disconnection_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 146, self.RULE_disconnection_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1097
-            self.match(vhdlParser.DISCONNECT)
+            self.match(VhdlParser.DISCONNECT)
             self.state = 1098
             self.guarded_signal_specification()
             self.state = 1099
-            self.match(vhdlParser.AFTER)
+            self.match(VhdlParser.AFTER)
             self.state = 1100
             self.expression()
             self.state = 1101
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -7672,15 +7672,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def range_base(self):
-            return self.getTypedRuleContext(vhdlParser.Range_baseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Range_baseContext,0)
 
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_discrete_range
+            return VhdlParser.RULE_discrete_range
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDiscrete_range" ):
@@ -7701,7 +7701,7 @@ class vhdlParser ( Parser ):
 
     def discrete_range(self):
 
-        localctx = vhdlParser.Discrete_rangeContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Discrete_rangeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 148, self.RULE_discrete_range)
         try:
             self.state = 1105
@@ -7734,18 +7734,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def choices(self):
-            return self.getTypedRuleContext(vhdlParser.ChoicesContext,0)
+            return self.getTypedRuleContext(VhdlParser.ChoicesContext,0)
 
 
         def ARROW(self):
-            return self.getToken(vhdlParser.ARROW, 0)
+            return self.getToken(VhdlParser.ARROW, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_element_association
+            return VhdlParser.RULE_element_association
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterElement_association" ):
@@ -7766,7 +7766,7 @@ class vhdlParser ( Parser ):
 
     def element_association(self):
 
-        localctx = vhdlParser.Element_associationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Element_associationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 150, self.RULE_element_association)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -7776,7 +7776,7 @@ class vhdlParser ( Parser ):
                 self.state = 1107
                 self.choices()
                 self.state = 1108
-                self.match(vhdlParser.ARROW)
+                self.match(VhdlParser.ARROW)
 
 
             self.state = 1112
@@ -7796,21 +7796,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def element_subtype_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Element_subtype_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Element_subtype_definitionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_element_declaration
+            return VhdlParser.RULE_element_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterElement_declaration" ):
@@ -7831,18 +7831,18 @@ class vhdlParser ( Parser ):
 
     def element_declaration(self):
 
-        localctx = vhdlParser.Element_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Element_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 152, self.RULE_element_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1114
             self.identifier_list()
             self.state = 1115
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1116
             self.element_subtype_definition()
             self.state = 1117
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -7858,11 +7858,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subnature_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_element_subnature_definition
+            return VhdlParser.RULE_element_subnature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterElement_subnature_definition" ):
@@ -7883,7 +7883,7 @@ class vhdlParser ( Parser ):
 
     def element_subnature_definition(self):
 
-        localctx = vhdlParser.Element_subnature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Element_subnature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 154, self.RULE_element_subnature_definition)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -7904,11 +7904,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_element_subtype_definition
+            return VhdlParser.RULE_element_subtype_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterElement_subtype_definition" ):
@@ -7929,7 +7929,7 @@ class vhdlParser ( Parser ):
 
     def element_subtype_definition(self):
 
-        localctx = vhdlParser.Element_subtype_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Element_subtype_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 156, self.RULE_element_subtype_definition)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -7950,30 +7950,30 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ENTITY(self):
-            return self.getToken(vhdlParser.ENTITY, 0)
+            return self.getToken(VhdlParser.ENTITY, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def CONFIGURATION(self):
-            return self.getToken(vhdlParser.CONFIGURATION, 0)
+            return self.getToken(VhdlParser.CONFIGURATION, 0)
 
         def OPEN(self):
-            return self.getToken(vhdlParser.OPEN, 0)
+            return self.getToken(VhdlParser.OPEN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_aspect
+            return VhdlParser.RULE_entity_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_aspect" ):
@@ -7994,41 +7994,41 @@ class vhdlParser ( Parser ):
 
     def entity_aspect(self):
 
-        localctx = vhdlParser.Entity_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 158, self.RULE_entity_aspect)
         self._la = 0 # Token type
         try:
             self.state = 1134
             token = self._input.LA(1)
-            if token in [vhdlParser.ENTITY]:
+            if token in [VhdlParser.ENTITY]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1123
-                self.match(vhdlParser.ENTITY)
+                self.match(VhdlParser.ENTITY)
                 self.state = 1124
                 self.name()
                 self.state = 1129
                 _la = self._input.LA(1)
-                if _la==vhdlParser.LPAREN:
+                if _la==VhdlParser.LPAREN:
                     self.state = 1125
-                    self.match(vhdlParser.LPAREN)
+                    self.match(VhdlParser.LPAREN)
                     self.state = 1126
                     self.identifier()
                     self.state = 1127
-                    self.match(vhdlParser.RPAREN)
+                    self.match(VhdlParser.RPAREN)
 
 
 
-            elif token in [vhdlParser.CONFIGURATION]:
+            elif token in [VhdlParser.CONFIGURATION]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1131
-                self.match(vhdlParser.CONFIGURATION)
+                self.match(VhdlParser.CONFIGURATION)
                 self.state = 1132
                 self.name()
 
-            elif token in [vhdlParser.OPEN]:
+            elif token in [VhdlParser.OPEN]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1133
-                self.match(vhdlParser.OPEN)
+                self.match(VhdlParser.OPEN)
 
             else:
                 raise NoViableAltException(self)
@@ -8048,70 +8048,70 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ENTITY(self):
-            return self.getToken(vhdlParser.ENTITY, 0)
+            return self.getToken(VhdlParser.ENTITY, 0)
 
         def ARCHITECTURE(self):
-            return self.getToken(vhdlParser.ARCHITECTURE, 0)
+            return self.getToken(VhdlParser.ARCHITECTURE, 0)
 
         def CONFIGURATION(self):
-            return self.getToken(vhdlParser.CONFIGURATION, 0)
+            return self.getToken(VhdlParser.CONFIGURATION, 0)
 
         def PROCEDURE(self):
-            return self.getToken(vhdlParser.PROCEDURE, 0)
+            return self.getToken(VhdlParser.PROCEDURE, 0)
 
         def FUNCTION(self):
-            return self.getToken(vhdlParser.FUNCTION, 0)
+            return self.getToken(VhdlParser.FUNCTION, 0)
 
         def PACKAGE(self):
-            return self.getToken(vhdlParser.PACKAGE, 0)
+            return self.getToken(VhdlParser.PACKAGE, 0)
 
         def TYPE(self):
-            return self.getToken(vhdlParser.TYPE, 0)
+            return self.getToken(VhdlParser.TYPE, 0)
 
         def SUBTYPE(self):
-            return self.getToken(vhdlParser.SUBTYPE, 0)
+            return self.getToken(VhdlParser.SUBTYPE, 0)
 
         def CONSTANT(self):
-            return self.getToken(vhdlParser.CONSTANT, 0)
+            return self.getToken(VhdlParser.CONSTANT, 0)
 
         def SIGNAL(self):
-            return self.getToken(vhdlParser.SIGNAL, 0)
+            return self.getToken(VhdlParser.SIGNAL, 0)
 
         def VARIABLE(self):
-            return self.getToken(vhdlParser.VARIABLE, 0)
+            return self.getToken(VhdlParser.VARIABLE, 0)
 
         def COMPONENT(self):
-            return self.getToken(vhdlParser.COMPONENT, 0)
+            return self.getToken(VhdlParser.COMPONENT, 0)
 
         def LABEL(self):
-            return self.getToken(vhdlParser.LABEL, 0)
+            return self.getToken(VhdlParser.LABEL, 0)
 
         def LITERAL(self):
-            return self.getToken(vhdlParser.LITERAL, 0)
+            return self.getToken(VhdlParser.LITERAL, 0)
 
         def UNITS(self):
-            return self.getToken(vhdlParser.UNITS, 0)
+            return self.getToken(VhdlParser.UNITS, 0)
 
         def GROUP(self):
-            return self.getToken(vhdlParser.GROUP, 0)
+            return self.getToken(VhdlParser.GROUP, 0)
 
         def FILE(self):
-            return self.getToken(vhdlParser.FILE, 0)
+            return self.getToken(VhdlParser.FILE, 0)
 
         def NATURE(self):
-            return self.getToken(vhdlParser.NATURE, 0)
+            return self.getToken(VhdlParser.NATURE, 0)
 
         def SUBNATURE(self):
-            return self.getToken(vhdlParser.SUBNATURE, 0)
+            return self.getToken(VhdlParser.SUBNATURE, 0)
 
         def QUANTITY(self):
-            return self.getToken(vhdlParser.QUANTITY, 0)
+            return self.getToken(VhdlParser.QUANTITY, 0)
 
         def TERMINAL(self):
-            return self.getToken(vhdlParser.TERMINAL, 0)
+            return self.getToken(VhdlParser.TERMINAL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_class
+            return VhdlParser.RULE_entity_class
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_class" ):
@@ -8132,14 +8132,14 @@ class vhdlParser ( Parser ):
 
     def entity_class(self):
 
-        localctx = vhdlParser.Entity_classContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_classContext(self, self._ctx, self.state)
         self.enterRule(localctx, 160, self.RULE_entity_class)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1136
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ARCHITECTURE) | (1 << vhdlParser.COMPONENT) | (1 << vhdlParser.CONFIGURATION) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.ENTITY) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.LABEL) | (1 << vhdlParser.LITERAL) | (1 << vhdlParser.NATURE))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (vhdlParser.PACKAGE - 64)) | (1 << (vhdlParser.PROCEDURE - 64)) | (1 << (vhdlParser.QUANTITY - 64)) | (1 << (vhdlParser.SIGNAL - 64)) | (1 << (vhdlParser.SUBNATURE - 64)) | (1 << (vhdlParser.SUBTYPE - 64)) | (1 << (vhdlParser.TERMINAL - 64)) | (1 << (vhdlParser.TYPE - 64)) | (1 << (vhdlParser.UNITS - 64)) | (1 << (vhdlParser.VARIABLE - 64)))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ARCHITECTURE) | (1 << VhdlParser.COMPONENT) | (1 << VhdlParser.CONFIGURATION) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.ENTITY) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.LABEL) | (1 << VhdlParser.LITERAL) | (1 << VhdlParser.NATURE))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (VhdlParser.PACKAGE - 64)) | (1 << (VhdlParser.PROCEDURE - 64)) | (1 << (VhdlParser.QUANTITY - 64)) | (1 << (VhdlParser.SIGNAL - 64)) | (1 << (VhdlParser.SUBNATURE - 64)) | (1 << (VhdlParser.SUBTYPE - 64)) | (1 << (VhdlParser.TERMINAL - 64)) | (1 << (VhdlParser.TYPE - 64)) | (1 << (VhdlParser.UNITS - 64)) | (1 << (VhdlParser.VARIABLE - 64)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -8158,14 +8158,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def entity_class(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_classContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_classContext,0)
 
 
         def BOX(self):
-            return self.getToken(vhdlParser.BOX, 0)
+            return self.getToken(VhdlParser.BOX, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_class_entry
+            return VhdlParser.RULE_entity_class_entry
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_class_entry" ):
@@ -8186,7 +8186,7 @@ class vhdlParser ( Parser ):
 
     def entity_class_entry(self):
 
-        localctx = vhdlParser.Entity_class_entryContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_class_entryContext(self, self._ctx, self.state)
         self.enterRule(localctx, 162, self.RULE_entity_class_entry)
         self._la = 0 # Token type
         try:
@@ -8195,9 +8195,9 @@ class vhdlParser ( Parser ):
             self.entity_class()
             self.state = 1140
             _la = self._input.LA(1)
-            if _la==vhdlParser.BOX:
+            if _la==VhdlParser.BOX:
                 self.state = 1139
-                self.match(vhdlParser.BOX)
+                self.match(VhdlParser.BOX)
 
 
         except RecognitionException as re:
@@ -8216,19 +8216,19 @@ class vhdlParser ( Parser ):
 
         def entity_class_entry(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Entity_class_entryContext)
+                return self.getTypedRuleContexts(VhdlParser.Entity_class_entryContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Entity_class_entryContext,i)
+                return self.getTypedRuleContext(VhdlParser.Entity_class_entryContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_class_entry_list
+            return VhdlParser.RULE_entity_class_entry_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_class_entry_list" ):
@@ -8249,7 +8249,7 @@ class vhdlParser ( Parser ):
 
     def entity_class_entry_list(self):
 
-        localctx = vhdlParser.Entity_class_entry_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_class_entry_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 164, self.RULE_entity_class_entry_list)
         self._la = 0 # Token type
         try:
@@ -8259,9 +8259,9 @@ class vhdlParser ( Parser ):
             self.state = 1147
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 1143
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 1144
                 self.entity_class_entry()
                 self.state = 1149
@@ -8284,43 +8284,43 @@ class vhdlParser ( Parser ):
 
         def ENTITY(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.ENTITY)
+                return self.getTokens(VhdlParser.ENTITY)
             else:
-                return self.getToken(vhdlParser.ENTITY, i)
+                return self.getToken(VhdlParser.ENTITY, i)
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def entity_header(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_headerContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_headerContext,0)
 
 
         def entity_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_declarative_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def BEGIN(self):
-            return self.getToken(vhdlParser.BEGIN, 0)
+            return self.getToken(VhdlParser.BEGIN, 0)
 
         def entity_statement_part(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_statement_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_statement_partContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_declaration
+            return VhdlParser.RULE_entity_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_declaration" ):
@@ -8341,48 +8341,48 @@ class vhdlParser ( Parser ):
 
     def entity_declaration(self):
 
-        localctx = vhdlParser.Entity_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 166, self.RULE_entity_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1150
-            self.match(vhdlParser.ENTITY)
+            self.match(VhdlParser.ENTITY)
             self.state = 1151
             self.identifier()
             self.state = 1152
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 1153
             self.entity_header()
             self.state = 1154
             self.entity_declarative_part()
             self.state = 1157
             _la = self._input.LA(1)
-            if _la==vhdlParser.BEGIN:
+            if _la==VhdlParser.BEGIN:
                 self.state = 1155
-                self.match(vhdlParser.BEGIN)
+                self.match(VhdlParser.BEGIN)
                 self.state = 1156
                 self.entity_statement_part()
 
 
             self.state = 1159
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1161
             _la = self._input.LA(1)
-            if _la==vhdlParser.ENTITY:
+            if _la==VhdlParser.ENTITY:
                 self.state = 1160
-                self.match(vhdlParser.ENTITY)
+                self.match(VhdlParser.ENTITY)
 
 
             self.state = 1164
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1163
                 self.identifier()
 
 
             self.state = 1166
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -8398,87 +8398,87 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarationContext,0)
 
 
         def subprogram_body(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_bodyContext,0)
 
 
         def type_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Type_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_declarationContext,0)
 
 
         def subtype_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_declarationContext,0)
 
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def signal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.File_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_declarationContext,0)
 
 
         def alias_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_declarationContext,0)
 
 
         def attribute_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_declarationContext,0)
 
 
         def attribute_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_specificationContext,0)
 
 
         def disconnection_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Disconnection_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Disconnection_specificationContext,0)
 
 
         def step_limit_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Step_limit_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Step_limit_specificationContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def group_template_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_template_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_template_declarationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def nature_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Nature_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Nature_declarationContext,0)
 
 
         def subnature_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_declarationContext,0)
 
 
         def quantity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Quantity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Quantity_declarationContext,0)
 
 
         def terminal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Terminal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Terminal_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_declarative_item
+            return VhdlParser.RULE_entity_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_declarative_item" ):
@@ -8499,7 +8499,7 @@ class vhdlParser ( Parser ):
 
     def entity_declarative_item(self):
 
-        localctx = vhdlParser.Entity_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 168, self.RULE_entity_declarative_item)
         try:
             self.state = 1188
@@ -8641,13 +8641,13 @@ class vhdlParser ( Parser ):
 
         def entity_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Entity_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Entity_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Entity_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Entity_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_declarative_part
+            return VhdlParser.RULE_entity_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_declarative_part" ):
@@ -8668,7 +8668,7 @@ class vhdlParser ( Parser ):
 
     def entity_declarative_part(self):
 
-        localctx = vhdlParser.Entity_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 170, self.RULE_entity_declarative_part)
         self._la = 0 # Token type
         try:
@@ -8676,7 +8676,7 @@ class vhdlParser ( Parser ):
             self.state = 1193
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.DISCONNECT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE) | (1 << vhdlParser.LIMIT) | (1 << vhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.QUANTITY - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SIGNAL - 68)) | (1 << (vhdlParser.SUBNATURE - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TERMINAL - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.DISCONNECT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE) | (1 << VhdlParser.LIMIT) | (1 << VhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.QUANTITY - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SIGNAL - 68)) | (1 << (VhdlParser.SUBNATURE - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TERMINAL - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 1190
                 self.entity_declarative_item()
                 self.state = 1195
@@ -8698,15 +8698,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def entity_tag(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_tagContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_tagContext,0)
 
 
         def signature(self):
-            return self.getTypedRuleContext(vhdlParser.SignatureContext,0)
+            return self.getTypedRuleContext(VhdlParser.SignatureContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_designator
+            return VhdlParser.RULE_entity_designator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_designator" ):
@@ -8727,7 +8727,7 @@ class vhdlParser ( Parser ):
 
     def entity_designator(self):
 
-        localctx = vhdlParser.Entity_designatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_designatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 172, self.RULE_entity_designator)
         self._la = 0 # Token type
         try:
@@ -8736,7 +8736,7 @@ class vhdlParser ( Parser ):
             self.entity_tag()
             self.state = 1198
             _la = self._input.LA(1)
-            if _la==vhdlParser.LBRACKET:
+            if _la==VhdlParser.LBRACKET:
                 self.state = 1197
                 self.signature()
 
@@ -8756,15 +8756,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def generic_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Generic_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generic_clauseContext,0)
 
 
         def port_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Port_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Port_clauseContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_header
+            return VhdlParser.RULE_entity_header
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_header" ):
@@ -8785,21 +8785,21 @@ class vhdlParser ( Parser ):
 
     def entity_header(self):
 
-        localctx = vhdlParser.Entity_headerContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_headerContext(self, self._ctx, self.state)
         self.enterRule(localctx, 174, self.RULE_entity_header)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1201
             _la = self._input.LA(1)
-            if _la==vhdlParser.GENERIC:
+            if _la==VhdlParser.GENERIC:
                 self.state = 1200
                 self.generic_clause()
 
 
             self.state = 1204
             _la = self._input.LA(1)
-            if _la==vhdlParser.PORT:
+            if _la==VhdlParser.PORT:
                 self.state = 1203
                 self.port_clause()
 
@@ -8820,25 +8820,25 @@ class vhdlParser ( Parser ):
 
         def entity_designator(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Entity_designatorContext)
+                return self.getTypedRuleContexts(VhdlParser.Entity_designatorContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Entity_designatorContext,i)
+                return self.getTypedRuleContext(VhdlParser.Entity_designatorContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def OTHERS(self):
-            return self.getToken(vhdlParser.OTHERS, 0)
+            return self.getToken(VhdlParser.OTHERS, 0)
 
         def ALL(self):
-            return self.getToken(vhdlParser.ALL, 0)
+            return self.getToken(VhdlParser.ALL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_name_list
+            return VhdlParser.RULE_entity_name_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_name_list" ):
@@ -8859,22 +8859,22 @@ class vhdlParser ( Parser ):
 
     def entity_name_list(self):
 
-        localctx = vhdlParser.Entity_name_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_name_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 176, self.RULE_entity_name_list)
         self._la = 0 # Token type
         try:
             self.state = 1216
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER, vhdlParser.CHARACTER_LITERAL, vhdlParser.STRING_LITERAL]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER, VhdlParser.CHARACTER_LITERAL, VhdlParser.STRING_LITERAL]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1206
                 self.entity_designator()
                 self.state = 1211
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==vhdlParser.COMMA:
+                while _la==VhdlParser.COMMA:
                     self.state = 1207
-                    self.match(vhdlParser.COMMA)
+                    self.match(VhdlParser.COMMA)
                     self.state = 1208
                     self.entity_designator()
                     self.state = 1213
@@ -8882,15 +8882,15 @@ class vhdlParser ( Parser ):
                     _la = self._input.LA(1)
 
 
-            elif token in [vhdlParser.OTHERS]:
+            elif token in [VhdlParser.OTHERS]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1214
-                self.match(vhdlParser.OTHERS)
+                self.match(VhdlParser.OTHERS)
 
-            elif token in [vhdlParser.ALL]:
+            elif token in [VhdlParser.ALL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1215
-                self.match(vhdlParser.ALL)
+                self.match(VhdlParser.ALL)
 
             else:
                 raise NoViableAltException(self)
@@ -8910,18 +8910,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def entity_name_list(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_name_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_name_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def entity_class(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_classContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_classContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_specification
+            return VhdlParser.RULE_entity_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_specification" ):
@@ -8942,14 +8942,14 @@ class vhdlParser ( Parser ):
 
     def entity_specification(self):
 
-        localctx = vhdlParser.Entity_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 178, self.RULE_entity_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1218
             self.entity_name_list()
             self.state = 1219
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1220
             self.entity_class()
         except RecognitionException as re:
@@ -8967,19 +8967,19 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def concurrent_assertion_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Concurrent_assertion_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Concurrent_assertion_statementContext,0)
 
 
         def process_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Process_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Process_statementContext,0)
 
 
         def concurrent_procedure_call_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Concurrent_procedure_call_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Concurrent_procedure_call_statementContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_statement
+            return VhdlParser.RULE_entity_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_statement" ):
@@ -9000,7 +9000,7 @@ class vhdlParser ( Parser ):
 
     def entity_statement(self):
 
-        localctx = vhdlParser.Entity_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 180, self.RULE_entity_statement)
         try:
             self.state = 1225
@@ -9040,13 +9040,13 @@ class vhdlParser ( Parser ):
 
         def entity_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Entity_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Entity_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Entity_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Entity_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_statement_part
+            return VhdlParser.RULE_entity_statement_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_statement_part" ):
@@ -9067,7 +9067,7 @@ class vhdlParser ( Parser ):
 
     def entity_statement_part(self):
 
-        localctx = vhdlParser.Entity_statement_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_statement_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 182, self.RULE_entity_statement_part)
         self._la = 0 # Token type
         try:
@@ -9075,7 +9075,7 @@ class vhdlParser ( Parser ):
             self.state = 1230
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.ASSERT or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (vhdlParser.POSTPONED - 66)) | (1 << (vhdlParser.PROCESS - 66)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 66)))) != 0):
+            while _la==VhdlParser.ASSERT or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (VhdlParser.POSTPONED - 66)) | (1 << (VhdlParser.PROCESS - 66)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 66)))) != 0):
                 self.state = 1227
                 self.entity_statement()
                 self.state = 1232
@@ -9097,17 +9097,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def CHARACTER_LITERAL(self):
-            return self.getToken(vhdlParser.CHARACTER_LITERAL, 0)
+            return self.getToken(VhdlParser.CHARACTER_LITERAL, 0)
 
         def STRING_LITERAL(self):
-            return self.getToken(vhdlParser.STRING_LITERAL, 0)
+            return self.getToken(VhdlParser.STRING_LITERAL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_entity_tag
+            return VhdlParser.RULE_entity_tag
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEntity_tag" ):
@@ -9128,25 +9128,25 @@ class vhdlParser ( Parser ):
 
     def entity_tag(self):
 
-        localctx = vhdlParser.Entity_tagContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Entity_tagContext(self, self._ctx, self.state)
         self.enterRule(localctx, 184, self.RULE_entity_tag)
         try:
             self.state = 1236
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1233
                 self.identifier()
 
-            elif token in [vhdlParser.CHARACTER_LITERAL]:
+            elif token in [VhdlParser.CHARACTER_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1234
-                self.match(vhdlParser.CHARACTER_LITERAL)
+                self.match(VhdlParser.CHARACTER_LITERAL)
 
-            elif token in [vhdlParser.STRING_LITERAL]:
+            elif token in [VhdlParser.STRING_LITERAL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1235
-                self.match(vhdlParser.STRING_LITERAL)
+                self.match(VhdlParser.STRING_LITERAL)
 
             else:
                 raise NoViableAltException(self)
@@ -9166,14 +9166,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def CHARACTER_LITERAL(self):
-            return self.getToken(vhdlParser.CHARACTER_LITERAL, 0)
+            return self.getToken(VhdlParser.CHARACTER_LITERAL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_enumeration_literal
+            return VhdlParser.RULE_enumeration_literal
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEnumeration_literal" ):
@@ -9194,20 +9194,20 @@ class vhdlParser ( Parser ):
 
     def enumeration_literal(self):
 
-        localctx = vhdlParser.Enumeration_literalContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Enumeration_literalContext(self, self._ctx, self.state)
         self.enterRule(localctx, 186, self.RULE_enumeration_literal)
         try:
             self.state = 1240
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1238
                 self.identifier()
 
-            elif token in [vhdlParser.CHARACTER_LITERAL]:
+            elif token in [VhdlParser.CHARACTER_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1239
-                self.match(vhdlParser.CHARACTER_LITERAL)
+                self.match(VhdlParser.CHARACTER_LITERAL)
 
             else:
                 raise NoViableAltException(self)
@@ -9227,26 +9227,26 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def enumeration_literal(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Enumeration_literalContext)
+                return self.getTypedRuleContexts(VhdlParser.Enumeration_literalContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Enumeration_literalContext,i)
+                return self.getTypedRuleContext(VhdlParser.Enumeration_literalContext,i)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_enumeration_type_definition
+            return VhdlParser.RULE_enumeration_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterEnumeration_type_definition" ):
@@ -9267,21 +9267,21 @@ class vhdlParser ( Parser ):
 
     def enumeration_type_definition(self):
 
-        localctx = vhdlParser.Enumeration_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Enumeration_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 188, self.RULE_enumeration_type_definition)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1242
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1243
             self.enumeration_literal()
             self.state = 1248
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 1244
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 1245
                 self.enumeration_literal()
                 self.state = 1250
@@ -9289,7 +9289,7 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 1251
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -9305,28 +9305,28 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def EXIT(self):
-            return self.getToken(vhdlParser.EXIT, 0)
+            return self.getToken(VhdlParser.EXIT, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def WHEN(self):
-            return self.getToken(vhdlParser.WHEN, 0)
+            return self.getToken(VhdlParser.WHEN, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_exit_statement
+            return VhdlParser.RULE_exit_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExit_statement" ):
@@ -9347,38 +9347,38 @@ class vhdlParser ( Parser ):
 
     def exit_statement(self):
 
-        localctx = vhdlParser.Exit_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Exit_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 190, self.RULE_exit_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1254
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1253
                 self.label_colon()
 
 
             self.state = 1256
-            self.match(vhdlParser.EXIT)
+            self.match(VhdlParser.EXIT)
             self.state = 1258
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1257
                 self.identifier()
 
 
             self.state = 1262
             _la = self._input.LA(1)
-            if _la==vhdlParser.WHEN:
+            if _la==VhdlParser.WHEN:
                 self.state = 1260
-                self.match(vhdlParser.WHEN)
+                self.match(VhdlParser.WHEN)
                 self.state = 1261
                 self.condition()
 
 
             self.state = 1264
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -9395,20 +9395,20 @@ class vhdlParser ( Parser ):
 
         def relation(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.RelationContext)
+                return self.getTypedRuleContexts(VhdlParser.RelationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.RelationContext,i)
+                return self.getTypedRuleContext(VhdlParser.RelationContext,i)
 
 
         def logical_operator(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Logical_operatorContext)
+                return self.getTypedRuleContexts(VhdlParser.Logical_operatorContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Logical_operatorContext,i)
+                return self.getTypedRuleContext(VhdlParser.Logical_operatorContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_expression
+            return VhdlParser.RULE_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExpression" ):
@@ -9429,7 +9429,7 @@ class vhdlParser ( Parser ):
 
     def expression(self):
 
-        localctx = vhdlParser.ExpressionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.ExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 192, self.RULE_expression)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -9464,22 +9464,22 @@ class vhdlParser ( Parser ):
 
         def primary(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.PrimaryContext)
+                return self.getTypedRuleContexts(VhdlParser.PrimaryContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.PrimaryContext,i)
+                return self.getTypedRuleContext(VhdlParser.PrimaryContext,i)
 
 
         def DOUBLESTAR(self):
-            return self.getToken(vhdlParser.DOUBLESTAR, 0)
+            return self.getToken(VhdlParser.DOUBLESTAR, 0)
 
         def ABS(self):
-            return self.getToken(vhdlParser.ABS, 0)
+            return self.getToken(VhdlParser.ABS, 0)
 
         def NOT(self):
-            return self.getToken(vhdlParser.NOT, 0)
+            return self.getToken(VhdlParser.NOT, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_factor
+            return VhdlParser.RULE_factor
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFactor" ):
@@ -9500,12 +9500,12 @@ class vhdlParser ( Parser ):
 
     def factor(self):
 
-        localctx = vhdlParser.FactorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.FactorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 194, self.RULE_factor)
         try:
             self.state = 1284
             token = self._input.LA(1)
-            if token in [vhdlParser.NEW, vhdlParser.NULL, vhdlParser.BASE_LITERAL, vhdlParser.BIT_STRING_LITERAL, vhdlParser.REAL_LITERAL, vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER, vhdlParser.CHARACTER_LITERAL, vhdlParser.STRING_LITERAL, vhdlParser.LPAREN, vhdlParser.INTEGER]:
+            if token in [VhdlParser.NEW, VhdlParser.NULL, VhdlParser.BASE_LITERAL, VhdlParser.BIT_STRING_LITERAL, VhdlParser.REAL_LITERAL, VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER, VhdlParser.CHARACTER_LITERAL, VhdlParser.STRING_LITERAL, VhdlParser.LPAREN, VhdlParser.INTEGER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1275
                 self.primary()
@@ -9513,23 +9513,23 @@ class vhdlParser ( Parser ):
                 la_ = self._interp.adaptivePredict(self._input,117,self._ctx)
                 if la_ == 1:
                     self.state = 1276
-                    self.match(vhdlParser.DOUBLESTAR)
+                    self.match(VhdlParser.DOUBLESTAR)
                     self.state = 1277
                     self.primary()
 
 
 
-            elif token in [vhdlParser.ABS]:
+            elif token in [VhdlParser.ABS]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1280
-                self.match(vhdlParser.ABS)
+                self.match(VhdlParser.ABS)
                 self.state = 1281
                 self.primary()
 
-            elif token in [vhdlParser.NOT]:
+            elif token in [VhdlParser.NOT]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1282
-                self.match(vhdlParser.NOT)
+                self.match(VhdlParser.NOT)
                 self.state = 1283
                 self.primary()
 
@@ -9551,28 +9551,28 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FILE(self):
-            return self.getToken(vhdlParser.FILE, 0)
+            return self.getToken(VhdlParser.FILE, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def file_open_information(self):
-            return self.getTypedRuleContext(vhdlParser.File_open_informationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_open_informationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_file_declaration
+            return VhdlParser.RULE_file_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFile_declaration" ):
@@ -9593,28 +9593,28 @@ class vhdlParser ( Parser ):
 
     def file_declaration(self):
 
-        localctx = vhdlParser.File_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.File_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 196, self.RULE_file_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1286
-            self.match(vhdlParser.FILE)
+            self.match(VhdlParser.FILE)
             self.state = 1287
             self.identifier_list()
             self.state = 1288
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1289
             self.subtype_indication()
             self.state = 1291
             _la = self._input.LA(1)
-            if _la==vhdlParser.IS or _la==vhdlParser.OPEN:
+            if _la==VhdlParser.IS or _la==VhdlParser.OPEN:
                 self.state = 1290
                 self.file_open_information()
 
 
             self.state = 1293
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -9630,11 +9630,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_file_logical_name
+            return VhdlParser.RULE_file_logical_name
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFile_logical_name" ):
@@ -9655,7 +9655,7 @@ class vhdlParser ( Parser ):
 
     def file_logical_name(self):
 
-        localctx = vhdlParser.File_logical_nameContext(self, self._ctx, self.state)
+        localctx = VhdlParser.File_logical_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 198, self.RULE_file_logical_name)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -9676,21 +9676,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def file_logical_name(self):
-            return self.getTypedRuleContext(vhdlParser.File_logical_nameContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_logical_nameContext,0)
 
 
         def OPEN(self):
-            return self.getToken(vhdlParser.OPEN, 0)
+            return self.getToken(VhdlParser.OPEN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_file_open_information
+            return VhdlParser.RULE_file_open_information
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFile_open_information" ):
@@ -9711,22 +9711,22 @@ class vhdlParser ( Parser ):
 
     def file_open_information(self):
 
-        localctx = vhdlParser.File_open_informationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.File_open_informationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 200, self.RULE_file_open_information)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1299
             _la = self._input.LA(1)
-            if _la==vhdlParser.OPEN:
+            if _la==VhdlParser.OPEN:
                 self.state = 1297
-                self.match(vhdlParser.OPEN)
+                self.match(VhdlParser.OPEN)
                 self.state = 1298
                 self.expression()
 
 
             self.state = 1301
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 1302
             self.file_logical_name()
         except RecognitionException as re:
@@ -9744,17 +9744,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FILE(self):
-            return self.getToken(vhdlParser.FILE, 0)
+            return self.getToken(VhdlParser.FILE, 0)
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_file_type_definition
+            return VhdlParser.RULE_file_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFile_type_definition" ):
@@ -9775,14 +9775,14 @@ class vhdlParser ( Parser ):
 
     def file_type_definition(self):
 
-        localctx = vhdlParser.File_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.File_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 202, self.RULE_file_type_definition)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1304
-            self.match(vhdlParser.FILE)
+            self.match(VhdlParser.FILE)
             self.state = 1305
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 1306
             self.subtype_indication()
         except RecognitionException as re:
@@ -9800,11 +9800,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def interface_list(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_listContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_formal_parameter_list
+            return VhdlParser.RULE_formal_parameter_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFormal_parameter_list" ):
@@ -9825,7 +9825,7 @@ class vhdlParser ( Parser ):
 
     def formal_parameter_list(self):
 
-        localctx = vhdlParser.Formal_parameter_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Formal_parameter_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 204, self.RULE_formal_parameter_list)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -9846,21 +9846,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def explicit_range(self):
-            return self.getTypedRuleContext(vhdlParser.Explicit_rangeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Explicit_rangeContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_formal_part
+            return VhdlParser.RULE_formal_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFormal_part" ):
@@ -9881,7 +9881,7 @@ class vhdlParser ( Parser ):
 
     def formal_part(self):
 
-        localctx = vhdlParser.Formal_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Formal_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 206, self.RULE_formal_part)
         try:
             self.state = 1316
@@ -9897,11 +9897,11 @@ class vhdlParser ( Parser ):
                 self.state = 1311
                 self.identifier()
                 self.state = 1312
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 1313
                 self.explicit_range()
                 self.state = 1314
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
                 pass
 
 
@@ -9920,31 +9920,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def QUANTITY(self):
-            return self.getToken(vhdlParser.QUANTITY, 0)
+            return self.getToken(VhdlParser.QUANTITY, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_free_quantity_declaration
+            return VhdlParser.RULE_free_quantity_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFree_quantity_declaration" ):
@@ -9965,30 +9965,30 @@ class vhdlParser ( Parser ):
 
     def free_quantity_declaration(self):
 
-        localctx = vhdlParser.Free_quantity_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Free_quantity_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 208, self.RULE_free_quantity_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1318
-            self.match(vhdlParser.QUANTITY)
+            self.match(VhdlParser.QUANTITY)
             self.state = 1319
             self.identifier_list()
             self.state = 1320
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1321
             self.subtype_indication()
             self.state = 1324
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 1322
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 1323
                 self.expression()
 
 
             self.state = 1326
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -10004,48 +10004,48 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def generation_scheme(self):
-            return self.getTypedRuleContext(vhdlParser.Generation_schemeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generation_schemeContext,0)
 
 
         def GENERATE(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.GENERATE)
+                return self.getTokens(VhdlParser.GENERATE)
             else:
-                return self.getToken(vhdlParser.GENERATE, i)
+                return self.getToken(VhdlParser.GENERATE, i)
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def BEGIN(self):
-            return self.getToken(vhdlParser.BEGIN, 0)
+            return self.getToken(VhdlParser.BEGIN, 0)
 
         def architecture_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Architecture_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Architecture_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Architecture_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Architecture_statementContext,i)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def block_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Block_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Block_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Block_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Block_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_generate_statement
+            return VhdlParser.RULE_generate_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGenerate_statement" ):
@@ -10066,7 +10066,7 @@ class vhdlParser ( Parser ):
 
     def generate_statement(self):
 
-        localctx = vhdlParser.Generate_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Generate_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 210, self.RULE_generate_statement)
         self._la = 0 # Token type
         try:
@@ -10076,14 +10076,14 @@ class vhdlParser ( Parser ):
             self.state = 1329
             self.generation_scheme()
             self.state = 1330
-            self.match(vhdlParser.GENERATE)
+            self.match(VhdlParser.GENERATE)
             self.state = 1338
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.BEGIN) | (1 << vhdlParser.COMPONENT) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.DISCONNECT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FOR) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE) | (1 << vhdlParser.LIMIT) | (1 << vhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.QUANTITY - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SIGNAL - 68)) | (1 << (vhdlParser.SUBNATURE - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TERMINAL - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.BEGIN) | (1 << VhdlParser.COMPONENT) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.DISCONNECT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FOR) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE) | (1 << VhdlParser.LIMIT) | (1 << VhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.QUANTITY - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SIGNAL - 68)) | (1 << (VhdlParser.SUBNATURE - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TERMINAL - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 1334
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.COMPONENT) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.DISCONNECT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FOR) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE) | (1 << vhdlParser.LIMIT) | (1 << vhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.QUANTITY - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SIGNAL - 68)) | (1 << (vhdlParser.SUBNATURE - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TERMINAL - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+                while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.COMPONENT) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.DISCONNECT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FOR) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE) | (1 << VhdlParser.LIMIT) | (1 << VhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.QUANTITY - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SIGNAL - 68)) | (1 << (VhdlParser.SUBNATURE - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TERMINAL - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                     self.state = 1331
                     self.block_declarative_item()
                     self.state = 1336
@@ -10091,13 +10091,13 @@ class vhdlParser ( Parser ):
                     _la = self._input.LA(1)
 
                 self.state = 1337
-                self.match(vhdlParser.BEGIN)
+                self.match(VhdlParser.BEGIN)
 
 
             self.state = 1343
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ABS) | (1 << vhdlParser.ASSERT) | (1 << vhdlParser.BREAK) | (1 << vhdlParser.CASE) | (1 << vhdlParser.IF) | (1 << vhdlParser.NEW) | (1 << vhdlParser.NOT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (vhdlParser.POSTPONED - 66)) | (1 << (vhdlParser.PROCESS - 66)) | (1 << (vhdlParser.PROCEDURAL - 66)) | (1 << (vhdlParser.WITH - 66)) | (1 << (vhdlParser.BASE_LITERAL - 66)) | (1 << (vhdlParser.BIT_STRING_LITERAL - 66)) | (1 << (vhdlParser.REAL_LITERAL - 66)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 66)) | (1 << (vhdlParser.CHARACTER_LITERAL - 66)) | (1 << (vhdlParser.STRING_LITERAL - 66)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (vhdlParser.LPAREN - 141)) | (1 << (vhdlParser.PLUS - 141)) | (1 << (vhdlParser.MINUS - 141)) | (1 << (vhdlParser.INTEGER - 141)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ABS) | (1 << VhdlParser.ASSERT) | (1 << VhdlParser.BREAK) | (1 << VhdlParser.CASE) | (1 << VhdlParser.IF) | (1 << VhdlParser.NEW) | (1 << VhdlParser.NOT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 66)) & ~0x3f) == 0 and ((1 << (_la - 66)) & ((1 << (VhdlParser.POSTPONED - 66)) | (1 << (VhdlParser.PROCESS - 66)) | (1 << (VhdlParser.PROCEDURAL - 66)) | (1 << (VhdlParser.WITH - 66)) | (1 << (VhdlParser.BASE_LITERAL - 66)) | (1 << (VhdlParser.BIT_STRING_LITERAL - 66)) | (1 << (VhdlParser.REAL_LITERAL - 66)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 66)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 66)) | (1 << (VhdlParser.CHARACTER_LITERAL - 66)) | (1 << (VhdlParser.STRING_LITERAL - 66)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (VhdlParser.LPAREN - 141)) | (1 << (VhdlParser.PLUS - 141)) | (1 << (VhdlParser.MINUS - 141)) | (1 << (VhdlParser.INTEGER - 141)))) != 0):
                 self.state = 1340
                 self.architecture_statement()
                 self.state = 1345
@@ -10105,18 +10105,18 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 1346
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1347
-            self.match(vhdlParser.GENERATE)
+            self.match(VhdlParser.GENERATE)
             self.state = 1349
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1348
                 self.identifier()
 
 
             self.state = 1351
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -10132,21 +10132,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FOR(self):
-            return self.getToken(vhdlParser.FOR, 0)
+            return self.getToken(VhdlParser.FOR, 0)
 
         def parameter_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Parameter_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Parameter_specificationContext,0)
 
 
         def IF(self):
-            return self.getToken(vhdlParser.IF, 0)
+            return self.getToken(VhdlParser.IF, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_generation_scheme
+            return VhdlParser.RULE_generation_scheme
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGeneration_scheme" ):
@@ -10167,22 +10167,22 @@ class vhdlParser ( Parser ):
 
     def generation_scheme(self):
 
-        localctx = vhdlParser.Generation_schemeContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Generation_schemeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 212, self.RULE_generation_scheme)
         try:
             self.state = 1357
             token = self._input.LA(1)
-            if token in [vhdlParser.FOR]:
+            if token in [VhdlParser.FOR]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1353
-                self.match(vhdlParser.FOR)
+                self.match(VhdlParser.FOR)
                 self.state = 1354
                 self.parameter_specification()
 
-            elif token in [vhdlParser.IF]:
+            elif token in [VhdlParser.IF]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1355
-                self.match(vhdlParser.IF)
+                self.match(VhdlParser.IF)
                 self.state = 1356
                 self.condition()
 
@@ -10204,23 +10204,23 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def GENERIC(self):
-            return self.getToken(vhdlParser.GENERIC, 0)
+            return self.getToken(VhdlParser.GENERIC, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def generic_list(self):
-            return self.getTypedRuleContext(vhdlParser.Generic_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Generic_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_generic_clause
+            return VhdlParser.RULE_generic_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGeneric_clause" ):
@@ -10241,20 +10241,20 @@ class vhdlParser ( Parser ):
 
     def generic_clause(self):
 
-        localctx = vhdlParser.Generic_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Generic_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 214, self.RULE_generic_clause)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1359
-            self.match(vhdlParser.GENERIC)
+            self.match(VhdlParser.GENERIC)
             self.state = 1360
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1361
             self.generic_list()
             self.state = 1362
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
             self.state = 1363
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -10271,19 +10271,19 @@ class vhdlParser ( Parser ):
 
         def interface_constant_declaration(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Interface_constant_declarationContext)
+                return self.getTypedRuleContexts(VhdlParser.Interface_constant_declarationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Interface_constant_declarationContext,i)
+                return self.getTypedRuleContext(VhdlParser.Interface_constant_declarationContext,i)
 
 
         def SEMI(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.SEMI)
+                return self.getTokens(VhdlParser.SEMI)
             else:
-                return self.getToken(vhdlParser.SEMI, i)
+                return self.getToken(VhdlParser.SEMI, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_generic_list
+            return VhdlParser.RULE_generic_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGeneric_list" ):
@@ -10304,7 +10304,7 @@ class vhdlParser ( Parser ):
 
     def generic_list(self):
 
-        localctx = vhdlParser.Generic_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Generic_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 216, self.RULE_generic_list)
         self._la = 0 # Token type
         try:
@@ -10314,9 +10314,9 @@ class vhdlParser ( Parser ):
             self.state = 1370
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.SEMI:
+            while _la==VhdlParser.SEMI:
                 self.state = 1366
-                self.match(vhdlParser.SEMI)
+                self.match(VhdlParser.SEMI)
                 self.state = 1367
                 self.interface_constant_declaration()
                 self.state = 1372
@@ -10338,23 +10338,23 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def GENERIC(self):
-            return self.getToken(vhdlParser.GENERIC, 0)
+            return self.getToken(VhdlParser.GENERIC, 0)
 
         def MAP(self):
-            return self.getToken(vhdlParser.MAP, 0)
+            return self.getToken(VhdlParser.MAP, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def association_list(self):
-            return self.getTypedRuleContext(vhdlParser.Association_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Association_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_generic_map_aspect
+            return VhdlParser.RULE_generic_map_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGeneric_map_aspect" ):
@@ -10375,20 +10375,20 @@ class vhdlParser ( Parser ):
 
     def generic_map_aspect(self):
 
-        localctx = vhdlParser.Generic_map_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Generic_map_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 218, self.RULE_generic_map_aspect)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1373
-            self.match(vhdlParser.GENERIC)
+            self.match(VhdlParser.GENERIC)
             self.state = 1374
-            self.match(vhdlParser.MAP)
+            self.match(VhdlParser.MAP)
             self.state = 1375
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1376
             self.association_list()
             self.state = 1377
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -10404,14 +10404,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def CHARACTER_LITERAL(self):
-            return self.getToken(vhdlParser.CHARACTER_LITERAL, 0)
+            return self.getToken(VhdlParser.CHARACTER_LITERAL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_group_constituent
+            return VhdlParser.RULE_group_constituent
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGroup_constituent" ):
@@ -10432,20 +10432,20 @@ class vhdlParser ( Parser ):
 
     def group_constituent(self):
 
-        localctx = vhdlParser.Group_constituentContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Group_constituentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 220, self.RULE_group_constituent)
         try:
             self.state = 1381
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1379
                 self.name()
 
-            elif token in [vhdlParser.CHARACTER_LITERAL]:
+            elif token in [VhdlParser.CHARACTER_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1380
-                self.match(vhdlParser.CHARACTER_LITERAL)
+                self.match(VhdlParser.CHARACTER_LITERAL)
 
             else:
                 raise NoViableAltException(self)
@@ -10466,19 +10466,19 @@ class vhdlParser ( Parser ):
 
         def group_constituent(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Group_constituentContext)
+                return self.getTypedRuleContexts(VhdlParser.Group_constituentContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Group_constituentContext,i)
+                return self.getTypedRuleContext(VhdlParser.Group_constituentContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_group_constituent_list
+            return VhdlParser.RULE_group_constituent_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGroup_constituent_list" ):
@@ -10499,7 +10499,7 @@ class vhdlParser ( Parser ):
 
     def group_constituent_list(self):
 
-        localctx = vhdlParser.Group_constituent_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Group_constituent_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 222, self.RULE_group_constituent_list)
         self._la = 0 # Token type
         try:
@@ -10509,9 +10509,9 @@ class vhdlParser ( Parser ):
             self.state = 1388
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 1384
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 1385
                 self.group_constituent()
                 self.state = 1390
@@ -10533,31 +10533,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def GROUP(self):
-            return self.getToken(vhdlParser.GROUP, 0)
+            return self.getToken(VhdlParser.GROUP, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def group_constituent_list(self):
-            return self.getTypedRuleContext(vhdlParser.Group_constituent_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_constituent_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_group_declaration
+            return VhdlParser.RULE_group_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGroup_declaration" ):
@@ -10578,24 +10578,24 @@ class vhdlParser ( Parser ):
 
     def group_declaration(self):
 
-        localctx = vhdlParser.Group_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Group_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 224, self.RULE_group_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1391
-            self.match(vhdlParser.GROUP)
+            self.match(VhdlParser.GROUP)
             self.state = 1392
             self.label_colon()
             self.state = 1393
             self.name()
             self.state = 1394
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1395
             self.group_constituent_list()
             self.state = 1396
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
             self.state = 1397
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -10611,30 +10611,30 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def GROUP(self):
-            return self.getToken(vhdlParser.GROUP, 0)
+            return self.getToken(VhdlParser.GROUP, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def entity_class_entry_list(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_class_entry_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_class_entry_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_group_template_declaration
+            return VhdlParser.RULE_group_template_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGroup_template_declaration" ):
@@ -10655,24 +10655,24 @@ class vhdlParser ( Parser ):
 
     def group_template_declaration(self):
 
-        localctx = vhdlParser.Group_template_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Group_template_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 226, self.RULE_group_template_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1399
-            self.match(vhdlParser.GROUP)
+            self.match(VhdlParser.GROUP)
             self.state = 1400
             self.identifier()
             self.state = 1401
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 1402
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1403
             self.entity_class_entry_list()
             self.state = 1404
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
             self.state = 1405
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -10688,18 +10688,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def signal_list(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_guarded_signal_specification
+            return VhdlParser.RULE_guarded_signal_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGuarded_signal_specification" ):
@@ -10720,14 +10720,14 @@ class vhdlParser ( Parser ):
 
     def guarded_signal_specification(self):
 
-        localctx = vhdlParser.Guarded_signal_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Guarded_signal_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 228, self.RULE_guarded_signal_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1407
             self.signal_list()
             self.state = 1408
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1409
             self.name()
         except RecognitionException as re:
@@ -10745,13 +10745,13 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def BASIC_IDENTIFIER(self):
-            return self.getToken(vhdlParser.BASIC_IDENTIFIER, 0)
+            return self.getToken(VhdlParser.BASIC_IDENTIFIER, 0)
 
         def EXTENDED_IDENTIFIER(self):
-            return self.getToken(vhdlParser.EXTENDED_IDENTIFIER, 0)
+            return self.getToken(VhdlParser.EXTENDED_IDENTIFIER, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_identifier
+            return VhdlParser.RULE_identifier
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIdentifier" ):
@@ -10772,14 +10772,14 @@ class vhdlParser ( Parser ):
 
     def identifier(self):
 
-        localctx = vhdlParser.IdentifierContext(self, self._ctx, self.state)
+        localctx = VhdlParser.IdentifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 230, self.RULE_identifier)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1411
             _la = self._input.LA(1)
-            if not(_la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER):
+            if not(_la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -10799,19 +10799,19 @@ class vhdlParser ( Parser ):
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_identifier_list
+            return VhdlParser.RULE_identifier_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIdentifier_list" ):
@@ -10832,7 +10832,7 @@ class vhdlParser ( Parser ):
 
     def identifier_list(self):
 
-        localctx = vhdlParser.Identifier_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Identifier_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 232, self.RULE_identifier_list)
         self._la = 0 # Token type
         try:
@@ -10842,9 +10842,9 @@ class vhdlParser ( Parser ):
             self.state = 1418
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 1414
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 1415
                 self.identifier()
                 self.state = 1420
@@ -10867,55 +10867,55 @@ class vhdlParser ( Parser ):
 
         def IF(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.IF)
+                return self.getTokens(VhdlParser.IF)
             else:
-                return self.getToken(vhdlParser.IF, i)
+                return self.getToken(VhdlParser.IF, i)
 
         def condition(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ConditionContext)
+                return self.getTypedRuleContexts(VhdlParser.ConditionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ConditionContext,i)
+                return self.getTypedRuleContext(VhdlParser.ConditionContext,i)
 
 
         def THEN(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.THEN)
+                return self.getTokens(VhdlParser.THEN)
             else:
-                return self.getToken(vhdlParser.THEN, i)
+                return self.getToken(VhdlParser.THEN, i)
 
         def sequence_of_statements(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Sequence_of_statementsContext)
+                return self.getTypedRuleContexts(VhdlParser.Sequence_of_statementsContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Sequence_of_statementsContext,i)
+                return self.getTypedRuleContext(VhdlParser.Sequence_of_statementsContext,i)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def ELSIF(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.ELSIF)
+                return self.getTokens(VhdlParser.ELSIF)
             else:
-                return self.getToken(vhdlParser.ELSIF, i)
+                return self.getToken(VhdlParser.ELSIF, i)
 
         def ELSE(self):
-            return self.getToken(vhdlParser.ELSE, 0)
+            return self.getToken(VhdlParser.ELSE, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_if_statement
+            return VhdlParser.RULE_if_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIf_statement" ):
@@ -10936,36 +10936,36 @@ class vhdlParser ( Parser ):
 
     def if_statement(self):
 
-        localctx = vhdlParser.If_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.If_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 234, self.RULE_if_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1422
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1421
                 self.label_colon()
 
 
             self.state = 1424
-            self.match(vhdlParser.IF)
+            self.match(VhdlParser.IF)
             self.state = 1425
             self.condition()
             self.state = 1426
-            self.match(vhdlParser.THEN)
+            self.match(VhdlParser.THEN)
             self.state = 1427
             self.sequence_of_statements()
             self.state = 1435
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.ELSIF:
+            while _la==VhdlParser.ELSIF:
                 self.state = 1428
-                self.match(vhdlParser.ELSIF)
+                self.match(VhdlParser.ELSIF)
                 self.state = 1429
                 self.condition()
                 self.state = 1430
-                self.match(vhdlParser.THEN)
+                self.match(VhdlParser.THEN)
                 self.state = 1431
                 self.sequence_of_statements()
                 self.state = 1437
@@ -10974,26 +10974,26 @@ class vhdlParser ( Parser ):
 
             self.state = 1440
             _la = self._input.LA(1)
-            if _la==vhdlParser.ELSE:
+            if _la==VhdlParser.ELSE:
                 self.state = 1438
-                self.match(vhdlParser.ELSE)
+                self.match(VhdlParser.ELSE)
                 self.state = 1439
                 self.sequence_of_statements()
 
 
             self.state = 1442
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1443
-            self.match(vhdlParser.IF)
+            self.match(VhdlParser.IF)
             self.state = 1445
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1444
                 self.identifier()
 
 
             self.state = 1447
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -11009,26 +11009,26 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def discrete_range(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Discrete_rangeContext)
+                return self.getTypedRuleContexts(VhdlParser.Discrete_rangeContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Discrete_rangeContext,i)
+                return self.getTypedRuleContext(VhdlParser.Discrete_rangeContext,i)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_index_constraint
+            return VhdlParser.RULE_index_constraint
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIndex_constraint" ):
@@ -11049,21 +11049,21 @@ class vhdlParser ( Parser ):
 
     def index_constraint(self):
 
-        localctx = vhdlParser.Index_constraintContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Index_constraintContext(self, self._ctx, self.state)
         self.enterRule(localctx, 236, self.RULE_index_constraint)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1449
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1450
             self.discrete_range()
             self.state = 1455
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 1451
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 1452
                 self.discrete_range()
                 self.state = 1457
@@ -11071,7 +11071,7 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 1458
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -11087,15 +11087,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def discrete_range(self):
-            return self.getTypedRuleContext(vhdlParser.Discrete_rangeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Discrete_rangeContext,0)
 
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_index_specification
+            return VhdlParser.RULE_index_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIndex_specification" ):
@@ -11116,7 +11116,7 @@ class vhdlParser ( Parser ):
 
     def index_specification(self):
 
-        localctx = vhdlParser.Index_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Index_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 238, self.RULE_index_specification)
         try:
             self.state = 1462
@@ -11149,17 +11149,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def RANGE(self):
-            return self.getToken(vhdlParser.RANGE, 0)
+            return self.getToken(VhdlParser.RANGE, 0)
 
         def BOX(self):
-            return self.getToken(vhdlParser.BOX, 0)
+            return self.getToken(VhdlParser.BOX, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_index_subtype_definition
+            return VhdlParser.RULE_index_subtype_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIndex_subtype_definition" ):
@@ -11180,16 +11180,16 @@ class vhdlParser ( Parser ):
 
     def index_subtype_definition(self):
 
-        localctx = vhdlParser.Index_subtype_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Index_subtype_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 240, self.RULE_index_subtype_definition)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1464
             self.name()
             self.state = 1465
-            self.match(vhdlParser.RANGE)
+            self.match(VhdlParser.RANGE)
             self.state = 1466
-            self.match(vhdlParser.BOX)
+            self.match(VhdlParser.BOX)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -11205,30 +11205,30 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def COMPONENT(self):
-            return self.getToken(vhdlParser.COMPONENT, 0)
+            return self.getToken(VhdlParser.COMPONENT, 0)
 
         def ENTITY(self):
-            return self.getToken(vhdlParser.ENTITY, 0)
+            return self.getToken(VhdlParser.ENTITY, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def CONFIGURATION(self):
-            return self.getToken(vhdlParser.CONFIGURATION, 0)
+            return self.getToken(VhdlParser.CONFIGURATION, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_instantiated_unit
+            return VhdlParser.RULE_instantiated_unit
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInstantiated_unit" ):
@@ -11249,46 +11249,46 @@ class vhdlParser ( Parser ):
 
     def instantiated_unit(self):
 
-        localctx = vhdlParser.Instantiated_unitContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Instantiated_unitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 242, self.RULE_instantiated_unit)
         self._la = 0 # Token type
         try:
             self.state = 1482
             token = self._input.LA(1)
-            if token in [vhdlParser.COMPONENT, vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.COMPONENT, VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1469
                 _la = self._input.LA(1)
-                if _la==vhdlParser.COMPONENT:
+                if _la==VhdlParser.COMPONENT:
                     self.state = 1468
-                    self.match(vhdlParser.COMPONENT)
+                    self.match(VhdlParser.COMPONENT)
 
 
                 self.state = 1471
                 self.name()
 
-            elif token in [vhdlParser.ENTITY]:
+            elif token in [VhdlParser.ENTITY]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1472
-                self.match(vhdlParser.ENTITY)
+                self.match(VhdlParser.ENTITY)
                 self.state = 1473
                 self.name()
                 self.state = 1478
                 _la = self._input.LA(1)
-                if _la==vhdlParser.LPAREN:
+                if _la==VhdlParser.LPAREN:
                     self.state = 1474
-                    self.match(vhdlParser.LPAREN)
+                    self.match(VhdlParser.LPAREN)
                     self.state = 1475
                     self.identifier()
                     self.state = 1476
-                    self.match(vhdlParser.RPAREN)
+                    self.match(VhdlParser.RPAREN)
 
 
 
-            elif token in [vhdlParser.CONFIGURATION]:
+            elif token in [VhdlParser.CONFIGURATION]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1480
-                self.match(vhdlParser.CONFIGURATION)
+                self.match(VhdlParser.CONFIGURATION)
                 self.state = 1481
                 self.name()
 
@@ -11311,25 +11311,25 @@ class vhdlParser ( Parser ):
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def OTHERS(self):
-            return self.getToken(vhdlParser.OTHERS, 0)
+            return self.getToken(VhdlParser.OTHERS, 0)
 
         def ALL(self):
-            return self.getToken(vhdlParser.ALL, 0)
+            return self.getToken(VhdlParser.ALL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_instantiation_list
+            return VhdlParser.RULE_instantiation_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInstantiation_list" ):
@@ -11350,22 +11350,22 @@ class vhdlParser ( Parser ):
 
     def instantiation_list(self):
 
-        localctx = vhdlParser.Instantiation_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Instantiation_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 244, self.RULE_instantiation_list)
         self._la = 0 # Token type
         try:
             self.state = 1494
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1484
                 self.identifier()
                 self.state = 1489
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==vhdlParser.COMMA:
+                while _la==VhdlParser.COMMA:
                     self.state = 1485
-                    self.match(vhdlParser.COMMA)
+                    self.match(VhdlParser.COMMA)
                     self.state = 1486
                     self.identifier()
                     self.state = 1491
@@ -11373,15 +11373,15 @@ class vhdlParser ( Parser ):
                     _la = self._input.LA(1)
 
 
-            elif token in [vhdlParser.OTHERS]:
+            elif token in [VhdlParser.OTHERS]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1492
-                self.match(vhdlParser.OTHERS)
+                self.match(VhdlParser.OTHERS)
 
-            elif token in [vhdlParser.ALL]:
+            elif token in [VhdlParser.ALL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1493
-                self.match(vhdlParser.ALL)
+                self.match(VhdlParser.ALL)
 
             else:
                 raise NoViableAltException(self)
@@ -11401,31 +11401,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def CONSTANT(self):
-            return self.getToken(vhdlParser.CONSTANT, 0)
+            return self.getToken(VhdlParser.CONSTANT, 0)
 
         def IN(self):
-            return self.getToken(vhdlParser.IN, 0)
+            return self.getToken(VhdlParser.IN, 0)
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_constant_declaration
+            return VhdlParser.RULE_interface_constant_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_constant_declaration" ):
@@ -11446,36 +11446,36 @@ class vhdlParser ( Parser ):
 
     def interface_constant_declaration(self):
 
-        localctx = vhdlParser.Interface_constant_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_constant_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 246, self.RULE_interface_constant_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1497
             _la = self._input.LA(1)
-            if _la==vhdlParser.CONSTANT:
+            if _la==VhdlParser.CONSTANT:
                 self.state = 1496
-                self.match(vhdlParser.CONSTANT)
+                self.match(VhdlParser.CONSTANT)
 
 
             self.state = 1499
             self.identifier_list()
             self.state = 1500
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1502
             _la = self._input.LA(1)
-            if _la==vhdlParser.IN:
+            if _la==VhdlParser.IN:
                 self.state = 1501
-                self.match(vhdlParser.IN)
+                self.match(VhdlParser.IN)
 
 
             self.state = 1504
             self.subtype_indication()
             self.state = 1507
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 1505
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 1506
                 self.expression()
 
@@ -11495,31 +11495,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def interface_constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_constant_declarationContext,0)
 
 
         def interface_signal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_signal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_signal_declarationContext,0)
 
 
         def interface_variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_variable_declarationContext,0)
 
 
         def interface_file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_file_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_file_declarationContext,0)
 
 
         def interface_terminal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_terminal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_terminal_declarationContext,0)
 
 
         def interface_quantity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_quantity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_quantity_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_declaration
+            return VhdlParser.RULE_interface_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_declaration" ):
@@ -11540,7 +11540,7 @@ class vhdlParser ( Parser ):
 
     def interface_declaration(self):
 
-        localctx = vhdlParser.Interface_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 248, self.RULE_interface_declaration)
         try:
             self.state = 1515
@@ -11597,11 +11597,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def interface_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_element
+            return VhdlParser.RULE_interface_element
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_element" ):
@@ -11622,7 +11622,7 @@ class vhdlParser ( Parser ):
 
     def interface_element(self):
 
-        localctx = vhdlParser.Interface_elementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_elementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 250, self.RULE_interface_element)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -11643,21 +11643,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FILE(self):
-            return self.getToken(vhdlParser.FILE, 0)
+            return self.getToken(VhdlParser.FILE, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_file_declaration
+            return VhdlParser.RULE_interface_file_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_file_declaration" ):
@@ -11678,16 +11678,16 @@ class vhdlParser ( Parser ):
 
     def interface_file_declaration(self):
 
-        localctx = vhdlParser.Interface_file_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_file_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 252, self.RULE_interface_file_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1519
-            self.match(vhdlParser.FILE)
+            self.match(VhdlParser.FILE)
             self.state = 1520
             self.identifier_list()
             self.state = 1521
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1522
             self.subtype_indication()
         except RecognitionException as re:
@@ -11706,19 +11706,19 @@ class vhdlParser ( Parser ):
 
         def interface_signal_declaration(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Interface_signal_declarationContext)
+                return self.getTypedRuleContexts(VhdlParser.Interface_signal_declarationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Interface_signal_declarationContext,i)
+                return self.getTypedRuleContext(VhdlParser.Interface_signal_declarationContext,i)
 
 
         def SEMI(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.SEMI)
+                return self.getTokens(VhdlParser.SEMI)
             else:
-                return self.getToken(vhdlParser.SEMI, i)
+                return self.getToken(VhdlParser.SEMI, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_signal_list
+            return VhdlParser.RULE_interface_signal_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_signal_list" ):
@@ -11739,7 +11739,7 @@ class vhdlParser ( Parser ):
 
     def interface_signal_list(self):
 
-        localctx = vhdlParser.Interface_signal_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_signal_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 254, self.RULE_interface_signal_list)
         self._la = 0 # Token type
         try:
@@ -11749,9 +11749,9 @@ class vhdlParser ( Parser ):
             self.state = 1529
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.SEMI:
+            while _la==VhdlParser.SEMI:
                 self.state = 1525
-                self.match(vhdlParser.SEMI)
+                self.match(VhdlParser.SEMI)
                 self.state = 1526
                 self.interface_signal_declaration()
                 self.state = 1531
@@ -11774,19 +11774,19 @@ class vhdlParser ( Parser ):
 
         def interface_port_declaration(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Interface_port_declarationContext)
+                return self.getTypedRuleContexts(VhdlParser.Interface_port_declarationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Interface_port_declarationContext,i)
+                return self.getTypedRuleContext(VhdlParser.Interface_port_declarationContext,i)
 
 
         def SEMI(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.SEMI)
+                return self.getTokens(VhdlParser.SEMI)
             else:
-                return self.getToken(vhdlParser.SEMI, i)
+                return self.getToken(VhdlParser.SEMI, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_port_list
+            return VhdlParser.RULE_interface_port_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_port_list" ):
@@ -11807,7 +11807,7 @@ class vhdlParser ( Parser ):
 
     def interface_port_list(self):
 
-        localctx = vhdlParser.Interface_port_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_port_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 256, self.RULE_interface_port_list)
         self._la = 0 # Token type
         try:
@@ -11817,9 +11817,9 @@ class vhdlParser ( Parser ):
             self.state = 1537
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.SEMI:
+            while _la==VhdlParser.SEMI:
                 self.state = 1533
-                self.match(vhdlParser.SEMI)
+                self.match(VhdlParser.SEMI)
                 self.state = 1534
                 self.interface_port_declaration()
                 self.state = 1539
@@ -11842,19 +11842,19 @@ class vhdlParser ( Parser ):
 
         def interface_element(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Interface_elementContext)
+                return self.getTypedRuleContexts(VhdlParser.Interface_elementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Interface_elementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Interface_elementContext,i)
 
 
         def SEMI(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.SEMI)
+                return self.getTokens(VhdlParser.SEMI)
             else:
-                return self.getToken(vhdlParser.SEMI, i)
+                return self.getToken(VhdlParser.SEMI, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_list
+            return VhdlParser.RULE_interface_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_list" ):
@@ -11875,7 +11875,7 @@ class vhdlParser ( Parser ):
 
     def interface_list(self):
 
-        localctx = vhdlParser.Interface_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 258, self.RULE_interface_list)
         self._la = 0 # Token type
         try:
@@ -11885,9 +11885,9 @@ class vhdlParser ( Parser ):
             self.state = 1545
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.SEMI:
+            while _la==VhdlParser.SEMI:
                 self.state = 1541
-                self.match(vhdlParser.SEMI)
+                self.match(VhdlParser.SEMI)
                 self.state = 1542
                 self.interface_element()
                 self.state = 1547
@@ -11909,34 +11909,34 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def QUANTITY(self):
-            return self.getToken(vhdlParser.QUANTITY, 0)
+            return self.getToken(VhdlParser.QUANTITY, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def IN(self):
-            return self.getToken(vhdlParser.IN, 0)
+            return self.getToken(VhdlParser.IN, 0)
 
         def OUT(self):
-            return self.getToken(vhdlParser.OUT, 0)
+            return self.getToken(VhdlParser.OUT, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_quantity_declaration
+            return VhdlParser.RULE_interface_quantity_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_quantity_declaration" ):
@@ -11957,23 +11957,23 @@ class vhdlParser ( Parser ):
 
     def interface_quantity_declaration(self):
 
-        localctx = vhdlParser.Interface_quantity_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_quantity_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 260, self.RULE_interface_quantity_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1548
-            self.match(vhdlParser.QUANTITY)
+            self.match(VhdlParser.QUANTITY)
             self.state = 1549
             self.identifier_list()
             self.state = 1550
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1552
             _la = self._input.LA(1)
-            if _la==vhdlParser.IN or _la==vhdlParser.OUT:
+            if _la==VhdlParser.IN or _la==VhdlParser.OUT:
                 self.state = 1551
                 _la = self._input.LA(1)
-                if not(_la==vhdlParser.IN or _la==vhdlParser.OUT):
+                if not(_la==VhdlParser.IN or _la==VhdlParser.OUT):
                     self._errHandler.recoverInline(self)
                 else:
                     self.consume()
@@ -11983,9 +11983,9 @@ class vhdlParser ( Parser ):
             self.subtype_indication()
             self.state = 1557
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 1555
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 1556
                 self.expression()
 
@@ -12005,25 +12005,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def signal_mode(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_modeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_modeContext,0)
 
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def BUS(self):
-            return self.getToken(vhdlParser.BUS, 0)
+            return self.getToken(VhdlParser.BUS, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_port_declaration
+            return VhdlParser.RULE_interface_port_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_port_declaration" ):
@@ -12044,7 +12044,7 @@ class vhdlParser ( Parser ):
 
     def interface_port_declaration(self):
 
-        localctx = vhdlParser.Interface_port_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_port_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 262, self.RULE_interface_port_declaration)
         self._la = 0 # Token type
         try:
@@ -12052,16 +12052,16 @@ class vhdlParser ( Parser ):
             self.state = 1559
             self.identifier_list()
             self.state = 1560
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1561
             self.signal_mode()
             self.state = 1562
             self.subtype_indication()
             self.state = 1564
             _la = self._input.LA(1)
-            if _la==vhdlParser.BUS:
+            if _la==VhdlParser.BUS:
                 self.state = 1563
-                self.match(vhdlParser.BUS)
+                self.match(VhdlParser.BUS)
 
 
         except RecognitionException as re:
@@ -12079,31 +12079,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def SIGNAL(self):
-            return self.getToken(vhdlParser.SIGNAL, 0)
+            return self.getToken(VhdlParser.SIGNAL, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def BUS(self):
-            return self.getToken(vhdlParser.BUS, 0)
+            return self.getToken(VhdlParser.BUS, 0)
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_signal_declaration
+            return VhdlParser.RULE_interface_signal_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_signal_declaration" ):
@@ -12124,31 +12124,31 @@ class vhdlParser ( Parser ):
 
     def interface_signal_declaration(self):
 
-        localctx = vhdlParser.Interface_signal_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_signal_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 264, self.RULE_interface_signal_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1566
-            self.match(vhdlParser.SIGNAL)
+            self.match(VhdlParser.SIGNAL)
             self.state = 1567
             self.identifier_list()
             self.state = 1568
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1569
             self.subtype_indication()
             self.state = 1571
             _la = self._input.LA(1)
-            if _la==vhdlParser.BUS:
+            if _la==VhdlParser.BUS:
                 self.state = 1570
-                self.match(vhdlParser.BUS)
+                self.match(VhdlParser.BUS)
 
 
             self.state = 1575
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 1573
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 1574
                 self.expression()
 
@@ -12168,21 +12168,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def TERMINAL(self):
-            return self.getToken(vhdlParser.TERMINAL, 0)
+            return self.getToken(VhdlParser.TERMINAL, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subnature_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_indicationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_terminal_declaration
+            return VhdlParser.RULE_interface_terminal_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_terminal_declaration" ):
@@ -12203,16 +12203,16 @@ class vhdlParser ( Parser ):
 
     def interface_terminal_declaration(self):
 
-        localctx = vhdlParser.Interface_terminal_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_terminal_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 266, self.RULE_interface_terminal_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1577
-            self.match(vhdlParser.TERMINAL)
+            self.match(VhdlParser.TERMINAL)
             self.state = 1578
             self.identifier_list()
             self.state = 1579
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1580
             self.subnature_indication()
         except RecognitionException as re:
@@ -12230,32 +12230,32 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def VARIABLE(self):
-            return self.getToken(vhdlParser.VARIABLE, 0)
+            return self.getToken(VhdlParser.VARIABLE, 0)
 
         def signal_mode(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_modeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_modeContext,0)
 
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_interface_variable_declaration
+            return VhdlParser.RULE_interface_variable_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInterface_variable_declaration" ):
@@ -12276,25 +12276,25 @@ class vhdlParser ( Parser ):
 
     def interface_variable_declaration(self):
 
-        localctx = vhdlParser.Interface_variable_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Interface_variable_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 268, self.RULE_interface_variable_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1583
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARIABLE:
+            if _la==VhdlParser.VARIABLE:
                 self.state = 1582
-                self.match(vhdlParser.VARIABLE)
+                self.match(VhdlParser.VARIABLE)
 
 
             self.state = 1585
             self.identifier_list()
             self.state = 1586
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1588
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.BUFFER) | (1 << vhdlParser.IN) | (1 << vhdlParser.INOUT) | (1 << vhdlParser.LINKAGE) | (1 << vhdlParser.OUT))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.BUFFER) | (1 << VhdlParser.IN) | (1 << VhdlParser.INOUT) | (1 << VhdlParser.LINKAGE) | (1 << VhdlParser.OUT))) != 0):
                 self.state = 1587
                 self.signal_mode()
 
@@ -12303,9 +12303,9 @@ class vhdlParser ( Parser ):
             self.subtype_indication()
             self.state = 1593
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 1591
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 1592
                 self.expression()
 
@@ -12325,21 +12325,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def WHILE(self):
-            return self.getToken(vhdlParser.WHILE, 0)
+            return self.getToken(VhdlParser.WHILE, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def FOR(self):
-            return self.getToken(vhdlParser.FOR, 0)
+            return self.getToken(VhdlParser.FOR, 0)
 
         def parameter_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Parameter_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Parameter_specificationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_iteration_scheme
+            return VhdlParser.RULE_iteration_scheme
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIteration_scheme" ):
@@ -12360,22 +12360,22 @@ class vhdlParser ( Parser ):
 
     def iteration_scheme(self):
 
-        localctx = vhdlParser.Iteration_schemeContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Iteration_schemeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 270, self.RULE_iteration_scheme)
         try:
             self.state = 1599
             token = self._input.LA(1)
-            if token in [vhdlParser.WHILE]:
+            if token in [VhdlParser.WHILE]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1595
-                self.match(vhdlParser.WHILE)
+                self.match(VhdlParser.WHILE)
                 self.state = 1596
                 self.condition()
 
-            elif token in [vhdlParser.FOR]:
+            elif token in [VhdlParser.FOR]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1597
-                self.match(vhdlParser.FOR)
+                self.match(VhdlParser.FOR)
                 self.state = 1598
                 self.parameter_specification()
 
@@ -12397,14 +12397,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_label_colon
+            return VhdlParser.RULE_label_colon
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLabel_colon" ):
@@ -12425,14 +12425,14 @@ class vhdlParser ( Parser ):
 
     def label_colon(self):
 
-        localctx = vhdlParser.Label_colonContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Label_colonContext(self, self._ctx, self.state)
         self.enterRule(localctx, 272, self.RULE_label_colon)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1601
             self.identifier()
             self.state = 1602
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -12448,17 +12448,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LIBRARY(self):
-            return self.getToken(vhdlParser.LIBRARY, 0)
+            return self.getToken(VhdlParser.LIBRARY, 0)
 
         def logical_name_list(self):
-            return self.getTypedRuleContext(vhdlParser.Logical_name_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Logical_name_listContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_library_clause
+            return VhdlParser.RULE_library_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLibrary_clause" ):
@@ -12479,16 +12479,16 @@ class vhdlParser ( Parser ):
 
     def library_clause(self):
 
-        localctx = vhdlParser.Library_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Library_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 274, self.RULE_library_clause)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1604
-            self.match(vhdlParser.LIBRARY)
+            self.match(VhdlParser.LIBRARY)
             self.state = 1605
             self.logical_name_list()
             self.state = 1606
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -12504,15 +12504,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def secondary_unit(self):
-            return self.getTypedRuleContext(vhdlParser.Secondary_unitContext,0)
+            return self.getTypedRuleContext(VhdlParser.Secondary_unitContext,0)
 
 
         def primary_unit(self):
-            return self.getTypedRuleContext(vhdlParser.Primary_unitContext,0)
+            return self.getTypedRuleContext(VhdlParser.Primary_unitContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_library_unit
+            return VhdlParser.RULE_library_unit
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLibrary_unit" ):
@@ -12533,7 +12533,7 @@ class vhdlParser ( Parser ):
 
     def library_unit(self):
 
-        localctx = vhdlParser.Library_unitContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Library_unitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 276, self.RULE_library_unit)
         try:
             self.state = 1610
@@ -12566,24 +12566,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def NULL(self):
-            return self.getToken(vhdlParser.NULL, 0)
+            return self.getToken(VhdlParser.NULL, 0)
 
         def BIT_STRING_LITERAL(self):
-            return self.getToken(vhdlParser.BIT_STRING_LITERAL, 0)
+            return self.getToken(VhdlParser.BIT_STRING_LITERAL, 0)
 
         def STRING_LITERAL(self):
-            return self.getToken(vhdlParser.STRING_LITERAL, 0)
+            return self.getToken(VhdlParser.STRING_LITERAL, 0)
 
         def enumeration_literal(self):
-            return self.getTypedRuleContext(vhdlParser.Enumeration_literalContext,0)
+            return self.getTypedRuleContext(VhdlParser.Enumeration_literalContext,0)
 
 
         def numeric_literal(self):
-            return self.getTypedRuleContext(vhdlParser.Numeric_literalContext,0)
+            return self.getTypedRuleContext(VhdlParser.Numeric_literalContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_literal
+            return VhdlParser.RULE_literal
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLiteral" ):
@@ -12604,32 +12604,32 @@ class vhdlParser ( Parser ):
 
     def literal(self):
 
-        localctx = vhdlParser.LiteralContext(self, self._ctx, self.state)
+        localctx = VhdlParser.LiteralContext(self, self._ctx, self.state)
         self.enterRule(localctx, 278, self.RULE_literal)
         try:
             self.state = 1617
             token = self._input.LA(1)
-            if token in [vhdlParser.NULL]:
+            if token in [VhdlParser.NULL]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1612
-                self.match(vhdlParser.NULL)
+                self.match(VhdlParser.NULL)
 
-            elif token in [vhdlParser.BIT_STRING_LITERAL]:
+            elif token in [VhdlParser.BIT_STRING_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1613
-                self.match(vhdlParser.BIT_STRING_LITERAL)
+                self.match(VhdlParser.BIT_STRING_LITERAL)
 
-            elif token in [vhdlParser.STRING_LITERAL]:
+            elif token in [VhdlParser.STRING_LITERAL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1614
-                self.match(vhdlParser.STRING_LITERAL)
+                self.match(VhdlParser.STRING_LITERAL)
 
-            elif token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER, vhdlParser.CHARACTER_LITERAL]:
+            elif token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER, VhdlParser.CHARACTER_LITERAL]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 1615
                 self.enumeration_literal()
 
-            elif token in [vhdlParser.BASE_LITERAL, vhdlParser.REAL_LITERAL, vhdlParser.INTEGER]:
+            elif token in [VhdlParser.BASE_LITERAL, VhdlParser.REAL_LITERAL, VhdlParser.INTEGER]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 1616
                 self.numeric_literal()
@@ -12652,11 +12652,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_logical_name
+            return VhdlParser.RULE_logical_name
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLogical_name" ):
@@ -12677,7 +12677,7 @@ class vhdlParser ( Parser ):
 
     def logical_name(self):
 
-        localctx = vhdlParser.Logical_nameContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Logical_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 280, self.RULE_logical_name)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -12699,19 +12699,19 @@ class vhdlParser ( Parser ):
 
         def logical_name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Logical_nameContext)
+                return self.getTypedRuleContexts(VhdlParser.Logical_nameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Logical_nameContext,i)
+                return self.getTypedRuleContext(VhdlParser.Logical_nameContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_logical_name_list
+            return VhdlParser.RULE_logical_name_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLogical_name_list" ):
@@ -12732,7 +12732,7 @@ class vhdlParser ( Parser ):
 
     def logical_name_list(self):
 
-        localctx = vhdlParser.Logical_name_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Logical_name_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 282, self.RULE_logical_name_list)
         self._la = 0 # Token type
         try:
@@ -12742,9 +12742,9 @@ class vhdlParser ( Parser ):
             self.state = 1626
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 1622
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 1623
                 self.logical_name()
                 self.state = 1628
@@ -12766,25 +12766,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def AND(self):
-            return self.getToken(vhdlParser.AND, 0)
+            return self.getToken(VhdlParser.AND, 0)
 
         def OR(self):
-            return self.getToken(vhdlParser.OR, 0)
+            return self.getToken(VhdlParser.OR, 0)
 
         def NAND(self):
-            return self.getToken(vhdlParser.NAND, 0)
+            return self.getToken(VhdlParser.NAND, 0)
 
         def NOR(self):
-            return self.getToken(vhdlParser.NOR, 0)
+            return self.getToken(VhdlParser.NOR, 0)
 
         def XOR(self):
-            return self.getToken(vhdlParser.XOR, 0)
+            return self.getToken(VhdlParser.XOR, 0)
 
         def XNOR(self):
-            return self.getToken(vhdlParser.XNOR, 0)
+            return self.getToken(VhdlParser.XNOR, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_logical_operator
+            return VhdlParser.RULE_logical_operator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLogical_operator" ):
@@ -12805,14 +12805,14 @@ class vhdlParser ( Parser ):
 
     def logical_operator(self):
 
-        localctx = vhdlParser.Logical_operatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Logical_operatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 284, self.RULE_logical_operator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1629
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.AND) | (1 << vhdlParser.NAND) | (1 << vhdlParser.NOR) | (1 << vhdlParser.OR))) != 0) or _la==vhdlParser.XNOR or _la==vhdlParser.XOR):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.AND) | (1 << VhdlParser.NAND) | (1 << VhdlParser.NOR) | (1 << VhdlParser.OR))) != 0) or _la==VhdlParser.XNOR or _la==VhdlParser.XOR):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -12832,34 +12832,34 @@ class vhdlParser ( Parser ):
 
         def LOOP(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.LOOP)
+                return self.getTokens(VhdlParser.LOOP)
             else:
-                return self.getToken(vhdlParser.LOOP, i)
+                return self.getToken(VhdlParser.LOOP, i)
 
         def sequence_of_statements(self):
-            return self.getTypedRuleContext(vhdlParser.Sequence_of_statementsContext,0)
+            return self.getTypedRuleContext(VhdlParser.Sequence_of_statementsContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def iteration_scheme(self):
-            return self.getTypedRuleContext(vhdlParser.Iteration_schemeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Iteration_schemeContext,0)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_loop_statement
+            return VhdlParser.RULE_loop_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLoop_statement" ):
@@ -12880,42 +12880,42 @@ class vhdlParser ( Parser ):
 
     def loop_statement(self):
 
-        localctx = vhdlParser.Loop_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Loop_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 286, self.RULE_loop_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1632
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1631
                 self.label_colon()
 
 
             self.state = 1635
             _la = self._input.LA(1)
-            if _la==vhdlParser.FOR or _la==vhdlParser.WHILE:
+            if _la==VhdlParser.FOR or _la==VhdlParser.WHILE:
                 self.state = 1634
                 self.iteration_scheme()
 
 
             self.state = 1637
-            self.match(vhdlParser.LOOP)
+            self.match(VhdlParser.LOOP)
             self.state = 1638
             self.sequence_of_statements()
             self.state = 1639
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1640
-            self.match(vhdlParser.LOOP)
+            self.match(VhdlParser.LOOP)
             self.state = 1642
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1641
                 self.identifier()
 
 
             self.state = 1644
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -12931,22 +12931,22 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def IN(self):
-            return self.getToken(vhdlParser.IN, 0)
+            return self.getToken(VhdlParser.IN, 0)
 
         def OUT(self):
-            return self.getToken(vhdlParser.OUT, 0)
+            return self.getToken(VhdlParser.OUT, 0)
 
         def INOUT(self):
-            return self.getToken(vhdlParser.INOUT, 0)
+            return self.getToken(VhdlParser.INOUT, 0)
 
         def BUFFER(self):
-            return self.getToken(vhdlParser.BUFFER, 0)
+            return self.getToken(VhdlParser.BUFFER, 0)
 
         def LINKAGE(self):
-            return self.getToken(vhdlParser.LINKAGE, 0)
+            return self.getToken(VhdlParser.LINKAGE, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_signal_mode
+            return VhdlParser.RULE_signal_mode
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSignal_mode" ):
@@ -12967,14 +12967,14 @@ class vhdlParser ( Parser ):
 
     def signal_mode(self):
 
-        localctx = vhdlParser.Signal_modeContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Signal_modeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 288, self.RULE_signal_mode)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1646
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.BUFFER) | (1 << vhdlParser.IN) | (1 << vhdlParser.INOUT) | (1 << vhdlParser.LINKAGE) | (1 << vhdlParser.OUT))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.BUFFER) | (1 << VhdlParser.IN) | (1 << VhdlParser.INOUT) | (1 << VhdlParser.LINKAGE) | (1 << VhdlParser.OUT))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -12993,19 +12993,19 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def MUL(self):
-            return self.getToken(vhdlParser.MUL, 0)
+            return self.getToken(VhdlParser.MUL, 0)
 
         def DIV(self):
-            return self.getToken(vhdlParser.DIV, 0)
+            return self.getToken(VhdlParser.DIV, 0)
 
         def MOD(self):
-            return self.getToken(vhdlParser.MOD, 0)
+            return self.getToken(VhdlParser.MOD, 0)
 
         def REM(self):
-            return self.getToken(vhdlParser.REM, 0)
+            return self.getToken(VhdlParser.REM, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_multiplying_operator
+            return VhdlParser.RULE_multiplying_operator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterMultiplying_operator" ):
@@ -13026,14 +13026,14 @@ class vhdlParser ( Parser ):
 
     def multiplying_operator(self):
 
-        localctx = vhdlParser.Multiplying_operatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Multiplying_operatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 290, self.RULE_multiplying_operator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1648
             _la = self._input.LA(1)
-            if not(_la==vhdlParser.MOD or _la==vhdlParser.REM or _la==vhdlParser.MUL or _la==vhdlParser.DIV):
+            if not(_la==VhdlParser.MOD or _la==VhdlParser.REM or _la==VhdlParser.MUL or _la==VhdlParser.DIV):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -13052,24 +13052,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def selected_name(self):
-            return self.getTypedRuleContext(vhdlParser.Selected_nameContext,0)
+            return self.getTypedRuleContext(VhdlParser.Selected_nameContext,0)
 
 
         def name_part(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Name_partContext)
+                return self.getTypedRuleContexts(VhdlParser.Name_partContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Name_partContext,i)
+                return self.getTypedRuleContext(VhdlParser.Name_partContext,i)
 
 
         def DOT(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.DOT)
+                return self.getTokens(VhdlParser.DOT)
             else:
-                return self.getToken(vhdlParser.DOT, i)
+                return self.getToken(VhdlParser.DOT, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_name
+            return VhdlParser.RULE_name
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterName" ):
@@ -13090,7 +13090,7 @@ class vhdlParser ( Parser ):
 
     def name(self):
 
-        localctx = vhdlParser.NameContext(self, self._ctx, self.state)
+        localctx = VhdlParser.NameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 292, self.RULE_name)
         try:
             self.state = 1659
@@ -13111,7 +13111,7 @@ class vhdlParser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
                         self.state = 1652
-                        self.match(vhdlParser.DOT)
+                        self.match(VhdlParser.DOT)
                         self.state = 1653
                         self.name_part() 
                     self.state = 1658
@@ -13136,23 +13136,23 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def selected_name(self):
-            return self.getTypedRuleContext(vhdlParser.Selected_nameContext,0)
+            return self.getTypedRuleContext(VhdlParser.Selected_nameContext,0)
 
 
         def name_attribute_part(self):
-            return self.getTypedRuleContext(vhdlParser.Name_attribute_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Name_attribute_partContext,0)
 
 
         def name_function_call_or_indexed_part(self):
-            return self.getTypedRuleContext(vhdlParser.Name_function_call_or_indexed_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Name_function_call_or_indexed_partContext,0)
 
 
         def name_slice_part(self):
-            return self.getTypedRuleContext(vhdlParser.Name_slice_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Name_slice_partContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_name_part
+            return VhdlParser.RULE_name_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterName_part" ):
@@ -13173,7 +13173,7 @@ class vhdlParser ( Parser ):
 
     def name_part(self):
 
-        localctx = vhdlParser.Name_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Name_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 294, self.RULE_name_part)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -13209,27 +13209,27 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def APOSTROPHE(self):
-            return self.getToken(vhdlParser.APOSTROPHE, 0)
+            return self.getToken(VhdlParser.APOSTROPHE, 0)
 
         def attribute_designator(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_designatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_designatorContext,0)
 
 
         def expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ExpressionContext)
+                return self.getTypedRuleContexts(VhdlParser.ExpressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ExpressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.ExpressionContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_name_attribute_part
+            return VhdlParser.RULE_name_attribute_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterName_attribute_part" ):
@@ -13250,12 +13250,12 @@ class vhdlParser ( Parser ):
 
     def name_attribute_part(self):
 
-        localctx = vhdlParser.Name_attribute_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Name_attribute_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 296, self.RULE_name_attribute_part)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1667
-            self.match(vhdlParser.APOSTROPHE)
+            self.match(VhdlParser.APOSTROPHE)
             self.state = 1668
             self.attribute_designator()
             self.state = 1677
@@ -13269,7 +13269,7 @@ class vhdlParser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
                         self.state = 1670
-                        self.match(vhdlParser.COMMA)
+                        self.match(VhdlParser.COMMA)
                         self.state = 1671
                         self.expression() 
                     self.state = 1676
@@ -13293,17 +13293,17 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def actual_parameter_part(self):
-            return self.getTypedRuleContext(vhdlParser.Actual_parameter_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Actual_parameter_partContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_name_function_call_or_indexed_part
+            return VhdlParser.RULE_name_function_call_or_indexed_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterName_function_call_or_indexed_part" ):
@@ -13324,22 +13324,22 @@ class vhdlParser ( Parser ):
 
     def name_function_call_or_indexed_part(self):
 
-        localctx = vhdlParser.Name_function_call_or_indexed_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Name_function_call_or_indexed_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 298, self.RULE_name_function_call_or_indexed_part)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1679
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1681
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ABS) | (1 << vhdlParser.NEW) | (1 << vhdlParser.NOT) | (1 << vhdlParser.NULL) | (1 << vhdlParser.OPEN))) != 0) or ((((_la - 112)) & ~0x3f) == 0 and ((1 << (_la - 112)) & ((1 << (vhdlParser.BASE_LITERAL - 112)) | (1 << (vhdlParser.BIT_STRING_LITERAL - 112)) | (1 << (vhdlParser.REAL_LITERAL - 112)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 112)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 112)) | (1 << (vhdlParser.CHARACTER_LITERAL - 112)) | (1 << (vhdlParser.STRING_LITERAL - 112)) | (1 << (vhdlParser.LPAREN - 112)) | (1 << (vhdlParser.PLUS - 112)) | (1 << (vhdlParser.MINUS - 112)) | (1 << (vhdlParser.INTEGER - 112)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ABS) | (1 << VhdlParser.NEW) | (1 << VhdlParser.NOT) | (1 << VhdlParser.NULL) | (1 << VhdlParser.OPEN))) != 0) or ((((_la - 112)) & ~0x3f) == 0 and ((1 << (_la - 112)) & ((1 << (VhdlParser.BASE_LITERAL - 112)) | (1 << (VhdlParser.BIT_STRING_LITERAL - 112)) | (1 << (VhdlParser.REAL_LITERAL - 112)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 112)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 112)) | (1 << (VhdlParser.CHARACTER_LITERAL - 112)) | (1 << (VhdlParser.STRING_LITERAL - 112)) | (1 << (VhdlParser.LPAREN - 112)) | (1 << (VhdlParser.PLUS - 112)) | (1 << (VhdlParser.MINUS - 112)) | (1 << (VhdlParser.INTEGER - 112)))) != 0):
                 self.state = 1680
                 self.actual_parameter_part()
 
 
             self.state = 1683
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -13355,26 +13355,26 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def explicit_range(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Explicit_rangeContext)
+                return self.getTypedRuleContexts(VhdlParser.Explicit_rangeContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Explicit_rangeContext,i)
+                return self.getTypedRuleContext(VhdlParser.Explicit_rangeContext,i)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_name_slice_part
+            return VhdlParser.RULE_name_slice_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterName_slice_part" ):
@@ -13395,21 +13395,21 @@ class vhdlParser ( Parser ):
 
     def name_slice_part(self):
 
-        localctx = vhdlParser.Name_slice_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Name_slice_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 300, self.RULE_name_slice_part)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1685
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1686
             self.explicit_range()
             self.state = 1691
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 1687
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 1688
                 self.explicit_range()
                 self.state = 1693
@@ -13417,7 +13417,7 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 1694
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -13433,24 +13433,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def DOT(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.DOT)
+                return self.getTokens(VhdlParser.DOT)
             else:
-                return self.getToken(vhdlParser.DOT, i)
+                return self.getToken(VhdlParser.DOT, i)
 
         def suffix(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.SuffixContext)
+                return self.getTypedRuleContexts(VhdlParser.SuffixContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.SuffixContext,i)
+                return self.getTypedRuleContext(VhdlParser.SuffixContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_selected_name
+            return VhdlParser.RULE_selected_name
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSelected_name" ):
@@ -13471,7 +13471,7 @@ class vhdlParser ( Parser ):
 
     def selected_name(self):
 
-        localctx = vhdlParser.Selected_nameContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Selected_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 302, self.RULE_selected_name)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -13483,7 +13483,7 @@ class vhdlParser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 1697
-                    self.match(vhdlParser.DOT)
+                    self.match(VhdlParser.DOT)
                     self.state = 1698
                     self.suffix() 
                 self.state = 1703
@@ -13505,24 +13505,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def NATURE(self):
-            return self.getToken(vhdlParser.NATURE, 0)
+            return self.getToken(VhdlParser.NATURE, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def nature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Nature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Nature_definitionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_nature_declaration
+            return VhdlParser.RULE_nature_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNature_declaration" ):
@@ -13543,20 +13543,20 @@ class vhdlParser ( Parser ):
 
     def nature_declaration(self):
 
-        localctx = vhdlParser.Nature_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Nature_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 304, self.RULE_nature_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1704
-            self.match(vhdlParser.NATURE)
+            self.match(VhdlParser.NATURE)
             self.state = 1705
             self.identifier()
             self.state = 1706
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 1707
             self.nature_definition()
             self.state = 1708
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -13572,15 +13572,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def scalar_nature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Scalar_nature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Scalar_nature_definitionContext,0)
 
 
         def composite_nature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Composite_nature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Composite_nature_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_nature_definition
+            return VhdlParser.RULE_nature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNature_definition" ):
@@ -13601,17 +13601,17 @@ class vhdlParser ( Parser ):
 
     def nature_definition(self):
 
-        localctx = vhdlParser.Nature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Nature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 306, self.RULE_nature_definition)
         try:
             self.state = 1712
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1710
                 self.scalar_nature_definition()
 
-            elif token in [vhdlParser.ARRAY, vhdlParser.RECORD]:
+            elif token in [VhdlParser.ARRAY, VhdlParser.RECORD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1711
                 self.composite_nature_definition()
@@ -13634,18 +13634,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def element_subnature_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Element_subnature_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Element_subnature_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_nature_element_declaration
+            return VhdlParser.RULE_nature_element_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNature_element_declaration" ):
@@ -13666,14 +13666,14 @@ class vhdlParser ( Parser ):
 
     def nature_element_declaration(self):
 
-        localctx = vhdlParser.Nature_element_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Nature_element_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 308, self.RULE_nature_element_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1714
             self.identifier_list()
             self.state = 1715
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1716
             self.element_subnature_definition()
         except RecognitionException as re:
@@ -13691,28 +13691,28 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def NEXT(self):
-            return self.getToken(vhdlParser.NEXT, 0)
+            return self.getToken(VhdlParser.NEXT, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def WHEN(self):
-            return self.getToken(vhdlParser.WHEN, 0)
+            return self.getToken(VhdlParser.WHEN, 0)
 
         def condition(self):
-            return self.getTypedRuleContext(vhdlParser.ConditionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConditionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_next_statement
+            return VhdlParser.RULE_next_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNext_statement" ):
@@ -13733,38 +13733,38 @@ class vhdlParser ( Parser ):
 
     def next_statement(self):
 
-        localctx = vhdlParser.Next_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Next_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 310, self.RULE_next_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1719
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1718
                 self.label_colon()
 
 
             self.state = 1721
-            self.match(vhdlParser.NEXT)
+            self.match(VhdlParser.NEXT)
             self.state = 1723
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1722
                 self.identifier()
 
 
             self.state = 1727
             _la = self._input.LA(1)
-            if _la==vhdlParser.WHEN:
+            if _la==VhdlParser.WHEN:
                 self.state = 1725
-                self.match(vhdlParser.WHEN)
+                self.match(VhdlParser.WHEN)
                 self.state = 1726
                 self.condition()
 
 
             self.state = 1729
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -13780,15 +13780,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def abstract_literal(self):
-            return self.getTypedRuleContext(vhdlParser.Abstract_literalContext,0)
+            return self.getTypedRuleContext(VhdlParser.Abstract_literalContext,0)
 
 
         def physical_literal(self):
-            return self.getTypedRuleContext(vhdlParser.Physical_literalContext,0)
+            return self.getTypedRuleContext(VhdlParser.Physical_literalContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_numeric_literal
+            return VhdlParser.RULE_numeric_literal
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNumeric_literal" ):
@@ -13809,7 +13809,7 @@ class vhdlParser ( Parser ):
 
     def numeric_literal(self):
 
-        localctx = vhdlParser.Numeric_literalContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Numeric_literalContext(self, self._ctx, self.state)
         self.enterRule(localctx, 312, self.RULE_numeric_literal)
         try:
             self.state = 1733
@@ -13842,31 +13842,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def signal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.File_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_declarationContext,0)
 
 
         def terminal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Terminal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Terminal_declarationContext,0)
 
 
         def quantity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Quantity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Quantity_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_object_declaration
+            return VhdlParser.RULE_object_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterObject_declaration" ):
@@ -13887,37 +13887,37 @@ class vhdlParser ( Parser ):
 
     def object_declaration(self):
 
-        localctx = vhdlParser.Object_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Object_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 314, self.RULE_object_declaration)
         try:
             self.state = 1741
             token = self._input.LA(1)
-            if token in [vhdlParser.CONSTANT]:
+            if token in [VhdlParser.CONSTANT]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1735
                 self.constant_declaration()
 
-            elif token in [vhdlParser.SIGNAL]:
+            elif token in [VhdlParser.SIGNAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1736
                 self.signal_declaration()
 
-            elif token in [vhdlParser.SHARED, vhdlParser.VARIABLE]:
+            elif token in [VhdlParser.SHARED, VhdlParser.VARIABLE]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1737
                 self.variable_declaration()
 
-            elif token in [vhdlParser.FILE]:
+            elif token in [VhdlParser.FILE]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 1738
                 self.file_declaration()
 
-            elif token in [vhdlParser.TERMINAL]:
+            elif token in [VhdlParser.TERMINAL]:
                 self.enterOuterAlt(localctx, 5)
                 self.state = 1739
                 self.terminal_declaration()
 
-            elif token in [vhdlParser.QUANTITY]:
+            elif token in [VhdlParser.QUANTITY]:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 1740
                 self.quantity_declaration()
@@ -13940,14 +13940,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def GUARDED(self):
-            return self.getToken(vhdlParser.GUARDED, 0)
+            return self.getToken(VhdlParser.GUARDED, 0)
 
         def delay_mechanism(self):
-            return self.getTypedRuleContext(vhdlParser.Delay_mechanismContext,0)
+            return self.getTypedRuleContext(VhdlParser.Delay_mechanismContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_opts
+            return VhdlParser.RULE_opts
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterOpts" ):
@@ -13968,21 +13968,21 @@ class vhdlParser ( Parser ):
 
     def opts(self):
 
-        localctx = vhdlParser.OptsContext(self, self._ctx, self.state)
+        localctx = VhdlParser.OptsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 316, self.RULE_opts)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1744
             _la = self._input.LA(1)
-            if _la==vhdlParser.GUARDED:
+            if _la==VhdlParser.GUARDED:
                 self.state = 1743
-                self.match(vhdlParser.GUARDED)
+                self.match(VhdlParser.GUARDED)
 
 
             self.state = 1747
             _la = self._input.LA(1)
-            if ((((_la - 39)) & ~0x3f) == 0 and ((1 << (_la - 39)) & ((1 << (vhdlParser.INERTIAL - 39)) | (1 << (vhdlParser.REJECT - 39)) | (1 << (vhdlParser.TRANSPORT - 39)))) != 0):
+            if ((((_la - 39)) & ~0x3f) == 0 and ((1 << (_la - 39)) & ((1 << (VhdlParser.INERTIAL - 39)) | (1 << (VhdlParser.REJECT - 39)) | (1 << (VhdlParser.TRANSPORT - 39)))) != 0):
                 self.state = 1746
                 self.delay_mechanism()
 
@@ -14003,38 +14003,38 @@ class vhdlParser ( Parser ):
 
         def PACKAGE(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.PACKAGE)
+                return self.getTokens(VhdlParser.PACKAGE)
             else:
-                return self.getToken(vhdlParser.PACKAGE, i)
+                return self.getToken(VhdlParser.PACKAGE, i)
 
         def BODY(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.BODY)
+                return self.getTokens(VhdlParser.BODY)
             else:
-                return self.getToken(vhdlParser.BODY, i)
+                return self.getToken(VhdlParser.BODY, i)
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def package_body_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Package_body_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Package_body_declarative_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_package_body
+            return VhdlParser.RULE_package_body
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPackage_body" ):
@@ -14055,41 +14055,41 @@ class vhdlParser ( Parser ):
 
     def package_body(self):
 
-        localctx = vhdlParser.Package_bodyContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Package_bodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 318, self.RULE_package_body)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1749
-            self.match(vhdlParser.PACKAGE)
+            self.match(VhdlParser.PACKAGE)
             self.state = 1750
-            self.match(vhdlParser.BODY)
+            self.match(VhdlParser.BODY)
             self.state = 1751
             self.identifier()
             self.state = 1752
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 1753
             self.package_body_declarative_part()
             self.state = 1754
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1757
             _la = self._input.LA(1)
-            if _la==vhdlParser.PACKAGE:
+            if _la==VhdlParser.PACKAGE:
                 self.state = 1755
-                self.match(vhdlParser.PACKAGE)
+                self.match(VhdlParser.PACKAGE)
                 self.state = 1756
-                self.match(vhdlParser.BODY)
+                self.match(VhdlParser.BODY)
 
 
             self.state = 1760
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1759
                 self.identifier()
 
 
             self.state = 1762
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -14105,51 +14105,51 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarationContext,0)
 
 
         def subprogram_body(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_bodyContext,0)
 
 
         def type_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Type_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_declarationContext,0)
 
 
         def subtype_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_declarationContext,0)
 
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.File_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_declarationContext,0)
 
 
         def alias_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_declarationContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def group_template_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_template_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_template_declarationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_package_body_declarative_item
+            return VhdlParser.RULE_package_body_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPackage_body_declarative_item" ):
@@ -14170,7 +14170,7 @@ class vhdlParser ( Parser ):
 
     def package_body_declarative_item(self):
 
-        localctx = vhdlParser.Package_body_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Package_body_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 320, self.RULE_package_body_declarative_item)
         try:
             self.state = 1775
@@ -14258,13 +14258,13 @@ class vhdlParser ( Parser ):
 
         def package_body_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Package_body_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Package_body_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Package_body_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Package_body_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_package_body_declarative_part
+            return VhdlParser.RULE_package_body_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPackage_body_declarative_part" ):
@@ -14285,7 +14285,7 @@ class vhdlParser ( Parser ):
 
     def package_body_declarative_part(self):
 
-        localctx = vhdlParser.Package_body_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Package_body_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 322, self.RULE_package_body_declarative_part)
         self._la = 0 # Token type
         try:
@@ -14293,7 +14293,7 @@ class vhdlParser ( Parser ):
             self.state = 1780
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 1777
                 self.package_body_declarative_item()
                 self.state = 1782
@@ -14316,32 +14316,32 @@ class vhdlParser ( Parser ):
 
         def PACKAGE(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.PACKAGE)
+                return self.getTokens(VhdlParser.PACKAGE)
             else:
-                return self.getToken(vhdlParser.PACKAGE, i)
+                return self.getToken(VhdlParser.PACKAGE, i)
 
         def identifier(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.IdentifierContext)
+                return self.getTypedRuleContexts(VhdlParser.IdentifierContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.IdentifierContext,i)
+                return self.getTypedRuleContext(VhdlParser.IdentifierContext,i)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def package_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Package_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Package_declarative_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_package_declaration
+            return VhdlParser.RULE_package_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPackage_declaration" ):
@@ -14362,37 +14362,37 @@ class vhdlParser ( Parser ):
 
     def package_declaration(self):
 
-        localctx = vhdlParser.Package_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Package_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 324, self.RULE_package_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1783
-            self.match(vhdlParser.PACKAGE)
+            self.match(VhdlParser.PACKAGE)
             self.state = 1784
             self.identifier()
             self.state = 1785
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 1786
             self.package_declarative_part()
             self.state = 1787
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1789
             _la = self._input.LA(1)
-            if _la==vhdlParser.PACKAGE:
+            if _la==VhdlParser.PACKAGE:
                 self.state = 1788
-                self.match(vhdlParser.PACKAGE)
+                self.match(VhdlParser.PACKAGE)
 
 
             self.state = 1792
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1791
                 self.identifier()
 
 
             self.state = 1794
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -14408,79 +14408,79 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarationContext,0)
 
 
         def type_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Type_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_declarationContext,0)
 
 
         def subtype_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_declarationContext,0)
 
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def signal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.File_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_declarationContext,0)
 
 
         def alias_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_declarationContext,0)
 
 
         def component_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Component_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Component_declarationContext,0)
 
 
         def attribute_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_declarationContext,0)
 
 
         def attribute_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_specificationContext,0)
 
 
         def disconnection_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Disconnection_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Disconnection_specificationContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def group_template_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_template_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_template_declarationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def nature_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Nature_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Nature_declarationContext,0)
 
 
         def subnature_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_declarationContext,0)
 
 
         def terminal_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Terminal_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Terminal_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_package_declarative_item
+            return VhdlParser.RULE_package_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPackage_declarative_item" ):
@@ -14501,7 +14501,7 @@ class vhdlParser ( Parser ):
 
     def package_declarative_item(self):
 
-        localctx = vhdlParser.Package_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Package_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 326, self.RULE_package_declarative_item)
         try:
             self.state = 1814
@@ -14631,13 +14631,13 @@ class vhdlParser ( Parser ):
 
         def package_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Package_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Package_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Package_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Package_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_package_declarative_part
+            return VhdlParser.RULE_package_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPackage_declarative_part" ):
@@ -14658,7 +14658,7 @@ class vhdlParser ( Parser ):
 
     def package_declarative_part(self):
 
-        localctx = vhdlParser.Package_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Package_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 328, self.RULE_package_declarative_part)
         self._la = 0 # Token type
         try:
@@ -14666,7 +14666,7 @@ class vhdlParser ( Parser ):
             self.state = 1819
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.COMPONENT) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.DISCONNECT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE) | (1 << vhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SIGNAL - 68)) | (1 << (vhdlParser.SUBNATURE - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TERMINAL - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.COMPONENT) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.DISCONNECT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE) | (1 << VhdlParser.NATURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SIGNAL - 68)) | (1 << (VhdlParser.SUBNATURE - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TERMINAL - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 1816
                 self.package_declarative_item()
                 self.state = 1821
@@ -14688,18 +14688,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def IN(self):
-            return self.getToken(vhdlParser.IN, 0)
+            return self.getToken(VhdlParser.IN, 0)
 
         def discrete_range(self):
-            return self.getTypedRuleContext(vhdlParser.Discrete_rangeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Discrete_rangeContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_parameter_specification
+            return VhdlParser.RULE_parameter_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterParameter_specification" ):
@@ -14720,14 +14720,14 @@ class vhdlParser ( Parser ):
 
     def parameter_specification(self):
 
-        localctx = vhdlParser.Parameter_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Parameter_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 330, self.RULE_parameter_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1822
             self.identifier()
             self.state = 1823
-            self.match(vhdlParser.IN)
+            self.match(VhdlParser.IN)
             self.state = 1824
             self.discrete_range()
         except RecognitionException as re:
@@ -14745,15 +14745,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def abstract_literal(self):
-            return self.getTypedRuleContext(vhdlParser.Abstract_literalContext,0)
+            return self.getTypedRuleContext(VhdlParser.Abstract_literalContext,0)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_physical_literal
+            return VhdlParser.RULE_physical_literal
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPhysical_literal" ):
@@ -14774,7 +14774,7 @@ class vhdlParser ( Parser ):
 
     def physical_literal(self):
 
-        localctx = vhdlParser.Physical_literalContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Physical_literalContext(self, self._ctx, self.state)
         self.enterRule(localctx, 332, self.RULE_physical_literal)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -14798,35 +14798,35 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def range_constraint(self):
-            return self.getTypedRuleContext(vhdlParser.Range_constraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.Range_constraintContext,0)
 
 
         def UNITS(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.UNITS)
+                return self.getTokens(VhdlParser.UNITS)
             else:
-                return self.getToken(vhdlParser.UNITS, i)
+                return self.getToken(VhdlParser.UNITS, i)
 
         def base_unit_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Base_unit_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Base_unit_declarationContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def secondary_unit_declaration(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Secondary_unit_declarationContext)
+                return self.getTypedRuleContexts(VhdlParser.Secondary_unit_declarationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Secondary_unit_declarationContext,i)
+                return self.getTypedRuleContext(VhdlParser.Secondary_unit_declarationContext,i)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_physical_type_definition
+            return VhdlParser.RULE_physical_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPhysical_type_definition" ):
@@ -14847,7 +14847,7 @@ class vhdlParser ( Parser ):
 
     def physical_type_definition(self):
 
-        localctx = vhdlParser.Physical_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Physical_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 334, self.RULE_physical_type_definition)
         self._la = 0 # Token type
         try:
@@ -14855,13 +14855,13 @@ class vhdlParser ( Parser ):
             self.state = 1829
             self.range_constraint()
             self.state = 1830
-            self.match(vhdlParser.UNITS)
+            self.match(VhdlParser.UNITS)
             self.state = 1831
             self.base_unit_declaration()
             self.state = 1835
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            while _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1832
                 self.secondary_unit_declaration()
                 self.state = 1837
@@ -14869,12 +14869,12 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 1838
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1839
-            self.match(vhdlParser.UNITS)
+            self.match(VhdlParser.UNITS)
             self.state = 1841
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1840
                 self.identifier()
 
@@ -14894,23 +14894,23 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def PORT(self):
-            return self.getToken(vhdlParser.PORT, 0)
+            return self.getToken(VhdlParser.PORT, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def port_list(self):
-            return self.getTypedRuleContext(vhdlParser.Port_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Port_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_port_clause
+            return VhdlParser.RULE_port_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPort_clause" ):
@@ -14931,20 +14931,20 @@ class vhdlParser ( Parser ):
 
     def port_clause(self):
 
-        localctx = vhdlParser.Port_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Port_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 336, self.RULE_port_clause)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1843
-            self.match(vhdlParser.PORT)
+            self.match(VhdlParser.PORT)
             self.state = 1844
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1845
             self.port_list()
             self.state = 1846
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
             self.state = 1847
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -14960,11 +14960,11 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def interface_port_list(self):
-            return self.getTypedRuleContext(vhdlParser.Interface_port_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Interface_port_listContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_port_list
+            return VhdlParser.RULE_port_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPort_list" ):
@@ -14985,7 +14985,7 @@ class vhdlParser ( Parser ):
 
     def port_list(self):
 
-        localctx = vhdlParser.Port_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Port_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 338, self.RULE_port_list)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -15006,23 +15006,23 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def PORT(self):
-            return self.getToken(vhdlParser.PORT, 0)
+            return self.getToken(VhdlParser.PORT, 0)
 
         def MAP(self):
-            return self.getToken(vhdlParser.MAP, 0)
+            return self.getToken(VhdlParser.MAP, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def association_list(self):
-            return self.getTypedRuleContext(vhdlParser.Association_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Association_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_port_map_aspect
+            return VhdlParser.RULE_port_map_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPort_map_aspect" ):
@@ -15043,20 +15043,20 @@ class vhdlParser ( Parser ):
 
     def port_map_aspect(self):
 
-        localctx = vhdlParser.Port_map_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Port_map_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 340, self.RULE_port_map_aspect)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1851
-            self.match(vhdlParser.PORT)
+            self.match(VhdlParser.PORT)
             self.state = 1852
-            self.match(vhdlParser.MAP)
+            self.match(VhdlParser.MAP)
             self.state = 1853
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 1854
             self.association_list()
             self.state = 1855
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -15072,37 +15072,37 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def literal(self):
-            return self.getTypedRuleContext(vhdlParser.LiteralContext,0)
+            return self.getTypedRuleContext(VhdlParser.LiteralContext,0)
 
 
         def qualified_expression(self):
-            return self.getTypedRuleContext(vhdlParser.Qualified_expressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Qualified_expressionContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def allocator(self):
-            return self.getTypedRuleContext(vhdlParser.AllocatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.AllocatorContext,0)
 
 
         def aggregate(self):
-            return self.getTypedRuleContext(vhdlParser.AggregateContext,0)
+            return self.getTypedRuleContext(VhdlParser.AggregateContext,0)
 
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_primary
+            return VhdlParser.RULE_primary
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPrimary" ):
@@ -15123,7 +15123,7 @@ class vhdlParser ( Parser ):
 
     def primary(self):
 
-        localctx = vhdlParser.PrimaryContext(self, self._ctx, self.state)
+        localctx = VhdlParser.PrimaryContext(self, self._ctx, self.state)
         self.enterRule(localctx, 342, self.RULE_primary)
         try:
             self.state = 1866
@@ -15143,11 +15143,11 @@ class vhdlParser ( Parser ):
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1859
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 1860
                 self.expression()
                 self.state = 1861
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
                 pass
 
             elif la_ == 4:
@@ -15184,19 +15184,19 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def entity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Entity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Entity_declarationContext,0)
 
 
         def configuration_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Configuration_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Configuration_declarationContext,0)
 
 
         def package_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Package_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Package_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_primary_unit
+            return VhdlParser.RULE_primary_unit
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterPrimary_unit" ):
@@ -15217,22 +15217,22 @@ class vhdlParser ( Parser ):
 
     def primary_unit(self):
 
-        localctx = vhdlParser.Primary_unitContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Primary_unitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 344, self.RULE_primary_unit)
         try:
             self.state = 1871
             token = self._input.LA(1)
-            if token in [vhdlParser.ENTITY]:
+            if token in [VhdlParser.ENTITY]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1868
                 self.entity_declaration()
 
-            elif token in [vhdlParser.CONFIGURATION]:
+            elif token in [VhdlParser.CONFIGURATION]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1869
                 self.configuration_declaration()
 
-            elif token in [vhdlParser.PACKAGE]:
+            elif token in [VhdlParser.PACKAGE]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1870
                 self.package_declaration()
@@ -15255,55 +15255,55 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarationContext,0)
 
 
         def subprogram_body(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_bodyContext,0)
 
 
         def type_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Type_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_declarationContext,0)
 
 
         def subtype_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_declarationContext,0)
 
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def alias_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_declarationContext,0)
 
 
         def attribute_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_declarationContext,0)
 
 
         def attribute_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_specificationContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def group_template_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_template_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_template_declarationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_procedural_declarative_item
+            return VhdlParser.RULE_procedural_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcedural_declarative_item" ):
@@ -15324,7 +15324,7 @@ class vhdlParser ( Parser ):
 
     def procedural_declarative_item(self):
 
-        localctx = vhdlParser.Procedural_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Procedural_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 346, self.RULE_procedural_declarative_item)
         try:
             self.state = 1885
@@ -15418,13 +15418,13 @@ class vhdlParser ( Parser ):
 
         def procedural_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Procedural_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Procedural_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Procedural_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Procedural_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_procedural_declarative_part
+            return VhdlParser.RULE_procedural_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcedural_declarative_part" ):
@@ -15445,7 +15445,7 @@ class vhdlParser ( Parser ):
 
     def procedural_declarative_part(self):
 
-        localctx = vhdlParser.Procedural_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Procedural_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 348, self.RULE_procedural_declarative_part)
         self._la = 0 # Token type
         try:
@@ -15453,7 +15453,7 @@ class vhdlParser ( Parser ):
             self.state = 1890
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 1887
                 self.procedural_declarative_item()
                 self.state = 1892
@@ -15476,13 +15476,13 @@ class vhdlParser ( Parser ):
 
         def sequential_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Sequential_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Sequential_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Sequential_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Sequential_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_procedural_statement_part
+            return VhdlParser.RULE_procedural_statement_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcedural_statement_part" ):
@@ -15503,7 +15503,7 @@ class vhdlParser ( Parser ):
 
     def procedural_statement_part(self):
 
-        localctx = vhdlParser.Procedural_statement_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Procedural_statement_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 350, self.RULE_procedural_statement_part)
         self._la = 0 # Token type
         try:
@@ -15511,7 +15511,7 @@ class vhdlParser ( Parser ):
             self.state = 1896
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ASSERT) | (1 << vhdlParser.BREAK) | (1 << vhdlParser.CASE) | (1 << vhdlParser.EXIT) | (1 << vhdlParser.FOR) | (1 << vhdlParser.IF) | (1 << vhdlParser.LOOP) | (1 << vhdlParser.NEXT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (vhdlParser.REPORT - 79)) | (1 << (vhdlParser.RETURN - 79)) | (1 << (vhdlParser.WAIT - 79)) | (1 << (vhdlParser.WHILE - 79)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (vhdlParser.LPAREN - 79)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ASSERT) | (1 << VhdlParser.BREAK) | (1 << VhdlParser.CASE) | (1 << VhdlParser.EXIT) | (1 << VhdlParser.FOR) | (1 << VhdlParser.IF) | (1 << VhdlParser.LOOP) | (1 << VhdlParser.NEXT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (VhdlParser.REPORT - 79)) | (1 << (VhdlParser.RETURN - 79)) | (1 << (VhdlParser.WAIT - 79)) | (1 << (VhdlParser.WHILE - 79)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (VhdlParser.LPAREN - 79)))) != 0):
                 self.state = 1893
                 self.sequential_statement()
                 self.state = 1898
@@ -15533,21 +15533,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def selected_name(self):
-            return self.getTypedRuleContext(vhdlParser.Selected_nameContext,0)
+            return self.getTypedRuleContext(VhdlParser.Selected_nameContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def actual_parameter_part(self):
-            return self.getTypedRuleContext(vhdlParser.Actual_parameter_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Actual_parameter_partContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_procedure_call
+            return VhdlParser.RULE_procedure_call
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcedure_call" ):
@@ -15568,7 +15568,7 @@ class vhdlParser ( Parser ):
 
     def procedure_call(self):
 
-        localctx = vhdlParser.Procedure_callContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Procedure_callContext(self, self._ctx, self.state)
         self.enterRule(localctx, 352, self.RULE_procedure_call)
         self._la = 0 # Token type
         try:
@@ -15577,13 +15577,13 @@ class vhdlParser ( Parser ):
             self.selected_name()
             self.state = 1904
             _la = self._input.LA(1)
-            if _la==vhdlParser.LPAREN:
+            if _la==VhdlParser.LPAREN:
                 self.state = 1900
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 1901
                 self.actual_parameter_part()
                 self.state = 1902
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
 
 
         except RecognitionException as re:
@@ -15601,18 +15601,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def procedure_call(self):
-            return self.getTypedRuleContext(vhdlParser.Procedure_callContext,0)
+            return self.getTypedRuleContext(VhdlParser.Procedure_callContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_procedure_call_statement
+            return VhdlParser.RULE_procedure_call_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcedure_call_statement" ):
@@ -15633,7 +15633,7 @@ class vhdlParser ( Parser ):
 
     def procedure_call_statement(self):
 
-        localctx = vhdlParser.Procedure_call_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Procedure_call_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 354, self.RULE_procedure_call_statement)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -15647,7 +15647,7 @@ class vhdlParser ( Parser ):
             self.state = 1909
             self.procedure_call()
             self.state = 1910
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -15663,59 +15663,59 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarationContext,0)
 
 
         def subprogram_body(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_bodyContext,0)
 
 
         def type_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Type_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_declarationContext,0)
 
 
         def subtype_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_declarationContext,0)
 
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.File_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_declarationContext,0)
 
 
         def alias_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_declarationContext,0)
 
 
         def attribute_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_declarationContext,0)
 
 
         def attribute_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_specificationContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def group_template_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_template_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_template_declarationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_process_declarative_item
+            return VhdlParser.RULE_process_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcess_declarative_item" ):
@@ -15736,7 +15736,7 @@ class vhdlParser ( Parser ):
 
     def process_declarative_item(self):
 
-        localctx = vhdlParser.Process_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Process_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 356, self.RULE_process_declarative_item)
         try:
             self.state = 1925
@@ -15836,13 +15836,13 @@ class vhdlParser ( Parser ):
 
         def process_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Process_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Process_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Process_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Process_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_process_declarative_part
+            return VhdlParser.RULE_process_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcess_declarative_part" ):
@@ -15863,7 +15863,7 @@ class vhdlParser ( Parser ):
 
     def process_declarative_part(self):
 
-        localctx = vhdlParser.Process_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Process_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 358, self.RULE_process_declarative_part)
         self._la = 0 # Token type
         try:
@@ -15871,7 +15871,7 @@ class vhdlParser ( Parser ):
             self.state = 1930
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 1927
                 self.process_declarative_item()
                 self.state = 1932
@@ -15894,56 +15894,56 @@ class vhdlParser ( Parser ):
 
         def PROCESS(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.PROCESS)
+                return self.getTokens(VhdlParser.PROCESS)
             else:
-                return self.getToken(vhdlParser.PROCESS, i)
+                return self.getToken(VhdlParser.PROCESS, i)
 
         def process_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Process_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Process_declarative_partContext,0)
 
 
         def BEGIN(self):
-            return self.getToken(vhdlParser.BEGIN, 0)
+            return self.getToken(VhdlParser.BEGIN, 0)
 
         def process_statement_part(self):
-            return self.getTypedRuleContext(vhdlParser.Process_statement_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Process_statement_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def POSTPONED(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.POSTPONED)
+                return self.getTokens(VhdlParser.POSTPONED)
             else:
-                return self.getToken(vhdlParser.POSTPONED, i)
+                return self.getToken(VhdlParser.POSTPONED, i)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def sensitivity_list(self):
-            return self.getTypedRuleContext(vhdlParser.Sensitivity_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Sensitivity_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_process_statement
+            return VhdlParser.RULE_process_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcess_statement" ):
@@ -15964,71 +15964,71 @@ class vhdlParser ( Parser ):
 
     def process_statement(self):
 
-        localctx = vhdlParser.Process_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Process_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 360, self.RULE_process_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1934
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1933
                 self.label_colon()
 
 
             self.state = 1937
             _la = self._input.LA(1)
-            if _la==vhdlParser.POSTPONED:
+            if _la==VhdlParser.POSTPONED:
                 self.state = 1936
-                self.match(vhdlParser.POSTPONED)
+                self.match(VhdlParser.POSTPONED)
 
 
             self.state = 1939
-            self.match(vhdlParser.PROCESS)
+            self.match(VhdlParser.PROCESS)
             self.state = 1944
             _la = self._input.LA(1)
-            if _la==vhdlParser.LPAREN:
+            if _la==VhdlParser.LPAREN:
                 self.state = 1940
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 1941
                 self.sensitivity_list()
                 self.state = 1942
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
 
 
             self.state = 1947
             _la = self._input.LA(1)
-            if _la==vhdlParser.IS:
+            if _la==VhdlParser.IS:
                 self.state = 1946
-                self.match(vhdlParser.IS)
+                self.match(VhdlParser.IS)
 
 
             self.state = 1949
             self.process_declarative_part()
             self.state = 1950
-            self.match(vhdlParser.BEGIN)
+            self.match(VhdlParser.BEGIN)
             self.state = 1951
             self.process_statement_part()
             self.state = 1952
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 1954
             _la = self._input.LA(1)
-            if _la==vhdlParser.POSTPONED:
+            if _la==VhdlParser.POSTPONED:
                 self.state = 1953
-                self.match(vhdlParser.POSTPONED)
+                self.match(VhdlParser.POSTPONED)
 
 
             self.state = 1956
-            self.match(vhdlParser.PROCESS)
+            self.match(VhdlParser.PROCESS)
             self.state = 1958
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 1957
                 self.identifier()
 
 
             self.state = 1960
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -16045,13 +16045,13 @@ class vhdlParser ( Parser ):
 
         def sequential_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Sequential_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Sequential_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Sequential_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Sequential_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_process_statement_part
+            return VhdlParser.RULE_process_statement_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcess_statement_part" ):
@@ -16072,7 +16072,7 @@ class vhdlParser ( Parser ):
 
     def process_statement_part(self):
 
-        localctx = vhdlParser.Process_statement_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Process_statement_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 362, self.RULE_process_statement_part)
         self._la = 0 # Token type
         try:
@@ -16080,7 +16080,7 @@ class vhdlParser ( Parser ):
             self.state = 1965
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ASSERT) | (1 << vhdlParser.BREAK) | (1 << vhdlParser.CASE) | (1 << vhdlParser.EXIT) | (1 << vhdlParser.FOR) | (1 << vhdlParser.IF) | (1 << vhdlParser.LOOP) | (1 << vhdlParser.NEXT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (vhdlParser.REPORT - 79)) | (1 << (vhdlParser.RETURN - 79)) | (1 << (vhdlParser.WAIT - 79)) | (1 << (vhdlParser.WHILE - 79)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (vhdlParser.LPAREN - 79)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ASSERT) | (1 << VhdlParser.BREAK) | (1 << VhdlParser.CASE) | (1 << VhdlParser.EXIT) | (1 << VhdlParser.FOR) | (1 << VhdlParser.IF) | (1 << VhdlParser.LOOP) | (1 << VhdlParser.NEXT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (VhdlParser.REPORT - 79)) | (1 << (VhdlParser.RETURN - 79)) | (1 << (VhdlParser.WAIT - 79)) | (1 << (VhdlParser.WHILE - 79)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (VhdlParser.LPAREN - 79)))) != 0):
                 self.state = 1962
                 self.sequential_statement()
                 self.state = 1967
@@ -16102,28 +16102,28 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def APOSTROPHE(self):
-            return self.getToken(vhdlParser.APOSTROPHE, 0)
+            return self.getToken(VhdlParser.APOSTROPHE, 0)
 
         def aggregate(self):
-            return self.getTypedRuleContext(vhdlParser.AggregateContext,0)
+            return self.getTypedRuleContext(VhdlParser.AggregateContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_qualified_expression
+            return VhdlParser.RULE_qualified_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterQualified_expression" ):
@@ -16144,14 +16144,14 @@ class vhdlParser ( Parser ):
 
     def qualified_expression(self):
 
-        localctx = vhdlParser.Qualified_expressionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Qualified_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 364, self.RULE_qualified_expression)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1968
             self.subtype_indication()
             self.state = 1969
-            self.match(vhdlParser.APOSTROPHE)
+            self.match(VhdlParser.APOSTROPHE)
             self.state = 1975
             la_ = self._interp.adaptivePredict(self._input,207,self._ctx)
             if la_ == 1:
@@ -16161,11 +16161,11 @@ class vhdlParser ( Parser ):
 
             elif la_ == 2:
                 self.state = 1971
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 1972
                 self.expression()
                 self.state = 1973
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
                 pass
 
 
@@ -16184,19 +16184,19 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def free_quantity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Free_quantity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Free_quantity_declarationContext,0)
 
 
         def branch_quantity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Branch_quantity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Branch_quantity_declarationContext,0)
 
 
         def source_quantity_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Source_quantity_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Source_quantity_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_quantity_declaration
+            return VhdlParser.RULE_quantity_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterQuantity_declaration" ):
@@ -16217,7 +16217,7 @@ class vhdlParser ( Parser ):
 
     def quantity_declaration(self):
 
-        localctx = vhdlParser.Quantity_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Quantity_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 366, self.RULE_quantity_declaration)
         try:
             self.state = 1980
@@ -16257,25 +16257,25 @@ class vhdlParser ( Parser ):
 
         def name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.NameContext)
+                return self.getTypedRuleContexts(VhdlParser.NameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.NameContext,i)
+                return self.getTypedRuleContext(VhdlParser.NameContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def OTHERS(self):
-            return self.getToken(vhdlParser.OTHERS, 0)
+            return self.getToken(VhdlParser.OTHERS, 0)
 
         def ALL(self):
-            return self.getToken(vhdlParser.ALL, 0)
+            return self.getToken(VhdlParser.ALL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_quantity_list
+            return VhdlParser.RULE_quantity_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterQuantity_list" ):
@@ -16296,22 +16296,22 @@ class vhdlParser ( Parser ):
 
     def quantity_list(self):
 
-        localctx = vhdlParser.Quantity_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Quantity_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 368, self.RULE_quantity_list)
         self._la = 0 # Token type
         try:
             self.state = 1992
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1982
                 self.name()
                 self.state = 1987
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==vhdlParser.COMMA:
+                while _la==VhdlParser.COMMA:
                     self.state = 1983
-                    self.match(vhdlParser.COMMA)
+                    self.match(VhdlParser.COMMA)
                     self.state = 1984
                     self.name()
                     self.state = 1989
@@ -16319,15 +16319,15 @@ class vhdlParser ( Parser ):
                     _la = self._input.LA(1)
 
 
-            elif token in [vhdlParser.OTHERS]:
+            elif token in [VhdlParser.OTHERS]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1990
-                self.match(vhdlParser.OTHERS)
+                self.match(VhdlParser.OTHERS)
 
-            elif token in [vhdlParser.ALL]:
+            elif token in [VhdlParser.ALL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1991
-                self.match(vhdlParser.ALL)
+                self.match(VhdlParser.ALL)
 
             else:
                 raise NoViableAltException(self)
@@ -16347,18 +16347,18 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def quantity_list(self):
-            return self.getTypedRuleContext(vhdlParser.Quantity_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Quantity_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_quantity_specification
+            return VhdlParser.RULE_quantity_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterQuantity_specification" ):
@@ -16379,14 +16379,14 @@ class vhdlParser ( Parser ):
 
     def quantity_specification(self):
 
-        localctx = vhdlParser.Quantity_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Quantity_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 370, self.RULE_quantity_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 1994
             self.quantity_list()
             self.state = 1995
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 1996
             self.name()
         except RecognitionException as re:
@@ -16404,15 +16404,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def explicit_range(self):
-            return self.getTypedRuleContext(vhdlParser.Explicit_rangeContext,0)
+            return self.getTypedRuleContext(VhdlParser.Explicit_rangeContext,0)
 
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_range_base
+            return VhdlParser.RULE_range_base
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRange_base" ):
@@ -16433,7 +16433,7 @@ class vhdlParser ( Parser ):
 
     def range_base(self):
 
-        localctx = vhdlParser.Range_baseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Range_baseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 372, self.RULE_range_base)
         try:
             self.state = 2000
@@ -16467,17 +16467,17 @@ class vhdlParser ( Parser ):
 
         def simple_expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Simple_expressionContext)
+                return self.getTypedRuleContexts(VhdlParser.Simple_expressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Simple_expressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.Simple_expressionContext,i)
 
 
         def direction(self):
-            return self.getTypedRuleContext(vhdlParser.DirectionContext,0)
+            return self.getTypedRuleContext(VhdlParser.DirectionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_explicit_range
+            return VhdlParser.RULE_explicit_range
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExplicit_range" ):
@@ -16498,7 +16498,7 @@ class vhdlParser ( Parser ):
 
     def explicit_range(self):
 
-        localctx = vhdlParser.Explicit_rangeContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Explicit_rangeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 374, self.RULE_explicit_range)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -16523,14 +16523,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def RANGE(self):
-            return self.getToken(vhdlParser.RANGE, 0)
+            return self.getToken(VhdlParser.RANGE, 0)
 
         def range_base(self):
-            return self.getTypedRuleContext(vhdlParser.Range_baseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Range_baseContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_range_constraint
+            return VhdlParser.RULE_range_constraint
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRange_constraint" ):
@@ -16551,12 +16551,12 @@ class vhdlParser ( Parser ):
 
     def range_constraint(self):
 
-        localctx = vhdlParser.Range_constraintContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Range_constraintContext(self, self._ctx, self.state)
         self.enterRule(localctx, 376, self.RULE_range_constraint)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2006
-            self.match(vhdlParser.RANGE)
+            self.match(VhdlParser.RANGE)
             self.state = 2007
             self.range_base()
         except RecognitionException as re:
@@ -16575,26 +16575,26 @@ class vhdlParser ( Parser ):
 
         def RECORD(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.RECORD)
+                return self.getTokens(VhdlParser.RECORD)
             else:
-                return self.getToken(vhdlParser.RECORD, i)
+                return self.getToken(VhdlParser.RECORD, i)
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def nature_element_declaration(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Nature_element_declarationContext)
+                return self.getTypedRuleContexts(VhdlParser.Nature_element_declarationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Nature_element_declarationContext,i)
+                return self.getTypedRuleContext(VhdlParser.Nature_element_declarationContext,i)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_record_nature_definition
+            return VhdlParser.RULE_record_nature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRecord_nature_definition" ):
@@ -16615,13 +16615,13 @@ class vhdlParser ( Parser ):
 
     def record_nature_definition(self):
 
-        localctx = vhdlParser.Record_nature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Record_nature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 378, self.RULE_record_nature_definition)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2009
-            self.match(vhdlParser.RECORD)
+            self.match(VhdlParser.RECORD)
             self.state = 2011 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
@@ -16631,16 +16631,16 @@ class vhdlParser ( Parser ):
                 self.state = 2013 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER):
+                if not (_la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER):
                     break
 
             self.state = 2015
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 2016
-            self.match(vhdlParser.RECORD)
+            self.match(VhdlParser.RECORD)
             self.state = 2018
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2017
                 self.identifier()
 
@@ -16661,26 +16661,26 @@ class vhdlParser ( Parser ):
 
         def RECORD(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.RECORD)
+                return self.getTokens(VhdlParser.RECORD)
             else:
-                return self.getToken(vhdlParser.RECORD, i)
+                return self.getToken(VhdlParser.RECORD, i)
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def element_declaration(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Element_declarationContext)
+                return self.getTypedRuleContexts(VhdlParser.Element_declarationContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Element_declarationContext,i)
+                return self.getTypedRuleContext(VhdlParser.Element_declarationContext,i)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_record_type_definition
+            return VhdlParser.RULE_record_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRecord_type_definition" ):
@@ -16701,13 +16701,13 @@ class vhdlParser ( Parser ):
 
     def record_type_definition(self):
 
-        localctx = vhdlParser.Record_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Record_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 380, self.RULE_record_type_definition)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2020
-            self.match(vhdlParser.RECORD)
+            self.match(VhdlParser.RECORD)
             self.state = 2022 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
@@ -16717,16 +16717,16 @@ class vhdlParser ( Parser ):
                 self.state = 2024 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER):
+                if not (_la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER):
                     break
 
             self.state = 2026
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 2027
-            self.match(vhdlParser.RECORD)
+            self.match(VhdlParser.RECORD)
             self.state = 2029
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2028
                 self.identifier()
 
@@ -16747,17 +16747,17 @@ class vhdlParser ( Parser ):
 
         def shift_expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Shift_expressionContext)
+                return self.getTypedRuleContexts(VhdlParser.Shift_expressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Shift_expressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.Shift_expressionContext,i)
 
 
         def relational_operator(self):
-            return self.getTypedRuleContext(vhdlParser.Relational_operatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.Relational_operatorContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_relation
+            return VhdlParser.RULE_relation
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRelation" ):
@@ -16778,7 +16778,7 @@ class vhdlParser ( Parser ):
 
     def relation(self):
 
-        localctx = vhdlParser.RelationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.RelationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 382, self.RULE_relation)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -16808,25 +16808,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def EQ(self):
-            return self.getToken(vhdlParser.EQ, 0)
+            return self.getToken(VhdlParser.EQ, 0)
 
         def NEQ(self):
-            return self.getToken(vhdlParser.NEQ, 0)
+            return self.getToken(VhdlParser.NEQ, 0)
 
         def LOWERTHAN(self):
-            return self.getToken(vhdlParser.LOWERTHAN, 0)
+            return self.getToken(VhdlParser.LOWERTHAN, 0)
 
         def LE(self):
-            return self.getToken(vhdlParser.LE, 0)
+            return self.getToken(VhdlParser.LE, 0)
 
         def GREATERTHAN(self):
-            return self.getToken(vhdlParser.GREATERTHAN, 0)
+            return self.getToken(VhdlParser.GREATERTHAN, 0)
 
         def GE(self):
-            return self.getToken(vhdlParser.GE, 0)
+            return self.getToken(VhdlParser.GE, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_relational_operator
+            return VhdlParser.RULE_relational_operator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRelational_operator" ):
@@ -16847,14 +16847,14 @@ class vhdlParser ( Parser ):
 
     def relational_operator(self):
 
-        localctx = vhdlParser.Relational_operatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Relational_operatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 384, self.RULE_relational_operator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2037
             _la = self._input.LA(1)
-            if not(((((_la - 131)) & ~0x3f) == 0 and ((1 << (_la - 131)) & ((1 << (vhdlParser.LE - 131)) | (1 << (vhdlParser.GE - 131)) | (1 << (vhdlParser.NEQ - 131)) | (1 << (vhdlParser.LOWERTHAN - 131)) | (1 << (vhdlParser.GREATERTHAN - 131)) | (1 << (vhdlParser.EQ - 131)))) != 0)):
+            if not(((((_la - 131)) & ~0x3f) == 0 and ((1 << (_la - 131)) & ((1 << (VhdlParser.LE - 131)) | (1 << (VhdlParser.GE - 131)) | (1 << (VhdlParser.NEQ - 131)) | (1 << (VhdlParser.LOWERTHAN - 131)) | (1 << (VhdlParser.GREATERTHAN - 131)) | (1 << (VhdlParser.EQ - 131)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -16873,27 +16873,27 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def REPORT(self):
-            return self.getToken(vhdlParser.REPORT, 0)
+            return self.getToken(VhdlParser.REPORT, 0)
 
         def expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ExpressionContext)
+                return self.getTypedRuleContexts(VhdlParser.ExpressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ExpressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.ExpressionContext,i)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def SEVERITY(self):
-            return self.getToken(vhdlParser.SEVERITY, 0)
+            return self.getToken(VhdlParser.SEVERITY, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_report_statement
+            return VhdlParser.RULE_report_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterReport_statement" ):
@@ -16914,33 +16914,33 @@ class vhdlParser ( Parser ):
 
     def report_statement(self):
 
-        localctx = vhdlParser.Report_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Report_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 386, self.RULE_report_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2040
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2039
                 self.label_colon()
 
 
             self.state = 2042
-            self.match(vhdlParser.REPORT)
+            self.match(VhdlParser.REPORT)
             self.state = 2043
             self.expression()
             self.state = 2046
             _la = self._input.LA(1)
-            if _la==vhdlParser.SEVERITY:
+            if _la==VhdlParser.SEVERITY:
                 self.state = 2044
-                self.match(vhdlParser.SEVERITY)
+                self.match(VhdlParser.SEVERITY)
                 self.state = 2045
                 self.expression()
 
 
             self.state = 2048
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -16956,21 +16956,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def RETURN(self):
-            return self.getToken(vhdlParser.RETURN, 0)
+            return self.getToken(VhdlParser.RETURN, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_return_statement
+            return VhdlParser.RULE_return_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterReturn_statement" ):
@@ -16991,29 +16991,29 @@ class vhdlParser ( Parser ):
 
     def return_statement(self):
 
-        localctx = vhdlParser.Return_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Return_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 388, self.RULE_return_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2051
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2050
                 self.label_colon()
 
 
             self.state = 2053
-            self.match(vhdlParser.RETURN)
+            self.match(VhdlParser.RETURN)
             self.state = 2055
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ABS) | (1 << vhdlParser.NEW) | (1 << vhdlParser.NOT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 112)) & ~0x3f) == 0 and ((1 << (_la - 112)) & ((1 << (vhdlParser.BASE_LITERAL - 112)) | (1 << (vhdlParser.BIT_STRING_LITERAL - 112)) | (1 << (vhdlParser.REAL_LITERAL - 112)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 112)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 112)) | (1 << (vhdlParser.CHARACTER_LITERAL - 112)) | (1 << (vhdlParser.STRING_LITERAL - 112)) | (1 << (vhdlParser.LPAREN - 112)) | (1 << (vhdlParser.PLUS - 112)) | (1 << (vhdlParser.MINUS - 112)) | (1 << (vhdlParser.INTEGER - 112)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ABS) | (1 << VhdlParser.NEW) | (1 << VhdlParser.NOT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 112)) & ~0x3f) == 0 and ((1 << (_la - 112)) & ((1 << (VhdlParser.BASE_LITERAL - 112)) | (1 << (VhdlParser.BIT_STRING_LITERAL - 112)) | (1 << (VhdlParser.REAL_LITERAL - 112)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 112)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 112)) | (1 << (VhdlParser.CHARACTER_LITERAL - 112)) | (1 << (VhdlParser.STRING_LITERAL - 112)) | (1 << (VhdlParser.LPAREN - 112)) | (1 << (VhdlParser.PLUS - 112)) | (1 << (VhdlParser.MINUS - 112)) | (1 << (VhdlParser.INTEGER - 112)))) != 0):
                 self.state = 2054
                 self.expression()
 
 
             self.state = 2057
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -17030,22 +17030,22 @@ class vhdlParser ( Parser ):
 
         def name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.NameContext)
+                return self.getTypedRuleContexts(VhdlParser.NameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.NameContext,i)
+                return self.getTypedRuleContext(VhdlParser.NameContext,i)
 
 
         def ACROSS(self):
-            return self.getToken(vhdlParser.ACROSS, 0)
+            return self.getToken(VhdlParser.ACROSS, 0)
 
         def THROUGH(self):
-            return self.getToken(vhdlParser.THROUGH, 0)
+            return self.getToken(VhdlParser.THROUGH, 0)
 
         def REFERENCE(self):
-            return self.getToken(vhdlParser.REFERENCE, 0)
+            return self.getToken(VhdlParser.REFERENCE, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_scalar_nature_definition
+            return VhdlParser.RULE_scalar_nature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterScalar_nature_definition" ):
@@ -17066,22 +17066,22 @@ class vhdlParser ( Parser ):
 
     def scalar_nature_definition(self):
 
-        localctx = vhdlParser.Scalar_nature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Scalar_nature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 390, self.RULE_scalar_nature_definition)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2059
             self.name()
             self.state = 2060
-            self.match(vhdlParser.ACROSS)
+            self.match(VhdlParser.ACROSS)
             self.state = 2061
             self.name()
             self.state = 2062
-            self.match(vhdlParser.THROUGH)
+            self.match(VhdlParser.THROUGH)
             self.state = 2063
             self.name()
             self.state = 2064
-            self.match(vhdlParser.REFERENCE)
+            self.match(VhdlParser.REFERENCE)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -17097,19 +17097,19 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def physical_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Physical_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Physical_type_definitionContext,0)
 
 
         def enumeration_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Enumeration_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Enumeration_type_definitionContext,0)
 
 
         def range_constraint(self):
-            return self.getTypedRuleContext(vhdlParser.Range_constraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.Range_constraintContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_scalar_type_definition
+            return VhdlParser.RULE_scalar_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterScalar_type_definition" ):
@@ -17130,7 +17130,7 @@ class vhdlParser ( Parser ):
 
     def scalar_type_definition(self):
 
-        localctx = vhdlParser.Scalar_type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Scalar_type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 392, self.RULE_scalar_type_definition)
         try:
             self.state = 2069
@@ -17169,15 +17169,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def architecture_body(self):
-            return self.getTypedRuleContext(vhdlParser.Architecture_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Architecture_bodyContext,0)
 
 
         def package_body(self):
-            return self.getTypedRuleContext(vhdlParser.Package_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Package_bodyContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_secondary_unit
+            return VhdlParser.RULE_secondary_unit
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSecondary_unit" ):
@@ -17198,17 +17198,17 @@ class vhdlParser ( Parser ):
 
     def secondary_unit(self):
 
-        localctx = vhdlParser.Secondary_unitContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Secondary_unitContext(self, self._ctx, self.state)
         self.enterRule(localctx, 394, self.RULE_secondary_unit)
         try:
             self.state = 2073
             token = self._input.LA(1)
-            if token in [vhdlParser.ARCHITECTURE]:
+            if token in [VhdlParser.ARCHITECTURE]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2071
                 self.architecture_body()
 
-            elif token in [vhdlParser.PACKAGE]:
+            elif token in [VhdlParser.PACKAGE]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2072
                 self.package_body()
@@ -17231,21 +17231,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def EQ(self):
-            return self.getToken(vhdlParser.EQ, 0)
+            return self.getToken(VhdlParser.EQ, 0)
 
         def physical_literal(self):
-            return self.getTypedRuleContext(vhdlParser.Physical_literalContext,0)
+            return self.getTypedRuleContext(VhdlParser.Physical_literalContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_secondary_unit_declaration
+            return VhdlParser.RULE_secondary_unit_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSecondary_unit_declaration" ):
@@ -17266,18 +17266,18 @@ class vhdlParser ( Parser ):
 
     def secondary_unit_declaration(self):
 
-        localctx = vhdlParser.Secondary_unit_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Secondary_unit_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 396, self.RULE_secondary_unit_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2075
             self.identifier()
             self.state = 2076
-            self.match(vhdlParser.EQ)
+            self.match(VhdlParser.EQ)
             self.state = 2077
             self.physical_literal()
             self.state = 2078
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -17293,35 +17293,35 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def WITH(self):
-            return self.getToken(vhdlParser.WITH, 0)
+            return self.getToken(VhdlParser.WITH, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def SELECT(self):
-            return self.getToken(vhdlParser.SELECT, 0)
+            return self.getToken(VhdlParser.SELECT, 0)
 
         def target(self):
-            return self.getTypedRuleContext(vhdlParser.TargetContext,0)
+            return self.getTypedRuleContext(VhdlParser.TargetContext,0)
 
 
         def LE(self):
-            return self.getToken(vhdlParser.LE, 0)
+            return self.getToken(VhdlParser.LE, 0)
 
         def opts(self):
-            return self.getTypedRuleContext(vhdlParser.OptsContext,0)
+            return self.getTypedRuleContext(VhdlParser.OptsContext,0)
 
 
         def selected_waveforms(self):
-            return self.getTypedRuleContext(vhdlParser.Selected_waveformsContext,0)
+            return self.getTypedRuleContext(VhdlParser.Selected_waveformsContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_selected_signal_assignment
+            return VhdlParser.RULE_selected_signal_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSelected_signal_assignment" ):
@@ -17342,26 +17342,26 @@ class vhdlParser ( Parser ):
 
     def selected_signal_assignment(self):
 
-        localctx = vhdlParser.Selected_signal_assignmentContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Selected_signal_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 398, self.RULE_selected_signal_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2080
-            self.match(vhdlParser.WITH)
+            self.match(VhdlParser.WITH)
             self.state = 2081
             self.expression()
             self.state = 2082
-            self.match(vhdlParser.SELECT)
+            self.match(VhdlParser.SELECT)
             self.state = 2083
             self.target()
             self.state = 2084
-            self.match(vhdlParser.LE)
+            self.match(VhdlParser.LE)
             self.state = 2085
             self.opts()
             self.state = 2086
             self.selected_waveforms()
             self.state = 2087
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -17378,32 +17378,32 @@ class vhdlParser ( Parser ):
 
         def waveform(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.WaveformContext)
+                return self.getTypedRuleContexts(VhdlParser.WaveformContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.WaveformContext,i)
+                return self.getTypedRuleContext(VhdlParser.WaveformContext,i)
 
 
         def WHEN(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.WHEN)
+                return self.getTokens(VhdlParser.WHEN)
             else:
-                return self.getToken(vhdlParser.WHEN, i)
+                return self.getToken(VhdlParser.WHEN, i)
 
         def choices(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ChoicesContext)
+                return self.getTypedRuleContexts(VhdlParser.ChoicesContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ChoicesContext,i)
+                return self.getTypedRuleContext(VhdlParser.ChoicesContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_selected_waveforms
+            return VhdlParser.RULE_selected_waveforms
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSelected_waveforms" ):
@@ -17424,7 +17424,7 @@ class vhdlParser ( Parser ):
 
     def selected_waveforms(self):
 
-        localctx = vhdlParser.Selected_waveformsContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Selected_waveformsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 400, self.RULE_selected_waveforms)
         self._la = 0 # Token type
         try:
@@ -17432,19 +17432,19 @@ class vhdlParser ( Parser ):
             self.state = 2089
             self.waveform()
             self.state = 2090
-            self.match(vhdlParser.WHEN)
+            self.match(VhdlParser.WHEN)
             self.state = 2091
             self.choices()
             self.state = 2099
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 2092
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 2093
                 self.waveform()
                 self.state = 2094
-                self.match(vhdlParser.WHEN)
+                self.match(VhdlParser.WHEN)
                 self.state = 2095
                 self.choices()
                 self.state = 2101
@@ -17466,14 +17466,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ON(self):
-            return self.getToken(vhdlParser.ON, 0)
+            return self.getToken(VhdlParser.ON, 0)
 
         def sensitivity_list(self):
-            return self.getTypedRuleContext(vhdlParser.Sensitivity_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Sensitivity_listContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_sensitivity_clause
+            return VhdlParser.RULE_sensitivity_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSensitivity_clause" ):
@@ -17494,12 +17494,12 @@ class vhdlParser ( Parser ):
 
     def sensitivity_clause(self):
 
-        localctx = vhdlParser.Sensitivity_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Sensitivity_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 402, self.RULE_sensitivity_clause)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2102
-            self.match(vhdlParser.ON)
+            self.match(VhdlParser.ON)
             self.state = 2103
             self.sensitivity_list()
         except RecognitionException as re:
@@ -17518,19 +17518,19 @@ class vhdlParser ( Parser ):
 
         def name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.NameContext)
+                return self.getTypedRuleContexts(VhdlParser.NameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.NameContext,i)
+                return self.getTypedRuleContext(VhdlParser.NameContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_sensitivity_list
+            return VhdlParser.RULE_sensitivity_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSensitivity_list" ):
@@ -17551,7 +17551,7 @@ class vhdlParser ( Parser ):
 
     def sensitivity_list(self):
 
-        localctx = vhdlParser.Sensitivity_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Sensitivity_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 404, self.RULE_sensitivity_list)
         self._la = 0 # Token type
         try:
@@ -17561,9 +17561,9 @@ class vhdlParser ( Parser ):
             self.state = 2110
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 2106
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 2107
                 self.name()
                 self.state = 2112
@@ -17586,13 +17586,13 @@ class vhdlParser ( Parser ):
 
         def sequential_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Sequential_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Sequential_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Sequential_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Sequential_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_sequence_of_statements
+            return VhdlParser.RULE_sequence_of_statements
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSequence_of_statements" ):
@@ -17613,7 +17613,7 @@ class vhdlParser ( Parser ):
 
     def sequence_of_statements(self):
 
-        localctx = vhdlParser.Sequence_of_statementsContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Sequence_of_statementsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 406, self.RULE_sequence_of_statements)
         self._la = 0 # Token type
         try:
@@ -17621,7 +17621,7 @@ class vhdlParser ( Parser ):
             self.state = 2116
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ASSERT) | (1 << vhdlParser.BREAK) | (1 << vhdlParser.CASE) | (1 << vhdlParser.EXIT) | (1 << vhdlParser.FOR) | (1 << vhdlParser.IF) | (1 << vhdlParser.LOOP) | (1 << vhdlParser.NEXT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (vhdlParser.REPORT - 79)) | (1 << (vhdlParser.RETURN - 79)) | (1 << (vhdlParser.WAIT - 79)) | (1 << (vhdlParser.WHILE - 79)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (vhdlParser.LPAREN - 79)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ASSERT) | (1 << VhdlParser.BREAK) | (1 << VhdlParser.CASE) | (1 << VhdlParser.EXIT) | (1 << VhdlParser.FOR) | (1 << VhdlParser.IF) | (1 << VhdlParser.LOOP) | (1 << VhdlParser.NEXT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (VhdlParser.REPORT - 79)) | (1 << (VhdlParser.RETURN - 79)) | (1 << (VhdlParser.WAIT - 79)) | (1 << (VhdlParser.WHILE - 79)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (VhdlParser.LPAREN - 79)))) != 0):
                 self.state = 2113
                 self.sequential_statement()
                 self.state = 2118
@@ -17643,69 +17643,69 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def wait_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Wait_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Wait_statementContext,0)
 
 
         def assertion_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Assertion_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Assertion_statementContext,0)
 
 
         def report_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Report_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Report_statementContext,0)
 
 
         def signal_assignment_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_assignment_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_assignment_statementContext,0)
 
 
         def variable_assignment_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_assignment_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_assignment_statementContext,0)
 
 
         def if_statement(self):
-            return self.getTypedRuleContext(vhdlParser.If_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.If_statementContext,0)
 
 
         def case_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Case_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Case_statementContext,0)
 
 
         def loop_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Loop_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Loop_statementContext,0)
 
 
         def next_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Next_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Next_statementContext,0)
 
 
         def exit_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Exit_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Exit_statementContext,0)
 
 
         def return_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Return_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Return_statementContext,0)
 
 
         def NULL(self):
-            return self.getToken(vhdlParser.NULL, 0)
+            return self.getToken(VhdlParser.NULL, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def break_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Break_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Break_statementContext,0)
 
 
         def procedure_call_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Procedure_call_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Procedure_call_statementContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_sequential_statement
+            return VhdlParser.RULE_sequential_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSequential_statement" ):
@@ -17726,7 +17726,7 @@ class vhdlParser ( Parser ):
 
     def sequential_statement(self):
 
-        localctx = vhdlParser.Sequential_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Sequential_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 408, self.RULE_sequential_statement)
         self._la = 0 # Token type
         try:
@@ -17802,15 +17802,15 @@ class vhdlParser ( Parser ):
                 self.enterOuterAlt(localctx, 12)
                 self.state = 2131
                 _la = self._input.LA(1)
-                if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+                if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                     self.state = 2130
                     self.label_colon()
 
 
                 self.state = 2133
-                self.match(vhdlParser.NULL)
+                self.match(VhdlParser.NULL)
                 self.state = 2134
-                self.match(vhdlParser.SEMI)
+                self.match(VhdlParser.SEMI)
                 pass
 
             elif la_ == 13:
@@ -17842,17 +17842,17 @@ class vhdlParser ( Parser ):
 
         def simple_expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Simple_expressionContext)
+                return self.getTypedRuleContexts(VhdlParser.Simple_expressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Simple_expressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.Simple_expressionContext,i)
 
 
         def shift_operator(self):
-            return self.getTypedRuleContext(vhdlParser.Shift_operatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.Shift_operatorContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_shift_expression
+            return VhdlParser.RULE_shift_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterShift_expression" ):
@@ -17873,7 +17873,7 @@ class vhdlParser ( Parser ):
 
     def shift_expression(self):
 
-        localctx = vhdlParser.Shift_expressionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Shift_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 410, self.RULE_shift_expression)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -17903,25 +17903,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def SLL(self):
-            return self.getToken(vhdlParser.SLL, 0)
+            return self.getToken(VhdlParser.SLL, 0)
 
         def SRL(self):
-            return self.getToken(vhdlParser.SRL, 0)
+            return self.getToken(VhdlParser.SRL, 0)
 
         def SLA(self):
-            return self.getToken(vhdlParser.SLA, 0)
+            return self.getToken(VhdlParser.SLA, 0)
 
         def SRA(self):
-            return self.getToken(vhdlParser.SRA, 0)
+            return self.getToken(VhdlParser.SRA, 0)
 
         def ROL(self):
-            return self.getToken(vhdlParser.ROL, 0)
+            return self.getToken(VhdlParser.ROL, 0)
 
         def ROR(self):
-            return self.getToken(vhdlParser.ROR, 0)
+            return self.getToken(VhdlParser.ROR, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_shift_operator
+            return VhdlParser.RULE_shift_operator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterShift_operator" ):
@@ -17942,14 +17942,14 @@ class vhdlParser ( Parser ):
 
     def shift_operator(self):
 
-        localctx = vhdlParser.Shift_operatorContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Shift_operatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 412, self.RULE_shift_operator)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2145
             _la = self._input.LA(1)
-            if not(((((_la - 81)) & ~0x3f) == 0 and ((1 << (_la - 81)) & ((1 << (vhdlParser.ROL - 81)) | (1 << (vhdlParser.ROR - 81)) | (1 << (vhdlParser.SLA - 81)) | (1 << (vhdlParser.SLL - 81)) | (1 << (vhdlParser.SRA - 81)) | (1 << (vhdlParser.SRL - 81)))) != 0)):
+            if not(((((_la - 81)) & ~0x3f) == 0 and ((1 << (_la - 81)) & ((1 << (VhdlParser.ROL - 81)) | (1 << (VhdlParser.ROR - 81)) | (1 << (VhdlParser.SLA - 81)) | (1 << (VhdlParser.SLL - 81)) | (1 << (VhdlParser.SRA - 81)) | (1 << (VhdlParser.SRL - 81)))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -17968,29 +17968,29 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def target(self):
-            return self.getTypedRuleContext(vhdlParser.TargetContext,0)
+            return self.getTypedRuleContext(VhdlParser.TargetContext,0)
 
 
         def LE(self):
-            return self.getToken(vhdlParser.LE, 0)
+            return self.getToken(VhdlParser.LE, 0)
 
         def waveform(self):
-            return self.getTypedRuleContext(vhdlParser.WaveformContext,0)
+            return self.getTypedRuleContext(VhdlParser.WaveformContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def delay_mechanism(self):
-            return self.getTypedRuleContext(vhdlParser.Delay_mechanismContext,0)
+            return self.getTypedRuleContext(VhdlParser.Delay_mechanismContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_signal_assignment_statement
+            return VhdlParser.RULE_signal_assignment_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSignal_assignment_statement" ):
@@ -18011,7 +18011,7 @@ class vhdlParser ( Parser ):
 
     def signal_assignment_statement(self):
 
-        localctx = vhdlParser.Signal_assignment_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Signal_assignment_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 414, self.RULE_signal_assignment_statement)
         self._la = 0 # Token type
         try:
@@ -18026,10 +18026,10 @@ class vhdlParser ( Parser ):
             self.state = 2150
             self.target()
             self.state = 2151
-            self.match(vhdlParser.LE)
+            self.match(VhdlParser.LE)
             self.state = 2153
             _la = self._input.LA(1)
-            if ((((_la - 39)) & ~0x3f) == 0 and ((1 << (_la - 39)) & ((1 << (vhdlParser.INERTIAL - 39)) | (1 << (vhdlParser.REJECT - 39)) | (1 << (vhdlParser.TRANSPORT - 39)))) != 0):
+            if ((((_la - 39)) & ~0x3f) == 0 and ((1 << (_la - 39)) & ((1 << (VhdlParser.INERTIAL - 39)) | (1 << (VhdlParser.REJECT - 39)) | (1 << (VhdlParser.TRANSPORT - 39)))) != 0):
                 self.state = 2152
                 self.delay_mechanism()
 
@@ -18037,7 +18037,7 @@ class vhdlParser ( Parser ):
             self.state = 2155
             self.waveform()
             self.state = 2156
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -18053,35 +18053,35 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def SIGNAL(self):
-            return self.getToken(vhdlParser.SIGNAL, 0)
+            return self.getToken(VhdlParser.SIGNAL, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def signal_kind(self):
-            return self.getTypedRuleContext(vhdlParser.Signal_kindContext,0)
+            return self.getTypedRuleContext(VhdlParser.Signal_kindContext,0)
 
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_signal_declaration
+            return VhdlParser.RULE_signal_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSignal_declaration" ):
@@ -18102,37 +18102,37 @@ class vhdlParser ( Parser ):
 
     def signal_declaration(self):
 
-        localctx = vhdlParser.Signal_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Signal_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 416, self.RULE_signal_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2158
-            self.match(vhdlParser.SIGNAL)
+            self.match(VhdlParser.SIGNAL)
             self.state = 2159
             self.identifier_list()
             self.state = 2160
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 2161
             self.subtype_indication()
             self.state = 2163
             _la = self._input.LA(1)
-            if _la==vhdlParser.BUS or _la==vhdlParser.REGISTER:
+            if _la==VhdlParser.BUS or _la==VhdlParser.REGISTER:
                 self.state = 2162
                 self.signal_kind()
 
 
             self.state = 2167
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 2165
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 2166
                 self.expression()
 
 
             self.state = 2169
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -18148,13 +18148,13 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def REGISTER(self):
-            return self.getToken(vhdlParser.REGISTER, 0)
+            return self.getToken(VhdlParser.REGISTER, 0)
 
         def BUS(self):
-            return self.getToken(vhdlParser.BUS, 0)
+            return self.getToken(VhdlParser.BUS, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_signal_kind
+            return VhdlParser.RULE_signal_kind
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSignal_kind" ):
@@ -18175,14 +18175,14 @@ class vhdlParser ( Parser ):
 
     def signal_kind(self):
 
-        localctx = vhdlParser.Signal_kindContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Signal_kindContext(self, self._ctx, self.state)
         self.enterRule(localctx, 418, self.RULE_signal_kind)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2171
             _la = self._input.LA(1)
-            if not(_la==vhdlParser.BUS or _la==vhdlParser.REGISTER):
+            if not(_la==VhdlParser.BUS or _la==VhdlParser.REGISTER):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -18202,25 +18202,25 @@ class vhdlParser ( Parser ):
 
         def name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.NameContext)
+                return self.getTypedRuleContexts(VhdlParser.NameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.NameContext,i)
+                return self.getTypedRuleContext(VhdlParser.NameContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def OTHERS(self):
-            return self.getToken(vhdlParser.OTHERS, 0)
+            return self.getToken(VhdlParser.OTHERS, 0)
 
         def ALL(self):
-            return self.getToken(vhdlParser.ALL, 0)
+            return self.getToken(VhdlParser.ALL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_signal_list
+            return VhdlParser.RULE_signal_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSignal_list" ):
@@ -18241,22 +18241,22 @@ class vhdlParser ( Parser ):
 
     def signal_list(self):
 
-        localctx = vhdlParser.Signal_listContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Signal_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 420, self.RULE_signal_list)
         self._la = 0 # Token type
         try:
             self.state = 2183
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2173
                 self.name()
                 self.state = 2178
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==vhdlParser.COMMA:
+                while _la==VhdlParser.COMMA:
                     self.state = 2174
-                    self.match(vhdlParser.COMMA)
+                    self.match(VhdlParser.COMMA)
                     self.state = 2175
                     self.name()
                     self.state = 2180
@@ -18264,15 +18264,15 @@ class vhdlParser ( Parser ):
                     _la = self._input.LA(1)
 
 
-            elif token in [vhdlParser.OTHERS]:
+            elif token in [VhdlParser.OTHERS]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2181
-                self.match(vhdlParser.OTHERS)
+                self.match(VhdlParser.OTHERS)
 
-            elif token in [vhdlParser.ALL]:
+            elif token in [VhdlParser.ALL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 2182
-                self.match(vhdlParser.ALL)
+                self.match(VhdlParser.ALL)
 
             else:
                 raise NoViableAltException(self)
@@ -18292,29 +18292,29 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LBRACKET(self):
-            return self.getToken(vhdlParser.LBRACKET, 0)
+            return self.getToken(VhdlParser.LBRACKET, 0)
 
         def RBRACKET(self):
-            return self.getToken(vhdlParser.RBRACKET, 0)
+            return self.getToken(VhdlParser.RBRACKET, 0)
 
         def name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.NameContext)
+                return self.getTypedRuleContexts(VhdlParser.NameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.NameContext,i)
+                return self.getTypedRuleContext(VhdlParser.NameContext,i)
 
 
         def RETURN(self):
-            return self.getToken(vhdlParser.RETURN, 0)
+            return self.getToken(VhdlParser.RETURN, 0)
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_signature
+            return VhdlParser.RULE_signature
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSignature" ):
@@ -18335,24 +18335,24 @@ class vhdlParser ( Parser ):
 
     def signature(self):
 
-        localctx = vhdlParser.SignatureContext(self, self._ctx, self.state)
+        localctx = VhdlParser.SignatureContext(self, self._ctx, self.state)
         self.enterRule(localctx, 422, self.RULE_signature)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2185
-            self.match(vhdlParser.LBRACKET)
+            self.match(VhdlParser.LBRACKET)
             self.state = 2194
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2186
                 self.name()
                 self.state = 2191
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==vhdlParser.COMMA:
+                while _la==VhdlParser.COMMA:
                     self.state = 2187
-                    self.match(vhdlParser.COMMA)
+                    self.match(VhdlParser.COMMA)
                     self.state = 2188
                     self.name()
                     self.state = 2193
@@ -18363,15 +18363,15 @@ class vhdlParser ( Parser ):
 
             self.state = 2198
             _la = self._input.LA(1)
-            if _la==vhdlParser.RETURN:
+            if _la==VhdlParser.RETURN:
                 self.state = 2196
-                self.match(vhdlParser.RETURN)
+                self.match(VhdlParser.RETURN)
                 self.state = 2197
                 self.name()
 
 
             self.state = 2200
-            self.match(vhdlParser.RBRACKET)
+            self.match(VhdlParser.RBRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -18388,26 +18388,26 @@ class vhdlParser ( Parser ):
 
         def term(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.TermContext)
+                return self.getTypedRuleContexts(VhdlParser.TermContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.TermContext,i)
+                return self.getTypedRuleContext(VhdlParser.TermContext,i)
 
 
         def adding_operator(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Adding_operatorContext)
+                return self.getTypedRuleContexts(VhdlParser.Adding_operatorContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Adding_operatorContext,i)
+                return self.getTypedRuleContext(VhdlParser.Adding_operatorContext,i)
 
 
         def PLUS(self):
-            return self.getToken(vhdlParser.PLUS, 0)
+            return self.getToken(VhdlParser.PLUS, 0)
 
         def MINUS(self):
-            return self.getToken(vhdlParser.MINUS, 0)
+            return self.getToken(VhdlParser.MINUS, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simple_expression
+            return VhdlParser.RULE_simple_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimple_expression" ):
@@ -18428,17 +18428,17 @@ class vhdlParser ( Parser ):
 
     def simple_expression(self):
 
-        localctx = vhdlParser.Simple_expressionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simple_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 424, self.RULE_simple_expression)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2203
             _la = self._input.LA(1)
-            if _la==vhdlParser.PLUS or _la==vhdlParser.MINUS:
+            if _la==VhdlParser.PLUS or _la==VhdlParser.MINUS:
                 self.state = 2202
                 _la = self._input.LA(1)
-                if not(_la==vhdlParser.PLUS or _la==vhdlParser.MINUS):
+                if not(_la==VhdlParser.PLUS or _la==VhdlParser.MINUS):
                     self._errHandler.recoverInline(self)
                 else:
                     self.consume()
@@ -18475,27 +18475,27 @@ class vhdlParser ( Parser ):
 
         def simple_expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Simple_expressionContext)
+                return self.getTypedRuleContexts(VhdlParser.Simple_expressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Simple_expressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.Simple_expressionContext,i)
 
 
         def ASSIGN(self):
-            return self.getToken(vhdlParser.ASSIGN, 0)
+            return self.getToken(VhdlParser.ASSIGN, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def tolerance_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Tolerance_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Tolerance_aspectContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simple_simultaneous_statement
+            return VhdlParser.RULE_simple_simultaneous_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimple_simultaneous_statement" ):
@@ -18516,7 +18516,7 @@ class vhdlParser ( Parser ):
 
     def simple_simultaneous_statement(self):
 
-        localctx = vhdlParser.Simple_simultaneous_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simple_simultaneous_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 426, self.RULE_simple_simultaneous_statement)
         self._la = 0 # Token type
         try:
@@ -18531,18 +18531,18 @@ class vhdlParser ( Parser ):
             self.state = 2217
             self.simple_expression()
             self.state = 2218
-            self.match(vhdlParser.ASSIGN)
+            self.match(VhdlParser.ASSIGN)
             self.state = 2219
             self.simple_expression()
             self.state = 2221
             _la = self._input.LA(1)
-            if _la==vhdlParser.TOLERANCE:
+            if _la==VhdlParser.TOLERANCE:
                 self.state = 2220
                 self.tolerance_aspect()
 
 
             self.state = 2223
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -18558,21 +18558,21 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def WHEN(self):
-            return self.getToken(vhdlParser.WHEN, 0)
+            return self.getToken(VhdlParser.WHEN, 0)
 
         def choices(self):
-            return self.getTypedRuleContext(vhdlParser.ChoicesContext,0)
+            return self.getTypedRuleContext(VhdlParser.ChoicesContext,0)
 
 
         def ARROW(self):
-            return self.getToken(vhdlParser.ARROW, 0)
+            return self.getToken(VhdlParser.ARROW, 0)
 
         def simultaneous_statement_part(self):
-            return self.getTypedRuleContext(vhdlParser.Simultaneous_statement_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Simultaneous_statement_partContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simultaneous_alternative
+            return VhdlParser.RULE_simultaneous_alternative
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimultaneous_alternative" ):
@@ -18593,16 +18593,16 @@ class vhdlParser ( Parser ):
 
     def simultaneous_alternative(self):
 
-        localctx = vhdlParser.Simultaneous_alternativeContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simultaneous_alternativeContext(self, self._ctx, self.state)
         self.enterRule(localctx, 428, self.RULE_simultaneous_alternative)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2225
-            self.match(vhdlParser.WHEN)
+            self.match(VhdlParser.WHEN)
             self.state = 2226
             self.choices()
             self.state = 2227
-            self.match(vhdlParser.ARROW)
+            self.match(VhdlParser.ARROW)
             self.state = 2228
             self.simultaneous_statement_part()
         except RecognitionException as re:
@@ -18621,40 +18621,40 @@ class vhdlParser ( Parser ):
 
         def CASE(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.CASE)
+                return self.getTokens(VhdlParser.CASE)
             else:
-                return self.getToken(vhdlParser.CASE, i)
+                return self.getToken(VhdlParser.CASE, i)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def USE(self):
-            return self.getToken(vhdlParser.USE, 0)
+            return self.getToken(VhdlParser.USE, 0)
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def simultaneous_alternative(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Simultaneous_alternativeContext)
+                return self.getTypedRuleContexts(VhdlParser.Simultaneous_alternativeContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Simultaneous_alternativeContext,i)
+                return self.getTypedRuleContext(VhdlParser.Simultaneous_alternativeContext,i)
 
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simultaneous_case_statement
+            return VhdlParser.RULE_simultaneous_case_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimultaneous_case_statement" ):
@@ -18675,24 +18675,24 @@ class vhdlParser ( Parser ):
 
     def simultaneous_case_statement(self):
 
-        localctx = vhdlParser.Simultaneous_case_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simultaneous_case_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 430, self.RULE_simultaneous_case_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2231
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2230
                 self.label_colon()
 
 
             self.state = 2233
-            self.match(vhdlParser.CASE)
+            self.match(VhdlParser.CASE)
             self.state = 2234
             self.expression()
             self.state = 2235
-            self.match(vhdlParser.USE)
+            self.match(VhdlParser.USE)
             self.state = 2237 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
@@ -18702,22 +18702,22 @@ class vhdlParser ( Parser ):
                 self.state = 2239 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==vhdlParser.WHEN):
+                if not (_la==VhdlParser.WHEN):
                     break
 
             self.state = 2241
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 2242
-            self.match(vhdlParser.CASE)
+            self.match(VhdlParser.CASE)
             self.state = 2244
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2243
                 self.identifier()
 
 
             self.state = 2246
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -18733,53 +18733,53 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def IF(self):
-            return self.getToken(vhdlParser.IF, 0)
+            return self.getToken(VhdlParser.IF, 0)
 
         def condition(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ConditionContext)
+                return self.getTypedRuleContexts(VhdlParser.ConditionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ConditionContext,i)
+                return self.getTypedRuleContext(VhdlParser.ConditionContext,i)
 
 
         def USE(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.USE)
+                return self.getTokens(VhdlParser.USE)
             else:
-                return self.getToken(vhdlParser.USE, i)
+                return self.getToken(VhdlParser.USE, i)
 
         def simultaneous_statement_part(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Simultaneous_statement_partContext)
+                return self.getTypedRuleContexts(VhdlParser.Simultaneous_statement_partContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Simultaneous_statement_partContext,i)
+                return self.getTypedRuleContext(VhdlParser.Simultaneous_statement_partContext,i)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def ELSIF(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.ELSIF)
+                return self.getTokens(VhdlParser.ELSIF)
             else:
-                return self.getToken(vhdlParser.ELSIF, i)
+                return self.getToken(VhdlParser.ELSIF, i)
 
         def ELSE(self):
-            return self.getToken(vhdlParser.ELSE, 0)
+            return self.getToken(VhdlParser.ELSE, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simultaneous_if_statement
+            return VhdlParser.RULE_simultaneous_if_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimultaneous_if_statement" ):
@@ -18800,36 +18800,36 @@ class vhdlParser ( Parser ):
 
     def simultaneous_if_statement(self):
 
-        localctx = vhdlParser.Simultaneous_if_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simultaneous_if_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 432, self.RULE_simultaneous_if_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2249
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2248
                 self.label_colon()
 
 
             self.state = 2251
-            self.match(vhdlParser.IF)
+            self.match(VhdlParser.IF)
             self.state = 2252
             self.condition()
             self.state = 2253
-            self.match(vhdlParser.USE)
+            self.match(VhdlParser.USE)
             self.state = 2254
             self.simultaneous_statement_part()
             self.state = 2262
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.ELSIF:
+            while _la==VhdlParser.ELSIF:
                 self.state = 2255
-                self.match(vhdlParser.ELSIF)
+                self.match(VhdlParser.ELSIF)
                 self.state = 2256
                 self.condition()
                 self.state = 2257
-                self.match(vhdlParser.USE)
+                self.match(VhdlParser.USE)
                 self.state = 2258
                 self.simultaneous_statement_part()
                 self.state = 2264
@@ -18838,26 +18838,26 @@ class vhdlParser ( Parser ):
 
             self.state = 2267
             _la = self._input.LA(1)
-            if _la==vhdlParser.ELSE:
+            if _la==VhdlParser.ELSE:
                 self.state = 2265
-                self.match(vhdlParser.ELSE)
+                self.match(VhdlParser.ELSE)
                 self.state = 2266
                 self.simultaneous_statement_part()
 
 
             self.state = 2269
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 2270
-            self.match(vhdlParser.USE)
+            self.match(VhdlParser.USE)
             self.state = 2272
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2271
                 self.identifier()
 
 
             self.state = 2274
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -18874,40 +18874,40 @@ class vhdlParser ( Parser ):
 
         def PROCEDURAL(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.PROCEDURAL)
+                return self.getTokens(VhdlParser.PROCEDURAL)
             else:
-                return self.getToken(vhdlParser.PROCEDURAL, i)
+                return self.getToken(VhdlParser.PROCEDURAL, i)
 
         def procedural_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Procedural_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Procedural_declarative_partContext,0)
 
 
         def BEGIN(self):
-            return self.getToken(vhdlParser.BEGIN, 0)
+            return self.getToken(VhdlParser.BEGIN, 0)
 
         def procedural_statement_part(self):
-            return self.getTypedRuleContext(vhdlParser.Procedural_statement_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Procedural_statement_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simultaneous_procedural_statement
+            return VhdlParser.RULE_simultaneous_procedural_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimultaneous_procedural_statement" ):
@@ -18928,46 +18928,46 @@ class vhdlParser ( Parser ):
 
     def simultaneous_procedural_statement(self):
 
-        localctx = vhdlParser.Simultaneous_procedural_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simultaneous_procedural_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 434, self.RULE_simultaneous_procedural_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2277
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2276
                 self.label_colon()
 
 
             self.state = 2279
-            self.match(vhdlParser.PROCEDURAL)
+            self.match(VhdlParser.PROCEDURAL)
             self.state = 2281
             _la = self._input.LA(1)
-            if _la==vhdlParser.IS:
+            if _la==VhdlParser.IS:
                 self.state = 2280
-                self.match(vhdlParser.IS)
+                self.match(VhdlParser.IS)
 
 
             self.state = 2283
             self.procedural_declarative_part()
             self.state = 2284
-            self.match(vhdlParser.BEGIN)
+            self.match(VhdlParser.BEGIN)
             self.state = 2285
             self.procedural_statement_part()
             self.state = 2286
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 2287
-            self.match(vhdlParser.PROCEDURAL)
+            self.match(VhdlParser.PROCEDURAL)
             self.state = 2289
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2288
                 self.identifier()
 
 
             self.state = 2291
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -18983,33 +18983,33 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def simple_simultaneous_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Simple_simultaneous_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Simple_simultaneous_statementContext,0)
 
 
         def simultaneous_if_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Simultaneous_if_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Simultaneous_if_statementContext,0)
 
 
         def simultaneous_case_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Simultaneous_case_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Simultaneous_case_statementContext,0)
 
 
         def simultaneous_procedural_statement(self):
-            return self.getTypedRuleContext(vhdlParser.Simultaneous_procedural_statementContext,0)
+            return self.getTypedRuleContext(VhdlParser.Simultaneous_procedural_statementContext,0)
 
 
         def NULL(self):
-            return self.getToken(vhdlParser.NULL, 0)
+            return self.getToken(VhdlParser.NULL, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simultaneous_statement
+            return VhdlParser.RULE_simultaneous_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimultaneous_statement" ):
@@ -19030,7 +19030,7 @@ class vhdlParser ( Parser ):
 
     def simultaneous_statement(self):
 
-        localctx = vhdlParser.Simultaneous_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simultaneous_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 436, self.RULE_simultaneous_statement)
         self._la = 0 # Token type
         try:
@@ -19064,15 +19064,15 @@ class vhdlParser ( Parser ):
                 self.enterOuterAlt(localctx, 5)
                 self.state = 2298
                 _la = self._input.LA(1)
-                if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+                if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                     self.state = 2297
                     self.label_colon()
 
 
                 self.state = 2300
-                self.match(vhdlParser.NULL)
+                self.match(VhdlParser.NULL)
                 self.state = 2301
-                self.match(vhdlParser.SEMI)
+                self.match(VhdlParser.SEMI)
                 pass
 
 
@@ -19092,13 +19092,13 @@ class vhdlParser ( Parser ):
 
         def simultaneous_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Simultaneous_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Simultaneous_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Simultaneous_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Simultaneous_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_simultaneous_statement_part
+            return VhdlParser.RULE_simultaneous_statement_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSimultaneous_statement_part" ):
@@ -19119,7 +19119,7 @@ class vhdlParser ( Parser ):
 
     def simultaneous_statement_part(self):
 
-        localctx = vhdlParser.Simultaneous_statement_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Simultaneous_statement_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 438, self.RULE_simultaneous_statement_part)
         self._la = 0 # Token type
         try:
@@ -19127,7 +19127,7 @@ class vhdlParser ( Parser ):
             self.state = 2307
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ABS) | (1 << vhdlParser.CASE) | (1 << vhdlParser.IF) | (1 << vhdlParser.NEW) | (1 << vhdlParser.NOT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & ((1 << (vhdlParser.PROCEDURAL - 69)) | (1 << (vhdlParser.BASE_LITERAL - 69)) | (1 << (vhdlParser.BIT_STRING_LITERAL - 69)) | (1 << (vhdlParser.REAL_LITERAL - 69)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 69)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 69)) | (1 << (vhdlParser.CHARACTER_LITERAL - 69)) | (1 << (vhdlParser.STRING_LITERAL - 69)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (vhdlParser.LPAREN - 141)) | (1 << (vhdlParser.PLUS - 141)) | (1 << (vhdlParser.MINUS - 141)) | (1 << (vhdlParser.INTEGER - 141)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ABS) | (1 << VhdlParser.CASE) | (1 << VhdlParser.IF) | (1 << VhdlParser.NEW) | (1 << VhdlParser.NOT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 69)) & ~0x3f) == 0 and ((1 << (_la - 69)) & ((1 << (VhdlParser.PROCEDURAL - 69)) | (1 << (VhdlParser.BASE_LITERAL - 69)) | (1 << (VhdlParser.BIT_STRING_LITERAL - 69)) | (1 << (VhdlParser.REAL_LITERAL - 69)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 69)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 69)) | (1 << (VhdlParser.CHARACTER_LITERAL - 69)) | (1 << (VhdlParser.STRING_LITERAL - 69)))) != 0) or ((((_la - 141)) & ~0x3f) == 0 and ((1 << (_la - 141)) & ((1 << (VhdlParser.LPAREN - 141)) | (1 << (VhdlParser.PLUS - 141)) | (1 << (VhdlParser.MINUS - 141)) | (1 << (VhdlParser.INTEGER - 141)))) != 0):
                 self.state = 2304
                 self.simultaneous_statement()
                 self.state = 2309
@@ -19149,23 +19149,23 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def SPECTRUM(self):
-            return self.getToken(vhdlParser.SPECTRUM, 0)
+            return self.getToken(VhdlParser.SPECTRUM, 0)
 
         def simple_expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Simple_expressionContext)
+                return self.getTypedRuleContexts(VhdlParser.Simple_expressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Simple_expressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.Simple_expressionContext,i)
 
 
         def COMMA(self):
-            return self.getToken(vhdlParser.COMMA, 0)
+            return self.getToken(VhdlParser.COMMA, 0)
 
         def NOISE(self):
-            return self.getToken(vhdlParser.NOISE, 0)
+            return self.getToken(VhdlParser.NOISE, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_source_aspect
+            return VhdlParser.RULE_source_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSource_aspect" ):
@@ -19186,26 +19186,26 @@ class vhdlParser ( Parser ):
 
     def source_aspect(self):
 
-        localctx = vhdlParser.Source_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Source_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 440, self.RULE_source_aspect)
         try:
             self.state = 2317
             token = self._input.LA(1)
-            if token in [vhdlParser.SPECTRUM]:
+            if token in [VhdlParser.SPECTRUM]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2310
-                self.match(vhdlParser.SPECTRUM)
+                self.match(VhdlParser.SPECTRUM)
                 self.state = 2311
                 self.simple_expression()
                 self.state = 2312
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 2313
                 self.simple_expression()
 
-            elif token in [vhdlParser.NOISE]:
+            elif token in [VhdlParser.NOISE]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2315
-                self.match(vhdlParser.NOISE)
+                self.match(VhdlParser.NOISE)
                 self.state = 2316
                 self.simple_expression()
 
@@ -19227,28 +19227,28 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def QUANTITY(self):
-            return self.getToken(vhdlParser.QUANTITY, 0)
+            return self.getToken(VhdlParser.QUANTITY, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def source_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Source_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Source_aspectContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_source_quantity_declaration
+            return VhdlParser.RULE_source_quantity_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSource_quantity_declaration" ):
@@ -19269,22 +19269,22 @@ class vhdlParser ( Parser ):
 
     def source_quantity_declaration(self):
 
-        localctx = vhdlParser.Source_quantity_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Source_quantity_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 442, self.RULE_source_quantity_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2319
-            self.match(vhdlParser.QUANTITY)
+            self.match(VhdlParser.QUANTITY)
             self.state = 2320
             self.identifier_list()
             self.state = 2321
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 2322
             self.subtype_indication()
             self.state = 2323
             self.source_aspect()
             self.state = 2324
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -19300,24 +19300,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def LIMIT(self):
-            return self.getToken(vhdlParser.LIMIT, 0)
+            return self.getToken(VhdlParser.LIMIT, 0)
 
         def quantity_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Quantity_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Quantity_specificationContext,0)
 
 
         def WITH(self):
-            return self.getToken(vhdlParser.WITH, 0)
+            return self.getToken(VhdlParser.WITH, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_step_limit_specification
+            return VhdlParser.RULE_step_limit_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterStep_limit_specification" ):
@@ -19338,20 +19338,20 @@ class vhdlParser ( Parser ):
 
     def step_limit_specification(self):
 
-        localctx = vhdlParser.Step_limit_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Step_limit_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 444, self.RULE_step_limit_specification)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2326
-            self.match(vhdlParser.LIMIT)
+            self.match(VhdlParser.LIMIT)
             self.state = 2327
             self.quantity_specification()
             self.state = 2328
-            self.match(vhdlParser.WITH)
+            self.match(VhdlParser.WITH)
             self.state = 2329
             self.expression()
             self.state = 2330
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -19367,24 +19367,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def SUBNATURE(self):
-            return self.getToken(vhdlParser.SUBNATURE, 0)
+            return self.getToken(VhdlParser.SUBNATURE, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def subnature_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subnature_declaration
+            return VhdlParser.RULE_subnature_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubnature_declaration" ):
@@ -19405,20 +19405,20 @@ class vhdlParser ( Parser ):
 
     def subnature_declaration(self):
 
-        localctx = vhdlParser.Subnature_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subnature_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 446, self.RULE_subnature_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2332
-            self.match(vhdlParser.SUBNATURE)
+            self.match(VhdlParser.SUBNATURE)
             self.state = 2333
             self.identifier()
             self.state = 2334
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 2335
             self.subnature_indication()
             self.state = 2336
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -19434,31 +19434,31 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def index_constraint(self):
-            return self.getTypedRuleContext(vhdlParser.Index_constraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.Index_constraintContext,0)
 
 
         def TOLERANCE(self):
-            return self.getToken(vhdlParser.TOLERANCE, 0)
+            return self.getToken(VhdlParser.TOLERANCE, 0)
 
         def expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ExpressionContext)
+                return self.getTypedRuleContexts(VhdlParser.ExpressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ExpressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.ExpressionContext,i)
 
 
         def ACROSS(self):
-            return self.getToken(vhdlParser.ACROSS, 0)
+            return self.getToken(VhdlParser.ACROSS, 0)
 
         def THROUGH(self):
-            return self.getToken(vhdlParser.THROUGH, 0)
+            return self.getToken(VhdlParser.THROUGH, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subnature_indication
+            return VhdlParser.RULE_subnature_indication
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubnature_indication" ):
@@ -19479,7 +19479,7 @@ class vhdlParser ( Parser ):
 
     def subnature_indication(self):
 
-        localctx = vhdlParser.Subnature_indicationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subnature_indicationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 448, self.RULE_subnature_indication)
         self._la = 0 # Token type
         try:
@@ -19488,24 +19488,24 @@ class vhdlParser ( Parser ):
             self.name()
             self.state = 2340
             _la = self._input.LA(1)
-            if _la==vhdlParser.LPAREN:
+            if _la==VhdlParser.LPAREN:
                 self.state = 2339
                 self.index_constraint()
 
 
             self.state = 2348
             _la = self._input.LA(1)
-            if _la==vhdlParser.TOLERANCE:
+            if _la==VhdlParser.TOLERANCE:
                 self.state = 2342
-                self.match(vhdlParser.TOLERANCE)
+                self.match(VhdlParser.TOLERANCE)
                 self.state = 2343
                 self.expression()
                 self.state = 2344
-                self.match(vhdlParser.ACROSS)
+                self.match(VhdlParser.ACROSS)
                 self.state = 2345
                 self.expression()
                 self.state = 2346
-                self.match(vhdlParser.THROUGH)
+                self.match(VhdlParser.THROUGH)
 
 
         except RecognitionException as re:
@@ -19523,39 +19523,39 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_specificationContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def subprogram_declarative_part(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarative_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarative_partContext,0)
 
 
         def BEGIN(self):
-            return self.getToken(vhdlParser.BEGIN, 0)
+            return self.getToken(VhdlParser.BEGIN, 0)
 
         def subprogram_statement_part(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_statement_partContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_statement_partContext,0)
 
 
         def END(self):
-            return self.getToken(vhdlParser.END, 0)
+            return self.getToken(VhdlParser.END, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def subprogram_kind(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_kindContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_kindContext,0)
 
 
         def designator(self):
-            return self.getTypedRuleContext(vhdlParser.DesignatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.DesignatorContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subprogram_body
+            return VhdlParser.RULE_subprogram_body
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubprogram_body" ):
@@ -19576,7 +19576,7 @@ class vhdlParser ( Parser ):
 
     def subprogram_body(self):
 
-        localctx = vhdlParser.Subprogram_bodyContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subprogram_bodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 450, self.RULE_subprogram_body)
         self._la = 0 # Token type
         try:
@@ -19584,31 +19584,31 @@ class vhdlParser ( Parser ):
             self.state = 2350
             self.subprogram_specification()
             self.state = 2351
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 2352
             self.subprogram_declarative_part()
             self.state = 2353
-            self.match(vhdlParser.BEGIN)
+            self.match(VhdlParser.BEGIN)
             self.state = 2354
             self.subprogram_statement_part()
             self.state = 2355
-            self.match(vhdlParser.END)
+            self.match(VhdlParser.END)
             self.state = 2357
             _la = self._input.LA(1)
-            if _la==vhdlParser.FUNCTION or _la==vhdlParser.PROCEDURE:
+            if _la==VhdlParser.FUNCTION or _la==VhdlParser.PROCEDURE:
                 self.state = 2356
                 self.subprogram_kind()
 
 
             self.state = 2360
             _la = self._input.LA(1)
-            if ((((_la - 118)) & ~0x3f) == 0 and ((1 << (_la - 118)) & ((1 << (vhdlParser.BASIC_IDENTIFIER - 118)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 118)) | (1 << (vhdlParser.STRING_LITERAL - 118)))) != 0):
+            if ((((_la - 118)) & ~0x3f) == 0 and ((1 << (_la - 118)) & ((1 << (VhdlParser.BASIC_IDENTIFIER - 118)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 118)) | (1 << (VhdlParser.STRING_LITERAL - 118)))) != 0):
                 self.state = 2359
                 self.designator()
 
 
             self.state = 2362
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -19624,14 +19624,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_specificationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subprogram_declaration
+            return VhdlParser.RULE_subprogram_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubprogram_declaration" ):
@@ -19652,14 +19652,14 @@ class vhdlParser ( Parser ):
 
     def subprogram_declaration(self):
 
-        localctx = vhdlParser.Subprogram_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subprogram_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 452, self.RULE_subprogram_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2364
             self.subprogram_specification()
             self.state = 2365
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -19675,59 +19675,59 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def subprogram_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_declarationContext,0)
 
 
         def subprogram_body(self):
-            return self.getTypedRuleContext(vhdlParser.Subprogram_bodyContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subprogram_bodyContext,0)
 
 
         def type_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Type_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_declarationContext,0)
 
 
         def subtype_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_declarationContext,0)
 
 
         def constant_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Constant_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Constant_declarationContext,0)
 
 
         def variable_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Variable_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Variable_declarationContext,0)
 
 
         def file_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.File_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_declarationContext,0)
 
 
         def alias_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Alias_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Alias_declarationContext,0)
 
 
         def attribute_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_declarationContext,0)
 
 
         def attribute_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Attribute_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Attribute_specificationContext,0)
 
 
         def use_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Use_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Use_clauseContext,0)
 
 
         def group_template_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_template_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_template_declarationContext,0)
 
 
         def group_declaration(self):
-            return self.getTypedRuleContext(vhdlParser.Group_declarationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Group_declarationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subprogram_declarative_item
+            return VhdlParser.RULE_subprogram_declarative_item
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubprogram_declarative_item" ):
@@ -19748,7 +19748,7 @@ class vhdlParser ( Parser ):
 
     def subprogram_declarative_item(self):
 
-        localctx = vhdlParser.Subprogram_declarative_itemContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subprogram_declarative_itemContext(self, self._ctx, self.state)
         self.enterRule(localctx, 454, self.RULE_subprogram_declarative_item)
         try:
             self.state = 2380
@@ -19848,13 +19848,13 @@ class vhdlParser ( Parser ):
 
         def subprogram_declarative_item(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Subprogram_declarative_itemContext)
+                return self.getTypedRuleContexts(VhdlParser.Subprogram_declarative_itemContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Subprogram_declarative_itemContext,i)
+                return self.getTypedRuleContext(VhdlParser.Subprogram_declarative_itemContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subprogram_declarative_part
+            return VhdlParser.RULE_subprogram_declarative_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubprogram_declarative_part" ):
@@ -19875,7 +19875,7 @@ class vhdlParser ( Parser ):
 
     def subprogram_declarative_part(self):
 
-        localctx = vhdlParser.Subprogram_declarative_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subprogram_declarative_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 456, self.RULE_subprogram_declarative_part)
         self._la = 0 # Token type
         try:
@@ -19883,7 +19883,7 @@ class vhdlParser ( Parser ):
             self.state = 2385
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ALIAS) | (1 << vhdlParser.ATTRIBUTE) | (1 << vhdlParser.CONSTANT) | (1 << vhdlParser.FILE) | (1 << vhdlParser.FUNCTION) | (1 << vhdlParser.GROUP) | (1 << vhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (vhdlParser.PROCEDURE - 68)) | (1 << (vhdlParser.PURE - 68)) | (1 << (vhdlParser.SHARED - 68)) | (1 << (vhdlParser.SUBTYPE - 68)) | (1 << (vhdlParser.TYPE - 68)) | (1 << (vhdlParser.USE - 68)) | (1 << (vhdlParser.VARIABLE - 68)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ALIAS) | (1 << VhdlParser.ATTRIBUTE) | (1 << VhdlParser.CONSTANT) | (1 << VhdlParser.FILE) | (1 << VhdlParser.FUNCTION) | (1 << VhdlParser.GROUP) | (1 << VhdlParser.IMPURE))) != 0) or ((((_la - 68)) & ~0x3f) == 0 and ((1 << (_la - 68)) & ((1 << (VhdlParser.PROCEDURE - 68)) | (1 << (VhdlParser.PURE - 68)) | (1 << (VhdlParser.SHARED - 68)) | (1 << (VhdlParser.SUBTYPE - 68)) | (1 << (VhdlParser.TYPE - 68)) | (1 << (VhdlParser.USE - 68)) | (1 << (VhdlParser.VARIABLE - 68)))) != 0):
                 self.state = 2382
                 self.subprogram_declarative_item()
                 self.state = 2387
@@ -19905,13 +19905,13 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def PROCEDURE(self):
-            return self.getToken(vhdlParser.PROCEDURE, 0)
+            return self.getToken(VhdlParser.PROCEDURE, 0)
 
         def FUNCTION(self):
-            return self.getToken(vhdlParser.FUNCTION, 0)
+            return self.getToken(VhdlParser.FUNCTION, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subprogram_kind
+            return VhdlParser.RULE_subprogram_kind
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubprogram_kind" ):
@@ -19932,14 +19932,14 @@ class vhdlParser ( Parser ):
 
     def subprogram_kind(self):
 
-        localctx = vhdlParser.Subprogram_kindContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subprogram_kindContext(self, self._ctx, self.state)
         self.enterRule(localctx, 458, self.RULE_subprogram_kind)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2388
             _la = self._input.LA(1)
-            if not(_la==vhdlParser.FUNCTION or _la==vhdlParser.PROCEDURE):
+            if not(_la==VhdlParser.FUNCTION or _la==VhdlParser.PROCEDURE):
                 self._errHandler.recoverInline(self)
             else:
                 self.consume()
@@ -19958,15 +19958,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def procedure_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Procedure_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Procedure_specificationContext,0)
 
 
         def function_specification(self):
-            return self.getTypedRuleContext(vhdlParser.Function_specificationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Function_specificationContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subprogram_specification
+            return VhdlParser.RULE_subprogram_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubprogram_specification" ):
@@ -19987,17 +19987,17 @@ class vhdlParser ( Parser ):
 
     def subprogram_specification(self):
 
-        localctx = vhdlParser.Subprogram_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subprogram_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 460, self.RULE_subprogram_specification)
         try:
             self.state = 2392
             token = self._input.LA(1)
-            if token in [vhdlParser.PROCEDURE]:
+            if token in [VhdlParser.PROCEDURE]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2390
                 self.procedure_specification()
 
-            elif token in [vhdlParser.FUNCTION, vhdlParser.IMPURE, vhdlParser.PURE]:
+            elif token in [VhdlParser.FUNCTION, VhdlParser.IMPURE, VhdlParser.PURE]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2391
                 self.function_specification()
@@ -20020,24 +20020,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def PROCEDURE(self):
-            return self.getToken(vhdlParser.PROCEDURE, 0)
+            return self.getToken(VhdlParser.PROCEDURE, 0)
 
         def designator(self):
-            return self.getTypedRuleContext(vhdlParser.DesignatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.DesignatorContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def formal_parameter_list(self):
-            return self.getTypedRuleContext(vhdlParser.Formal_parameter_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Formal_parameter_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_procedure_specification
+            return VhdlParser.RULE_procedure_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProcedure_specification" ):
@@ -20058,24 +20058,24 @@ class vhdlParser ( Parser ):
 
     def procedure_specification(self):
 
-        localctx = vhdlParser.Procedure_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Procedure_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 462, self.RULE_procedure_specification)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2394
-            self.match(vhdlParser.PROCEDURE)
+            self.match(VhdlParser.PROCEDURE)
             self.state = 2395
             self.designator()
             self.state = 2400
             _la = self._input.LA(1)
-            if _la==vhdlParser.LPAREN:
+            if _la==VhdlParser.LPAREN:
                 self.state = 2396
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 2397
                 self.formal_parameter_list()
                 self.state = 2398
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
 
 
         except RecognitionException as re:
@@ -20093,37 +20093,37 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FUNCTION(self):
-            return self.getToken(vhdlParser.FUNCTION, 0)
+            return self.getToken(VhdlParser.FUNCTION, 0)
 
         def designator(self):
-            return self.getTypedRuleContext(vhdlParser.DesignatorContext,0)
+            return self.getTypedRuleContext(VhdlParser.DesignatorContext,0)
 
 
         def RETURN(self):
-            return self.getToken(vhdlParser.RETURN, 0)
+            return self.getToken(VhdlParser.RETURN, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def formal_parameter_list(self):
-            return self.getTypedRuleContext(vhdlParser.Formal_parameter_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Formal_parameter_listContext,0)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def PURE(self):
-            return self.getToken(vhdlParser.PURE, 0)
+            return self.getToken(VhdlParser.PURE, 0)
 
         def IMPURE(self):
-            return self.getToken(vhdlParser.IMPURE, 0)
+            return self.getToken(VhdlParser.IMPURE, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_function_specification
+            return VhdlParser.RULE_function_specification
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_specification" ):
@@ -20144,39 +20144,39 @@ class vhdlParser ( Parser ):
 
     def function_specification(self):
 
-        localctx = vhdlParser.Function_specificationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Function_specificationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 464, self.RULE_function_specification)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2403
             _la = self._input.LA(1)
-            if _la==vhdlParser.IMPURE or _la==vhdlParser.PURE:
+            if _la==VhdlParser.IMPURE or _la==VhdlParser.PURE:
                 self.state = 2402
                 _la = self._input.LA(1)
-                if not(_la==vhdlParser.IMPURE or _la==vhdlParser.PURE):
+                if not(_la==VhdlParser.IMPURE or _la==VhdlParser.PURE):
                     self._errHandler.recoverInline(self)
                 else:
                     self.consume()
 
 
             self.state = 2405
-            self.match(vhdlParser.FUNCTION)
+            self.match(VhdlParser.FUNCTION)
             self.state = 2406
             self.designator()
             self.state = 2411
             _la = self._input.LA(1)
-            if _la==vhdlParser.LPAREN:
+            if _la==VhdlParser.LPAREN:
                 self.state = 2407
-                self.match(vhdlParser.LPAREN)
+                self.match(VhdlParser.LPAREN)
                 self.state = 2408
                 self.formal_parameter_list()
                 self.state = 2409
-                self.match(vhdlParser.RPAREN)
+                self.match(VhdlParser.RPAREN)
 
 
             self.state = 2413
-            self.match(vhdlParser.RETURN)
+            self.match(VhdlParser.RETURN)
             self.state = 2414
             self.subtype_indication()
         except RecognitionException as re:
@@ -20195,13 +20195,13 @@ class vhdlParser ( Parser ):
 
         def sequential_statement(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Sequential_statementContext)
+                return self.getTypedRuleContexts(VhdlParser.Sequential_statementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Sequential_statementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Sequential_statementContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subprogram_statement_part
+            return VhdlParser.RULE_subprogram_statement_part
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubprogram_statement_part" ):
@@ -20222,7 +20222,7 @@ class vhdlParser ( Parser ):
 
     def subprogram_statement_part(self):
 
-        localctx = vhdlParser.Subprogram_statement_partContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subprogram_statement_partContext(self, self._ctx, self.state)
         self.enterRule(localctx, 466, self.RULE_subprogram_statement_part)
         self._la = 0 # Token type
         try:
@@ -20230,7 +20230,7 @@ class vhdlParser ( Parser ):
             self.state = 2419
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << vhdlParser.ASSERT) | (1 << vhdlParser.BREAK) | (1 << vhdlParser.CASE) | (1 << vhdlParser.EXIT) | (1 << vhdlParser.FOR) | (1 << vhdlParser.IF) | (1 << vhdlParser.LOOP) | (1 << vhdlParser.NEXT) | (1 << vhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (vhdlParser.REPORT - 79)) | (1 << (vhdlParser.RETURN - 79)) | (1 << (vhdlParser.WAIT - 79)) | (1 << (vhdlParser.WHILE - 79)) | (1 << (vhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (vhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (vhdlParser.LPAREN - 79)))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << VhdlParser.ASSERT) | (1 << VhdlParser.BREAK) | (1 << VhdlParser.CASE) | (1 << VhdlParser.EXIT) | (1 << VhdlParser.FOR) | (1 << VhdlParser.IF) | (1 << VhdlParser.LOOP) | (1 << VhdlParser.NEXT) | (1 << VhdlParser.NULL))) != 0) or ((((_la - 79)) & ~0x3f) == 0 and ((1 << (_la - 79)) & ((1 << (VhdlParser.REPORT - 79)) | (1 << (VhdlParser.RETURN - 79)) | (1 << (VhdlParser.WAIT - 79)) | (1 << (VhdlParser.WHILE - 79)) | (1 << (VhdlParser.BASIC_IDENTIFIER - 79)) | (1 << (VhdlParser.EXTENDED_IDENTIFIER - 79)) | (1 << (VhdlParser.LPAREN - 79)))) != 0):
                 self.state = 2416
                 self.sequential_statement()
                 self.state = 2421
@@ -20252,24 +20252,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def SUBTYPE(self):
-            return self.getToken(vhdlParser.SUBTYPE, 0)
+            return self.getToken(VhdlParser.SUBTYPE, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subtype_declaration
+            return VhdlParser.RULE_subtype_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubtype_declaration" ):
@@ -20290,20 +20290,20 @@ class vhdlParser ( Parser ):
 
     def subtype_declaration(self):
 
-        localctx = vhdlParser.Subtype_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subtype_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 468, self.RULE_subtype_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2422
-            self.match(vhdlParser.SUBTYPE)
+            self.match(VhdlParser.SUBTYPE)
             self.state = 2423
             self.identifier()
             self.state = 2424
-            self.match(vhdlParser.IS)
+            self.match(VhdlParser.IS)
             self.state = 2425
             self.subtype_indication()
             self.state = 2426
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -20320,21 +20320,21 @@ class vhdlParser ( Parser ):
 
         def selected_name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Selected_nameContext)
+                return self.getTypedRuleContexts(VhdlParser.Selected_nameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Selected_nameContext,i)
+                return self.getTypedRuleContext(VhdlParser.Selected_nameContext,i)
 
 
         def constraint(self):
-            return self.getTypedRuleContext(vhdlParser.ConstraintContext,0)
+            return self.getTypedRuleContext(VhdlParser.ConstraintContext,0)
 
 
         def tolerance_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Tolerance_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Tolerance_aspectContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_subtype_indication
+            return VhdlParser.RULE_subtype_indication
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSubtype_indication" ):
@@ -20355,7 +20355,7 @@ class vhdlParser ( Parser ):
 
     def subtype_indication(self):
 
-        localctx = vhdlParser.Subtype_indicationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Subtype_indicationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 470, self.RULE_subtype_indication)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -20397,20 +20397,20 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def CHARACTER_LITERAL(self):
-            return self.getToken(vhdlParser.CHARACTER_LITERAL, 0)
+            return self.getToken(VhdlParser.CHARACTER_LITERAL, 0)
 
         def STRING_LITERAL(self):
-            return self.getToken(vhdlParser.STRING_LITERAL, 0)
+            return self.getToken(VhdlParser.STRING_LITERAL, 0)
 
         def ALL(self):
-            return self.getToken(vhdlParser.ALL, 0)
+            return self.getToken(VhdlParser.ALL, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_suffix
+            return VhdlParser.RULE_suffix
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSuffix" ):
@@ -20431,30 +20431,30 @@ class vhdlParser ( Parser ):
 
     def suffix(self):
 
-        localctx = vhdlParser.SuffixContext(self, self._ctx, self.state)
+        localctx = VhdlParser.SuffixContext(self, self._ctx, self.state)
         self.enterRule(localctx, 472, self.RULE_suffix)
         try:
             self.state = 2442
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2438
                 self.identifier()
 
-            elif token in [vhdlParser.CHARACTER_LITERAL]:
+            elif token in [VhdlParser.CHARACTER_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2439
-                self.match(vhdlParser.CHARACTER_LITERAL)
+                self.match(VhdlParser.CHARACTER_LITERAL)
 
-            elif token in [vhdlParser.STRING_LITERAL]:
+            elif token in [VhdlParser.STRING_LITERAL]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 2440
-                self.match(vhdlParser.STRING_LITERAL)
+                self.match(VhdlParser.STRING_LITERAL)
 
-            elif token in [vhdlParser.ALL]:
+            elif token in [VhdlParser.ALL]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 2441
-                self.match(vhdlParser.ALL)
+                self.match(VhdlParser.ALL)
 
             else:
                 raise NoViableAltException(self)
@@ -20474,15 +20474,15 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def name(self):
-            return self.getTypedRuleContext(vhdlParser.NameContext,0)
+            return self.getTypedRuleContext(VhdlParser.NameContext,0)
 
 
         def aggregate(self):
-            return self.getTypedRuleContext(vhdlParser.AggregateContext,0)
+            return self.getTypedRuleContext(VhdlParser.AggregateContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_target
+            return VhdlParser.RULE_target
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTarget" ):
@@ -20503,17 +20503,17 @@ class vhdlParser ( Parser ):
 
     def target(self):
 
-        localctx = vhdlParser.TargetContext(self, self._ctx, self.state)
+        localctx = VhdlParser.TargetContext(self, self._ctx, self.state)
         self.enterRule(localctx, 474, self.RULE_target)
         try:
             self.state = 2446
             token = self._input.LA(1)
-            if token in [vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER]:
+            if token in [VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2444
                 self.name()
 
-            elif token in [vhdlParser.LPAREN]:
+            elif token in [VhdlParser.LPAREN]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2445
                 self.aggregate()
@@ -20537,20 +20537,20 @@ class vhdlParser ( Parser ):
 
         def factor(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.FactorContext)
+                return self.getTypedRuleContexts(VhdlParser.FactorContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.FactorContext,i)
+                return self.getTypedRuleContext(VhdlParser.FactorContext,i)
 
 
         def multiplying_operator(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Multiplying_operatorContext)
+                return self.getTypedRuleContexts(VhdlParser.Multiplying_operatorContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Multiplying_operatorContext,i)
+                return self.getTypedRuleContext(VhdlParser.Multiplying_operatorContext,i)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_term
+            return VhdlParser.RULE_term
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTerm" ):
@@ -20571,7 +20571,7 @@ class vhdlParser ( Parser ):
 
     def term(self):
 
-        localctx = vhdlParser.TermContext(self, self._ctx, self.state)
+        localctx = VhdlParser.TermContext(self, self._ctx, self.state)
         self.enterRule(localctx, 476, self.RULE_term)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -20606,16 +20606,16 @@ class vhdlParser ( Parser ):
 
         def name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.NameContext)
+                return self.getTypedRuleContexts(VhdlParser.NameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.NameContext,i)
+                return self.getTypedRuleContext(VhdlParser.NameContext,i)
 
 
         def TO(self):
-            return self.getToken(vhdlParser.TO, 0)
+            return self.getToken(VhdlParser.TO, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_terminal_aspect
+            return VhdlParser.RULE_terminal_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTerminal_aspect" ):
@@ -20636,7 +20636,7 @@ class vhdlParser ( Parser ):
 
     def terminal_aspect(self):
 
-        localctx = vhdlParser.Terminal_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Terminal_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 478, self.RULE_terminal_aspect)
         self._la = 0 # Token type
         try:
@@ -20645,9 +20645,9 @@ class vhdlParser ( Parser ):
             self.name()
             self.state = 2460
             _la = self._input.LA(1)
-            if _la==vhdlParser.TO:
+            if _la==VhdlParser.TO:
                 self.state = 2458
-                self.match(vhdlParser.TO)
+                self.match(VhdlParser.TO)
                 self.state = 2459
                 self.name()
 
@@ -20667,24 +20667,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def TERMINAL(self):
-            return self.getToken(vhdlParser.TERMINAL, 0)
+            return self.getToken(VhdlParser.TERMINAL, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subnature_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_terminal_declaration
+            return VhdlParser.RULE_terminal_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTerminal_declaration" ):
@@ -20705,20 +20705,20 @@ class vhdlParser ( Parser ):
 
     def terminal_declaration(self):
 
-        localctx = vhdlParser.Terminal_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Terminal_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 480, self.RULE_terminal_declaration)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2462
-            self.match(vhdlParser.TERMINAL)
+            self.match(VhdlParser.TERMINAL)
             self.state = 2463
             self.identifier_list()
             self.state = 2464
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 2465
             self.subnature_indication()
             self.state = 2466
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -20734,25 +20734,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def THROUGH(self):
-            return self.getToken(vhdlParser.THROUGH, 0)
+            return self.getToken(VhdlParser.THROUGH, 0)
 
         def tolerance_aspect(self):
-            return self.getTypedRuleContext(vhdlParser.Tolerance_aspectContext,0)
+            return self.getTypedRuleContext(VhdlParser.Tolerance_aspectContext,0)
 
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_through_aspect
+            return VhdlParser.RULE_through_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterThrough_aspect" ):
@@ -20773,7 +20773,7 @@ class vhdlParser ( Parser ):
 
     def through_aspect(self):
 
-        localctx = vhdlParser.Through_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Through_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 482, self.RULE_through_aspect)
         self._la = 0 # Token type
         try:
@@ -20782,22 +20782,22 @@ class vhdlParser ( Parser ):
             self.identifier_list()
             self.state = 2470
             _la = self._input.LA(1)
-            if _la==vhdlParser.TOLERANCE:
+            if _la==VhdlParser.TOLERANCE:
                 self.state = 2469
                 self.tolerance_aspect()
 
 
             self.state = 2474
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 2472
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 2473
                 self.expression()
 
 
             self.state = 2476
-            self.match(vhdlParser.THROUGH)
+            self.match(VhdlParser.THROUGH)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -20813,14 +20813,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def FOR(self):
-            return self.getToken(vhdlParser.FOR, 0)
+            return self.getToken(VhdlParser.FOR, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_timeout_clause
+            return VhdlParser.RULE_timeout_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTimeout_clause" ):
@@ -20841,12 +20841,12 @@ class vhdlParser ( Parser ):
 
     def timeout_clause(self):
 
-        localctx = vhdlParser.Timeout_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Timeout_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 484, self.RULE_timeout_clause)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2478
-            self.match(vhdlParser.FOR)
+            self.match(VhdlParser.FOR)
             self.state = 2479
             self.expression()
         except RecognitionException as re:
@@ -20864,14 +20864,14 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def TOLERANCE(self):
-            return self.getToken(vhdlParser.TOLERANCE, 0)
+            return self.getToken(VhdlParser.TOLERANCE, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_tolerance_aspect
+            return VhdlParser.RULE_tolerance_aspect
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTolerance_aspect" ):
@@ -20892,12 +20892,12 @@ class vhdlParser ( Parser ):
 
     def tolerance_aspect(self):
 
-        localctx = vhdlParser.Tolerance_aspectContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Tolerance_aspectContext(self, self._ctx, self.state)
         self.enterRule(localctx, 486, self.RULE_tolerance_aspect)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2481
-            self.match(vhdlParser.TOLERANCE)
+            self.match(VhdlParser.TOLERANCE)
             self.state = 2482
             self.expression()
         except RecognitionException as re:
@@ -20915,24 +20915,24 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def TYPE(self):
-            return self.getToken(vhdlParser.TYPE, 0)
+            return self.getToken(VhdlParser.TYPE, 0)
 
         def identifier(self):
-            return self.getTypedRuleContext(vhdlParser.IdentifierContext,0)
+            return self.getTypedRuleContext(VhdlParser.IdentifierContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def IS(self):
-            return self.getToken(vhdlParser.IS, 0)
+            return self.getToken(VhdlParser.IS, 0)
 
         def type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Type_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_type_declaration
+            return VhdlParser.RULE_type_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterType_declaration" ):
@@ -20953,26 +20953,26 @@ class vhdlParser ( Parser ):
 
     def type_declaration(self):
 
-        localctx = vhdlParser.Type_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Type_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 488, self.RULE_type_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2484
-            self.match(vhdlParser.TYPE)
+            self.match(VhdlParser.TYPE)
             self.state = 2485
             self.identifier()
             self.state = 2488
             _la = self._input.LA(1)
-            if _la==vhdlParser.IS:
+            if _la==VhdlParser.IS:
                 self.state = 2486
-                self.match(vhdlParser.IS)
+                self.match(VhdlParser.IS)
                 self.state = 2487
                 self.type_definition()
 
 
             self.state = 2490
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -20988,23 +20988,23 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def scalar_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Scalar_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Scalar_type_definitionContext,0)
 
 
         def composite_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Composite_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Composite_type_definitionContext,0)
 
 
         def access_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.Access_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.Access_type_definitionContext,0)
 
 
         def file_type_definition(self):
-            return self.getTypedRuleContext(vhdlParser.File_type_definitionContext,0)
+            return self.getTypedRuleContext(VhdlParser.File_type_definitionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_type_definition
+            return VhdlParser.RULE_type_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterType_definition" ):
@@ -21025,27 +21025,27 @@ class vhdlParser ( Parser ):
 
     def type_definition(self):
 
-        localctx = vhdlParser.Type_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Type_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 490, self.RULE_type_definition)
         try:
             self.state = 2496
             token = self._input.LA(1)
-            if token in [vhdlParser.RANGE, vhdlParser.LPAREN]:
+            if token in [VhdlParser.RANGE, VhdlParser.LPAREN]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2492
                 self.scalar_type_definition()
 
-            elif token in [vhdlParser.ARRAY, vhdlParser.RECORD]:
+            elif token in [VhdlParser.ARRAY, VhdlParser.RECORD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2493
                 self.composite_type_definition()
 
-            elif token in [vhdlParser.ACCESS]:
+            elif token in [VhdlParser.ACCESS]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 2494
                 self.access_type_definition()
 
-            elif token in [vhdlParser.FILE]:
+            elif token in [VhdlParser.FILE]:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 2495
                 self.file_type_definition()
@@ -21068,36 +21068,36 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ARRAY(self):
-            return self.getToken(vhdlParser.ARRAY, 0)
+            return self.getToken(VhdlParser.ARRAY, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def index_subtype_definition(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Index_subtype_definitionContext)
+                return self.getTypedRuleContexts(VhdlParser.Index_subtype_definitionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Index_subtype_definitionContext,i)
+                return self.getTypedRuleContext(VhdlParser.Index_subtype_definitionContext,i)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_unconstrained_array_definition
+            return VhdlParser.RULE_unconstrained_array_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterUnconstrained_array_definition" ):
@@ -21118,23 +21118,23 @@ class vhdlParser ( Parser ):
 
     def unconstrained_array_definition(self):
 
-        localctx = vhdlParser.Unconstrained_array_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Unconstrained_array_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 492, self.RULE_unconstrained_array_definition)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2498
-            self.match(vhdlParser.ARRAY)
+            self.match(VhdlParser.ARRAY)
             self.state = 2499
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 2500
             self.index_subtype_definition()
             self.state = 2505
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 2501
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 2502
                 self.index_subtype_definition()
                 self.state = 2507
@@ -21142,9 +21142,9 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 2508
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
             self.state = 2509
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 2510
             self.subtype_indication()
         except RecognitionException as re:
@@ -21162,36 +21162,36 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def ARRAY(self):
-            return self.getToken(vhdlParser.ARRAY, 0)
+            return self.getToken(VhdlParser.ARRAY, 0)
 
         def LPAREN(self):
-            return self.getToken(vhdlParser.LPAREN, 0)
+            return self.getToken(VhdlParser.LPAREN, 0)
 
         def index_subtype_definition(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Index_subtype_definitionContext)
+                return self.getTypedRuleContexts(VhdlParser.Index_subtype_definitionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Index_subtype_definitionContext,i)
+                return self.getTypedRuleContext(VhdlParser.Index_subtype_definitionContext,i)
 
 
         def RPAREN(self):
-            return self.getToken(vhdlParser.RPAREN, 0)
+            return self.getToken(VhdlParser.RPAREN, 0)
 
         def OF(self):
-            return self.getToken(vhdlParser.OF, 0)
+            return self.getToken(VhdlParser.OF, 0)
 
         def subnature_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subnature_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subnature_indicationContext,0)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_unconstrained_nature_definition
+            return VhdlParser.RULE_unconstrained_nature_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterUnconstrained_nature_definition" ):
@@ -21212,23 +21212,23 @@ class vhdlParser ( Parser ):
 
     def unconstrained_nature_definition(self):
 
-        localctx = vhdlParser.Unconstrained_nature_definitionContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Unconstrained_nature_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 494, self.RULE_unconstrained_nature_definition)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2512
-            self.match(vhdlParser.ARRAY)
+            self.match(VhdlParser.ARRAY)
             self.state = 2513
-            self.match(vhdlParser.LPAREN)
+            self.match(VhdlParser.LPAREN)
             self.state = 2514
             self.index_subtype_definition()
             self.state = 2519
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 2515
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 2516
                 self.index_subtype_definition()
                 self.state = 2521
@@ -21236,9 +21236,9 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 2522
-            self.match(vhdlParser.RPAREN)
+            self.match(VhdlParser.RPAREN)
             self.state = 2523
-            self.match(vhdlParser.OF)
+            self.match(VhdlParser.OF)
             self.state = 2524
             self.subnature_indication()
         except RecognitionException as re:
@@ -21256,26 +21256,26 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def USE(self):
-            return self.getToken(vhdlParser.USE, 0)
+            return self.getToken(VhdlParser.USE, 0)
 
         def selected_name(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Selected_nameContext)
+                return self.getTypedRuleContexts(VhdlParser.Selected_nameContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Selected_nameContext,i)
+                return self.getTypedRuleContext(VhdlParser.Selected_nameContext,i)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_use_clause
+            return VhdlParser.RULE_use_clause
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterUse_clause" ):
@@ -21296,21 +21296,21 @@ class vhdlParser ( Parser ):
 
     def use_clause(self):
 
-        localctx = vhdlParser.Use_clauseContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Use_clauseContext(self, self._ctx, self.state)
         self.enterRule(localctx, 496, self.RULE_use_clause)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2526
-            self.match(vhdlParser.USE)
+            self.match(VhdlParser.USE)
             self.state = 2527
             self.selected_name()
             self.state = 2532
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==vhdlParser.COMMA:
+            while _la==VhdlParser.COMMA:
                 self.state = 2528
-                self.match(vhdlParser.COMMA)
+                self.match(VhdlParser.COMMA)
                 self.state = 2529
                 self.selected_name()
                 self.state = 2534
@@ -21318,7 +21318,7 @@ class vhdlParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 2535
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -21334,25 +21334,25 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def target(self):
-            return self.getTypedRuleContext(vhdlParser.TargetContext,0)
+            return self.getTypedRuleContext(VhdlParser.TargetContext,0)
 
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_variable_assignment_statement
+            return VhdlParser.RULE_variable_assignment_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterVariable_assignment_statement" ):
@@ -21373,7 +21373,7 @@ class vhdlParser ( Parser ):
 
     def variable_assignment_statement(self):
 
-        localctx = vhdlParser.Variable_assignment_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Variable_assignment_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 498, self.RULE_variable_assignment_statement)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -21387,11 +21387,11 @@ class vhdlParser ( Parser ):
             self.state = 2540
             self.target()
             self.state = 2541
-            self.match(vhdlParser.VARASGN)
+            self.match(VhdlParser.VARASGN)
             self.state = 2542
             self.expression()
             self.state = 2543
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -21407,34 +21407,34 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def VARIABLE(self):
-            return self.getToken(vhdlParser.VARIABLE, 0)
+            return self.getToken(VhdlParser.VARIABLE, 0)
 
         def identifier_list(self):
-            return self.getTypedRuleContext(vhdlParser.Identifier_listContext,0)
+            return self.getTypedRuleContext(VhdlParser.Identifier_listContext,0)
 
 
         def COLON(self):
-            return self.getToken(vhdlParser.COLON, 0)
+            return self.getToken(VhdlParser.COLON, 0)
 
         def subtype_indication(self):
-            return self.getTypedRuleContext(vhdlParser.Subtype_indicationContext,0)
+            return self.getTypedRuleContext(VhdlParser.Subtype_indicationContext,0)
 
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def SHARED(self):
-            return self.getToken(vhdlParser.SHARED, 0)
+            return self.getToken(VhdlParser.SHARED, 0)
 
         def VARASGN(self):
-            return self.getToken(vhdlParser.VARASGN, 0)
+            return self.getToken(VhdlParser.VARASGN, 0)
 
         def expression(self):
-            return self.getTypedRuleContext(vhdlParser.ExpressionContext,0)
+            return self.getTypedRuleContext(VhdlParser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_variable_declaration
+            return VhdlParser.RULE_variable_declaration
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterVariable_declaration" ):
@@ -21455,37 +21455,37 @@ class vhdlParser ( Parser ):
 
     def variable_declaration(self):
 
-        localctx = vhdlParser.Variable_declarationContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Variable_declarationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 500, self.RULE_variable_declaration)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2546
             _la = self._input.LA(1)
-            if _la==vhdlParser.SHARED:
+            if _la==VhdlParser.SHARED:
                 self.state = 2545
-                self.match(vhdlParser.SHARED)
+                self.match(VhdlParser.SHARED)
 
 
             self.state = 2548
-            self.match(vhdlParser.VARIABLE)
+            self.match(VhdlParser.VARIABLE)
             self.state = 2549
             self.identifier_list()
             self.state = 2550
-            self.match(vhdlParser.COLON)
+            self.match(VhdlParser.COLON)
             self.state = 2551
             self.subtype_indication()
             self.state = 2554
             _la = self._input.LA(1)
-            if _la==vhdlParser.VARASGN:
+            if _la==VhdlParser.VARASGN:
                 self.state = 2552
-                self.match(vhdlParser.VARASGN)
+                self.match(VhdlParser.VARASGN)
                 self.state = 2553
                 self.expression()
 
 
             self.state = 2556
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -21501,29 +21501,29 @@ class vhdlParser ( Parser ):
             self.parser = parser
 
         def WAIT(self):
-            return self.getToken(vhdlParser.WAIT, 0)
+            return self.getToken(VhdlParser.WAIT, 0)
 
         def SEMI(self):
-            return self.getToken(vhdlParser.SEMI, 0)
+            return self.getToken(VhdlParser.SEMI, 0)
 
         def label_colon(self):
-            return self.getTypedRuleContext(vhdlParser.Label_colonContext,0)
+            return self.getTypedRuleContext(VhdlParser.Label_colonContext,0)
 
 
         def sensitivity_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Sensitivity_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Sensitivity_clauseContext,0)
 
 
         def condition_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Condition_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Condition_clauseContext,0)
 
 
         def timeout_clause(self):
-            return self.getTypedRuleContext(vhdlParser.Timeout_clauseContext,0)
+            return self.getTypedRuleContext(VhdlParser.Timeout_clauseContext,0)
 
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_wait_statement
+            return VhdlParser.RULE_wait_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterWait_statement" ):
@@ -21544,43 +21544,43 @@ class vhdlParser ( Parser ):
 
     def wait_statement(self):
 
-        localctx = vhdlParser.Wait_statementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Wait_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 502, self.RULE_wait_statement)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2559
             _la = self._input.LA(1)
-            if _la==vhdlParser.BASIC_IDENTIFIER or _la==vhdlParser.EXTENDED_IDENTIFIER:
+            if _la==VhdlParser.BASIC_IDENTIFIER or _la==VhdlParser.EXTENDED_IDENTIFIER:
                 self.state = 2558
                 self.label_colon()
 
 
             self.state = 2561
-            self.match(vhdlParser.WAIT)
+            self.match(VhdlParser.WAIT)
             self.state = 2563
             _la = self._input.LA(1)
-            if _la==vhdlParser.ON:
+            if _la==VhdlParser.ON:
                 self.state = 2562
                 self.sensitivity_clause()
 
 
             self.state = 2566
             _la = self._input.LA(1)
-            if _la==vhdlParser.UNTIL:
+            if _la==VhdlParser.UNTIL:
                 self.state = 2565
                 self.condition_clause()
 
 
             self.state = 2569
             _la = self._input.LA(1)
-            if _la==vhdlParser.FOR:
+            if _la==VhdlParser.FOR:
                 self.state = 2568
                 self.timeout_clause()
 
 
             self.state = 2571
-            self.match(vhdlParser.SEMI)
+            self.match(VhdlParser.SEMI)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -21597,22 +21597,22 @@ class vhdlParser ( Parser ):
 
         def waveform_element(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.Waveform_elementContext)
+                return self.getTypedRuleContexts(VhdlParser.Waveform_elementContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.Waveform_elementContext,i)
+                return self.getTypedRuleContext(VhdlParser.Waveform_elementContext,i)
 
 
         def COMMA(self, i:int=None):
             if i is None:
-                return self.getTokens(vhdlParser.COMMA)
+                return self.getTokens(VhdlParser.COMMA)
             else:
-                return self.getToken(vhdlParser.COMMA, i)
+                return self.getToken(VhdlParser.COMMA, i)
 
         def UNAFFECTED(self):
-            return self.getToken(vhdlParser.UNAFFECTED, 0)
+            return self.getToken(VhdlParser.UNAFFECTED, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_waveform
+            return VhdlParser.RULE_waveform
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterWaveform" ):
@@ -21633,22 +21633,22 @@ class vhdlParser ( Parser ):
 
     def waveform(self):
 
-        localctx = vhdlParser.WaveformContext(self, self._ctx, self.state)
+        localctx = VhdlParser.WaveformContext(self, self._ctx, self.state)
         self.enterRule(localctx, 504, self.RULE_waveform)
         self._la = 0 # Token type
         try:
             self.state = 2582
             token = self._input.LA(1)
-            if token in [vhdlParser.ABS, vhdlParser.NEW, vhdlParser.NOT, vhdlParser.NULL, vhdlParser.BASE_LITERAL, vhdlParser.BIT_STRING_LITERAL, vhdlParser.REAL_LITERAL, vhdlParser.BASIC_IDENTIFIER, vhdlParser.EXTENDED_IDENTIFIER, vhdlParser.CHARACTER_LITERAL, vhdlParser.STRING_LITERAL, vhdlParser.LPAREN, vhdlParser.PLUS, vhdlParser.MINUS, vhdlParser.INTEGER]:
+            if token in [VhdlParser.ABS, VhdlParser.NEW, VhdlParser.NOT, VhdlParser.NULL, VhdlParser.BASE_LITERAL, VhdlParser.BIT_STRING_LITERAL, VhdlParser.REAL_LITERAL, VhdlParser.BASIC_IDENTIFIER, VhdlParser.EXTENDED_IDENTIFIER, VhdlParser.CHARACTER_LITERAL, VhdlParser.STRING_LITERAL, VhdlParser.LPAREN, VhdlParser.PLUS, VhdlParser.MINUS, VhdlParser.INTEGER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 2573
                 self.waveform_element()
                 self.state = 2578
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==vhdlParser.COMMA:
+                while _la==VhdlParser.COMMA:
                     self.state = 2574
-                    self.match(vhdlParser.COMMA)
+                    self.match(VhdlParser.COMMA)
                     self.state = 2575
                     self.waveform_element()
                     self.state = 2580
@@ -21656,10 +21656,10 @@ class vhdlParser ( Parser ):
                     _la = self._input.LA(1)
 
 
-            elif token in [vhdlParser.UNAFFECTED]:
+            elif token in [VhdlParser.UNAFFECTED]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 2581
-                self.match(vhdlParser.UNAFFECTED)
+                self.match(VhdlParser.UNAFFECTED)
 
             else:
                 raise NoViableAltException(self)
@@ -21680,16 +21680,16 @@ class vhdlParser ( Parser ):
 
         def expression(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(vhdlParser.ExpressionContext)
+                return self.getTypedRuleContexts(VhdlParser.ExpressionContext)
             else:
-                return self.getTypedRuleContext(vhdlParser.ExpressionContext,i)
+                return self.getTypedRuleContext(VhdlParser.ExpressionContext,i)
 
 
         def AFTER(self):
-            return self.getToken(vhdlParser.AFTER, 0)
+            return self.getToken(VhdlParser.AFTER, 0)
 
         def getRuleIndex(self):
-            return vhdlParser.RULE_waveform_element
+            return VhdlParser.RULE_waveform_element
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterWaveform_element" ):
@@ -21710,7 +21710,7 @@ class vhdlParser ( Parser ):
 
     def waveform_element(self):
 
-        localctx = vhdlParser.Waveform_elementContext(self, self._ctx, self.state)
+        localctx = VhdlParser.Waveform_elementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 506, self.RULE_waveform_element)
         self._la = 0 # Token type
         try:
@@ -21719,9 +21719,9 @@ class vhdlParser ( Parser ):
             self.expression()
             self.state = 2587
             _la = self._input.LA(1)
-            if _la==vhdlParser.AFTER:
+            if _la==VhdlParser.AFTER:
                 self.state = 2585
-                self.match(vhdlParser.AFTER)
+                self.match(VhdlParser.AFTER)
                 self.state = 2586
                 self.expression()
 

@@ -1,15 +1,15 @@
 import sys
 from antlr4 import *
-from vhdlLexer import vhdlLexer
-from vhdlParser import vhdlParser
-from vhdlListener import vhdlListener
+from VhdlLexer import VhdlLexer
+from VhdlParser import VhdlParser
+from VhdlListener import VhdlListener
  
 def main(argv):
     input = FileStream(argv[1])
-    lexer = vhdlLexer(input)
+    lexer = VhdlLexer(input)
     stream = CommonTokenStream(lexer)
-    parser = vhdlParser(stream)
-    listener = vhdlListener()
+    parser = VhdlParser(stream)
+    listener = VhdlListener()
     tree = parser.design_file()
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
