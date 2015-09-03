@@ -7,7 +7,7 @@ else:
 
 # This class defines a complete generic visitor for a parse tree produced by VhdlParser.
 
-class vhdlVisitor(ParseTreeVisitor):
+class VhdlVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by VhdlParser#abstract_literal.
     def visitAbstract_literal(self, ctx:VhdlParser.Abstract_literalContext):
