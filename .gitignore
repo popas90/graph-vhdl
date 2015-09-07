@@ -7,3 +7,4 @@ __pycache__/VhdlLexer.cpython-34.pyc
 .idea/modules.xml
 testfiles/RegisterMultipleClockDomains.vhd
 .idea/workspace.xml
+testfiles/simple_Fpga_Cc_2147483648.vhd
