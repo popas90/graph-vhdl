@@ -412,10 +412,9 @@ class VhdlListener(ParseTreeListener):
     def exitComponent_declaration(self, ctx:VhdlParser.Component_declarationContext):
         pass
 
-
     # Enter a parse tree produced by VhdlParser#component_instantiation_statement.
     def enterComponent_instantiation_statement(self, ctx:VhdlParser.Component_instantiation_statementContext):
-        print("Component: {0}".format(ctx))
+        pass
 
     # Exit a parse tree produced by VhdlParser#component_instantiation_statement.
     def exitComponent_instantiation_statement(self, ctx:VhdlParser.Component_instantiation_statementContext):

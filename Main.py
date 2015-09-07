@@ -2,7 +2,7 @@ import sys
 from antlr4 import *
 from VhdlLexer import VhdlLexer
 from VhdlParser import VhdlParser
-from VhdlListener import VhdlListener
+from VhdlListenerForGraph import VhdlListenerForGraph
 from VhdlVisitorForGraph import VhdlVisitorForGraph
  
 def main(argv):
@@ -10,12 +10,12 @@ def main(argv):
     lexer = VhdlLexer(input)
     stream = CommonTokenStream(lexer)
     parser = VhdlParser(stream)
-    ##listener = VhdlListener()
+    listener = VhdlListenerForGraph()
     tree = parser.design_file()
-    ##walker = ParseTreeWalker()
-    ##walker.walk(listener, tree)
-    grapher = VhdlVisitorForGraph()
-    grapher.visit(tree)
+    walker = ParseTreeWalker()
+    walker.walk(listener, tree)
+    #grapher = VhdlVisitorForGraph()
+    #grapher.visit(tree)
 
  
 if __name__ == '__main__':
