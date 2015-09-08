@@ -1,4 +1,4 @@
-# Generated from vhdl.g4 by ANTLR 4.5.1
+# Generated from Vhdl.g4 by ANTLR 4.5.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .VhdlParser import VhdlParser
@@ -411,6 +411,7 @@ class VhdlListener(ParseTreeListener):
     # Exit a parse tree produced by VhdlParser#component_declaration.
     def exitComponent_declaration(self, ctx:VhdlParser.Component_declarationContext):
         pass
+
 
     # Enter a parse tree produced by VhdlParser#component_instantiation_statement.
     def enterComponent_instantiation_statement(self, ctx:VhdlParser.Component_instantiation_statementContext):

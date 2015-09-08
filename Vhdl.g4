@@ -15,7 +15,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-grammar vhdl;
+grammar Vhdl;
 
 ABS: A B S;
 ACCESS : A C C E S S;
@@ -863,7 +863,7 @@ interface_quantity_declaration
 
 interface_port_declaration
   : identifier_list COLON signal_mode subtype_indication
-    ( BUS )?
+    ( BUS )? ( VARASGN expression )?
   ;
 
 interface_signal_declaration
