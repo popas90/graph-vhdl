@@ -10,7 +10,7 @@ def main(argv):
     lexer = VhdlLexer(input)
     stream = CommonTokenStream(lexer)
     parser = VhdlParser(stream)
-    parser._interp.predictionMode = PredictionMode.LL
+    parser._interp.predictionMode = PredictionMode.SLL
     listener = VhdlListenerForGraph()
     try:
         print("Parsing with SLL...")
