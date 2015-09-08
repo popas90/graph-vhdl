@@ -10,10 +10,20 @@ def main(argv):
     lexer = VhdlLexer(input)
     stream = CommonTokenStream(lexer)
     parser = VhdlParser(stream)
+    parser._interp.predictionMode = PredictionMode.SLL
     listener = VhdlListenerForGraph()
-    tree = parser.design_file()
-    walker = ParseTreeWalker()
-    walker.walk(listener, tree)
+    try:
+        print("Trying with SLL...")
+        tree = parser.design_file()
+    except:
+        print("SLL didn't work...")
+        stream.reset()
+        parser.reset()
+        parser._interp.predictionMode = PredictionMode.LL
+        tree = parser.design_file()
+    finally:
+        walker = ParseTreeWalker()
+        walker.walk(listener, tree)
     #grapher = VhdlVisitorForGraph()
     #grapher.visit(tree)
 
