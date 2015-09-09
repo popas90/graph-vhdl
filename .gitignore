@@ -9,3 +9,4 @@ testfiles/RegisterMultipleClockDomains.vhd
 .idea/workspace.xml
 testfiles/simple_Fpga_Cc_2147483648.vhd
 testfiles/MemoryOutsideCdlTestVi_2147483653_F2624b088ede.vhd
+testfiles/test_main.py
