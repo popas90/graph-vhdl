@@ -45,5 +45,3 @@ class VhdlListenerForGraph(VhdlListener):
     def exitConcurrent_signal_assignment_statement(self, ctx:VhdlParser.Concurrent_signal_assignment_statementContext):
         print("...exiting signal assignment")
         self.in_signal_assignment = False
-
-
