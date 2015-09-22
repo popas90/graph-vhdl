@@ -1,3 +1,7 @@
+class EmptyDeque(Exception):
+    pass
+
+
 class DequeNode:
 
     def __init__(self, data, left_ptr, right_ptr):
@@ -26,19 +30,19 @@ class Deque:
         self.size += 1
 
     def pop_right(self):
-        if self.size == 0:
-            return None
+        self._validate()
         old_right = self.right
         self.right = self.right.left
         self.size -= 1
+        self.left = None if self.size == 0 else self.left
         return old_right
 
     def pop_left(self):
-        if self.size == 0:
-            return None
+        self._validate()
         old_left = self.left
         self.left = self.left.right
         self.size -= 1
+        self.right = None if self.size == 0 else self.right
         return old_left
 
     def peek_left(self):
@@ -46,3 +50,7 @@ class Deque:
 
     def peek_right(self):
         return self.right
+
+    def _validate(self):
+        if self.size == 0:
+            raise EmptyDeque("Deque is empty !")
