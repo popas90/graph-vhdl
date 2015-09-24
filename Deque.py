@@ -51,6 +51,16 @@ class Deque:
     def peek_right(self):
         return self.right
 
+    # Stack interface - uses only right side of Deque
+    def push(self, new_data):
+        self.push_right(new_data)
+
+    def pop(self):
+        return self.pop_right()
+
+    def preview_top(self):
+        return self.peek_right()
+
     def _validate(self):
         if self.size == 0:
             raise EmptyDeque("Deque is empty !")

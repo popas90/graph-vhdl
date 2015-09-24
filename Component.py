@@ -1,10 +1,19 @@
 class Component:
 
     def __init__(self):
-        pass
+        self.label = ""
+        self.name = ""
+        self.input_ports = []
+        self.output_ports = []
 
-    def __init__(self, label, name, input_ports, output_ports):
-        self.label = label
+    def add_name(self, name):
         self.name = name
-        self.input_ports = input_ports
-        self.output_ports = output_ports
+
+    def add_label(self, label):
+        self.label = label
+
+    def add_input_port(self, input_port):
+        self.input_ports.append(input_port)
+
+    def add_output_port(self, output_port):
+        self.output_ports.append(output_port)

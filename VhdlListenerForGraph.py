@@ -2,55 +2,85 @@ from antlr4 import *
 from VhdlListener import VhdlListener
 from VhdlParser import VhdlParser
 from Component import Component
+from Deque import Deque
+from Label import Label
+from StringContainer import StringContainer
+from StringContainer import StringContainerCategory
+
 
 # This class defines a complete listener for a parse tree produced by VhdlParser.
 class VhdlListenerForGraph(VhdlListener):
 
     def __init__(self):
-        # TODO look for a better implem for a stack (preview, push, pop, rpush, rpop)
-        self.parsing_stack = []
+        self.parsing_stack = Deque()
         self.components_list = []
-        self.search_for_instance = False
-        self.search_for_port_map = False
-        self.in_signal_assignment = False
 
-    # Entering the component instantiation statement
+    # Component instantiation statement
     def enterComponent_instantiation_statement(self, ctx:VhdlParser.Component_instantiation_statementContext):
         # Create an empty Component instance and add it to the parsing stack
-        self.parsing_stack.append(Component())
+        self.parsing_stack.push(Component())
 
-    # Exiting the component instantiation statement
     def exitComponent_instantiation_statement(self, ctx:VhdlParser.Component_instantiation_statementContext):
         # Pop the parsing stack and add the element to the components list
         self.components_list.append(self.parsing_stack.pop())
 
-    # Entering the instantiation_unit rule
+    # Label colon
+    def enterLabel_colon(self, ctx:VhdlParser.Label_colonContext):
+        self.parsing_stack.push(StringContainer(StringContainerCategory.Label))
+
+    def exitLabel_colon(self, ctx:VhdlParser.Label_colonContext):
+        label = self.parsing_stack.pop()
+        self.parsing_stack.preview_top().set_label(label.value)
+
+    # Instantiation unit
     def enterInstantiated_unit(self, ctx:VhdlParser.Instantiated_unitContext):
-        pass
+        self.parsing_stack.push(StringContainer(StringContainerCategory.Instantiated_Unit))
 
-    # Exiting the instantiation_unit rule
     def exitInstantiated_unit(self, ctx:VhdlParser.Instantiated_unitContext):
+        instantiated_unit = self.parsing_stack.pop()
+        self.parsing_stack.preview_top().set_name(instantiated_unit.value)
+
+    # Name
+    def enterName(self, ctx:VhdlParser.NameContext):
+        self.parsing_stack.push(StringContainer(StringContainerCategory.Name))
+
+    def exitName(self, ctx:VhdlParser.NameContext):
+        name = self.parsing_stack.pop()
+        # TODO see what kind of node this is
+        # For now, assume it's an instantiated unit
+        self.parsing_stack.preview_top().set_identifier(name.value)
+
+    # Identifier
+    def enterIdentifier(self, ctx:VhdlParser.IdentifierContext):
+        self.parsing_stack.preview_top().set_identifier(ctx.BASIC_IDENTIFIER())
+
+    def exitIdentifier(self, ctx:VhdlParser.IdentifierContext):
         pass
 
-    # Entering identifier rule
-    def enterIdentifier(self, ctx:VhdlParser.IdentifierContext):
-        # TODO this should be a dynamic (or to the base class) call to add a name
-        self.parsing_stack.preview().add_name()
-
-    # Entering port map rule
+    # Port map aspect
     def enterPort_map_aspect(self, ctx:VhdlParser.Port_map_aspectContext):
-        self.search_for_port_map = True
+        pass
 
-    # Exiting port map rule
     def exitPort_map_aspect(self, ctx:VhdlParser.Port_map_aspectContext):
-        self.search_for_port_map = False
+        pass
 
-    # Entering concurrent signal assignment
-    def enterConcurrent_signal_assignment_statement(self, ctx:VhdlParser.Concurrent_signal_assignment_statementContext):
-        print("...entering signal assignment")
-        self.in_signal_assignment = True
+    # Association element
+    def enterAssociation_element(self, ctx:VhdlParser.Association_elementContext):
+        pass
 
-    # Exiting concurrent signal assignment
-    def exitConcurrent_signal_assignment_statement(self, ctx:VhdlParser.Concurrent_signal_assignment_statementContext):
-        print("...exiting signal assignment")
-        self.in_signal_assignment = False
+    def exitAssociation_element(self, ctx:VhdlParser.Association_elementContext):
+        pass
+
+    # Formal part
+    def enterFormal_part(self, ctx:VhdlParser.Formal_partContext):
+        pass
+
+    def exitFormal_part(self, ctx:VhdlParser.Formal_partContext):
+        pass
+
+    # Actual part
+    def enterActual_part(self, ctx:VhdlParser.Actual_partContext):
+        pass
+
+    def exitActual_part(self, ctx:VhdlParser.Actual_partContext):
+        pass
