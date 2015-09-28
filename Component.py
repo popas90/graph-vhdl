@@ -5,6 +5,7 @@ class Component:
         self.name = ""
         self.input_ports = []
         self.output_ports = []
+        self.associations = []
 
     def add_name(self, name):
         self.name = name
