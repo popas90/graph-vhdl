@@ -45,7 +45,6 @@ class VhdlListenerForGraph(VhdlListener):
 
     def exitName(self, ctx:VhdlParser.NameContext):
         name = self.parsing_stack.pop()
-        # TODO see what kind of node this is
         # For now, assume it's an instantiated unit
         self.parsing_stack.preview_top().set_identifier(name.identifier)
 
