@@ -46,10 +46,10 @@ class Deque:
         return old_left.data
 
     def peek_left(self):
-        return self.left.data
+        return self.left.data if self.size > 0 else None
 
     def peek_right(self):
-        return self.right.data
+        return self.right.data if self.size > 0 else None
 
     # Stack interface - uses only right side of Deque
     def push(self, new_data):
