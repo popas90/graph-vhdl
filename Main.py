@@ -10,8 +10,8 @@ def main(argv):
     stream = CommonTokenStream(lexer)
     parser = VhdlParser(stream)
     listener = VhdlListenerForGraph()
+    parser_option = argv[2]
 
-    parser_option = argv[2];
     if (parser_option == "SLL"):
         parser._interp.predictionMode = PredictionMode.SLL
         try:
@@ -34,6 +34,8 @@ def main(argv):
         print("Done parsing, walking parse tree...")
         walker = ParseTreeWalker()
         walker.walk(listener, tree)
+
+    print(len(listener.components_list))
 
     #grapher = VhdlVisitorForGraph()
     #grapher.visit(tree)

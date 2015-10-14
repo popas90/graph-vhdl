@@ -35,7 +35,7 @@ class Deque:
         self.right = self.right.left
         self.size -= 1
         self.left = None if self.size == 0 else self.left
-        return old_right
+        return old_right.data
 
     def pop_left(self):
         self._validate()
@@ -43,13 +43,13 @@ class Deque:
         self.left = self.left.right
         self.size -= 1
         self.right = None if self.size == 0 else self.right
-        return old_left
+        return old_left.data
 
     def peek_left(self):
-        return self.left
+        return self.left.data if self.size > 0 else None
 
     def peek_right(self):
-        return self.right
+        return self.right.data if self.size > 0 else None
 
     # Stack interface - uses only right side of Deque
     def push(self, new_data):
