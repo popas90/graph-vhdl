@@ -1,9 +1,9 @@
 from antlr4 import *
-from VhdlListener import VhdlListener
-from VhdlParser import VhdlParser
-from Component import Component
+from antlr_generated.VhdlListener import VhdlListener
+from antlr_generated.VhdlParser import VhdlParser
+from vhdl_model.Component import Component
 from Deque import Deque
-from Label import Label
+from vhdl_model.Label import Label
 from StringContainer import StringContainer
 from StringContainer import StringContainerCategory
 

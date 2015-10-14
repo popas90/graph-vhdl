@@ -2,7 +2,7 @@ from graphviz import Digraph
 from abc import ABCMeta
 
 
-class VhdlDotBaseClass(metaclass=ABCMeta):
+class VhdlDot(metaclass=ABCMeta):
 
     _dot = None
 

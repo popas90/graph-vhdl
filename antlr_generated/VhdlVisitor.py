@@ -3,7 +3,7 @@ from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .VhdlParser import VhdlParser
 else:
-    from VhdlParser import VhdlParser
+    from antlr_generated import VhdlParser
 
 # This class defines a complete generic visitor for a parse tree produced by VhdlParser.
 

@@ -1,9 +1,8 @@
 import sys
 from antlr4 import *
-from VhdlLexer import VhdlLexer
-from VhdlParser import VhdlParser
+from antlr_generated.VhdlLexer import VhdlLexer
+from antlr_generated.VhdlParser import VhdlParser
 from VhdlListenerForGraph import VhdlListenerForGraph
-from VhdlVisitorForGraph import VhdlVisitorForGraph
  
 def main(argv):
     input = FileStream(argv[1])
