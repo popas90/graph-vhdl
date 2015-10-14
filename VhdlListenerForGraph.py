@@ -2,7 +2,7 @@ from antlr4 import *
 from antlr_generated.VhdlListener import VhdlListener
 from antlr_generated.VhdlParser import VhdlParser
 from vhdl_model.Component import Component
-from Deque import Deque
+from deque.Deque import Deque
 from collections import namedtuple
 import logging
 
