@@ -3,7 +3,8 @@ from antlr4 import *
 from antlr_generated.VhdlLexer import VhdlLexer
 from antlr_generated.VhdlParser import VhdlParser
 from VhdlListenerForGraph import VhdlListenerForGraph
- 
+
+
 def main(argv):
     input = FileStream(argv[1])
     lexer = VhdlLexer(input)
@@ -37,9 +38,9 @@ def main(argv):
 
     print(len(listener.components_list))
 
-    #grapher = VhdlVisitorForGraph()
-    #grapher.visit(tree)
+    # grapher = VhdlVisitorForGraph()
+    # grapher.visit(tree)
 
- 
+
 if __name__ == '__main__':
     main(sys.argv)
