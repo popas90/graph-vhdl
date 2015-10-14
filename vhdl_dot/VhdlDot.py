@@ -12,7 +12,7 @@ class VhdlDot(metaclass=ABCMeta):
         :type self: VhdlDotBaseClass
         """
         if self.__class__._dot is None:
-            self.__class__._dot = Digraph(name="top_level", format  ="png")
+            self.__class__._dot = Digraph(name="top_level", format="png")
 
     def get_dot(self):
         """
