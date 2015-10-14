@@ -13,3 +13,4 @@ testfiles/MemoryOutsideCdlTestVi_2147483653_F2624b088ede.vhd
 testfiles/test_main.py
 testfiles/component.vhd
 *.xml
+*.vhd
