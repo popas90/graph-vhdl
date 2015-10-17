@@ -1,0 +1,1 @@
+{"metadata": {"cwd": "/home/popas/Code/graph-vhdl", "time": 1445119336.1876838, "command": "/usr/bin/python3 -m nose --with-json-extended"}, "modules": [{"nr_success": 1, "nr_error": 0, "testcases": [{"result": "success", "name": "test_identify_instances"}], "nr_failed": 0, "name": "test_unit"}]}
