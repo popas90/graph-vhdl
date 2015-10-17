@@ -6,6 +6,6 @@ before_install:
   - cd /opt
   - sudo wget https://pypi.python.org/packages/source/a/antlr4-python3-runtime/antlr4-python3-runtime-4.5.2.tar.gz
   - sudo tar xzf antlr4-python3-runtime-4.5.2.tar.gz
-  - cd antlr4-python3-runtime-4.5.2.tar.gz
+  - cd antlr4-python3-runtime-4.5.2
   - sudo python3 setup.py install
 script: nosetests
