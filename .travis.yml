@@ -8,4 +8,7 @@ before_install:
   - sudo tar xzf antlr4-python3-runtime-4.5.2.tar.gz
   - cd antlr4-python3-runtime-4.5.2
   - sudo python3 setup.py install
+##Install dependencies
+install: "pip install -r requirements.txt"
+##Run tests
 script: nosetests
