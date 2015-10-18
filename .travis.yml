@@ -13,6 +13,7 @@ before_install:
   - sudo python3 setup.py install
 ##Install dependencies
 install:
+  - export PYTHONPATH="${PYTHONPATH}:/home/popas/Code/graph-vhdl/antlr_generated"
   - pwd
   - cd $REPO
   - pip install -r requirements.txt
