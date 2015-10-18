@@ -1,3 +1,4 @@
+sudo: true
 language: python
 python:
   - "3.4"
@@ -9,7 +10,7 @@ before_install:
   - sudo wget https://pypi.python.org/packages/source/a/antlr4-python3-runtime/antlr4-python3-runtime-4.5.2.tar.gz
   - sudo tar xzf antlr4-python3-runtime-4.5.2.tar.gz
   - cd antlr4-python3-runtime-4.5.2
-  - sudo python setup.py install
+  - python setup.py install
 ##Install dependencies
 install:
   - export PYTHONPATH="${PYTHONPATH}:/home/popas/Code/graph-vhdl/antlr_generated"
@@ -18,3 +19,7 @@ install:
   - pip install -r requirements.txt
 ##Run tests
 script: nosetests
+notifications:
+  email:
+    on_success: never
+    on_failure: never
