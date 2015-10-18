@@ -1,6 +1,8 @@
 language: python
 python:
   - "3.4"
+virtualenv:
+  system_site_packages: true
 before_install:
   - REPO=`pwd`
   - echo $REPO
