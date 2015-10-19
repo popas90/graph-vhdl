@@ -5,7 +5,7 @@ from VhdlListenerForGraph import VhdlListenerForGraph
 import nose
 
 
-def parse_setup(file_path):
+def parse_file_setup(file_path):
     inp = FileStream(file_path)
     lexer = VhdlLexer(inp)
     stream = CommonTokenStream(lexer)
@@ -19,10 +19,10 @@ def parse_setup(file_path):
 
 
 def test_identify_instances():
-    listener = parse_setup('./tests/testfiles/struct_with_components.vhd')
-    nose.tools.eq_(len(listener.components_list), 2)
+    listener = parse_file_setup('./tests/testfiles/struct_with_components.vhd')
+    nose.tools.eq_(len(listener.instances_list), 2)
 
 
 def test_no_instances():
-    listener = parse_setup('./tests/testfiles/d_flop_behav.vhd')
-    nose.tools.eq_(len(listener.components_list), 0)
+    listener = parse_file_setup('./tests/testfiles/d_flop_behav.vhd')
+    nose.tools.eq_(len(listener.instances_list), 0)
