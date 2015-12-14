@@ -26,8 +26,8 @@ class Node:
             node_structure += '<TD PORT="{0}">{0}</TD>\n'.format(inp)
             node_structure += '<TD>{0}</TD>\n'.format(comp_name)
             node_structure += '<TD PORT="{0}">{0}</TD>\n'.format(outp)
-        node_structure += '</TR>\n'
-        node_structure += '</TABLE>>\n'
+            node_structure += '</TR>\n'
+        node_structure += '</TABLE>>'
         return node_structure
 
 
