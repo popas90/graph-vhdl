@@ -2,7 +2,7 @@ from graphviz import Digraph
 from abc import ABCMeta
 
 
-class VhdlDot(metaclass=ABCMeta):
+class VhdlDot:
 
     _dot = None
 
@@ -12,7 +12,7 @@ class VhdlDot(metaclass=ABCMeta):
         :type self: VhdlDotBaseClass
         """
         if self.__class__._dot is None:
-            self.__class__._dot = Digraph(name="top_level", format="png")
+            self.__class__._dot = Digraph(name="top_level", format="pdf")
 
     def get_dot(self):
         """
