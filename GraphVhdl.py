@@ -5,6 +5,19 @@ from antlr_generated.VhdlParser import VhdlParser
 from VhdlListenerForGraph import VhdlListenerForGraph
 
 
+def parse_file(file_path):
+    inp = FileStream(file_path)
+    lexer = VhdlLexer(inp)
+    stream = CommonTokenStream(lexer)
+    parser = VhdlParser(stream)
+    listener = VhdlListenerForGraph()
+    parser._interp.predictionMode = PredictionMode.LL
+    tree = parser.design_file()
+    walker = ParseTreeWalker()
+    walker.walk(listener, tree)
+    return listener
+
+
 def main(argv):
     input = FileStream(argv[1])
     lexer = VhdlLexer(input)
