@@ -1,11 +1,11 @@
-from VhdlDot import VhdlDot
+import DotBase
 import itertools
 
 
-class Node:
+class Node(DotBase):
 
     def __init__(self, name, inputs, outputs):
-        dot = VhdlDot()
+        dot = DotBase()
         # TODO make this a class method
         dot.get_dot().node(name,
                            self._build_node_structure(name, inputs, outputs))
