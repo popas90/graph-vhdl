@@ -1,12 +1,12 @@
 from antlr4 import *
 from antlr_generated.VhdlListener import VhdlListener
 from vhdl_model.Component import Component
+from vhdl_model.Process import Process
 from deque.Deque import Deque
 from collections import namedtuple
 import logging
 
 
-# This class defines a complete listener for a tree produced by VhdlParser.
 class VhdlListenerForGraph(VhdlListener):
 
     def __init__(self):
@@ -16,6 +16,7 @@ class VhdlListenerForGraph(VhdlListener):
         self.parsing_stack = Deque()
         # TODO maybe a hashmap would be better here ?
         self.instances_list = []
+        self.processes_list = []
 
     # Component instantiation statement
     def enterComponent_instantiation_statement(self, ctx):
@@ -62,7 +63,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     # Identifier
     def enterIdentifier(self, ctx):
-        # self.parsing_stack.preview_top().identifier = ctx.BASIC_IDENTIFIER()
+        self.parsing_stack.preview_top().identifier = ctx.BASIC_IDENTIFIER()
         logging.info("SET  identifier {}".format(ctx.BASIC_IDENTIFIER()))
 
     def exitIdentifier(self, ctx):
@@ -118,4 +119,5 @@ class VhdlListenerForGraph(VhdlListener):
         logging.info("PUSH Process")
 
     def exitProcess_statement(self, ctx):
+        self.instances_list.append(self.parsing_stack.pop())
         logging.info("POP  Process")
