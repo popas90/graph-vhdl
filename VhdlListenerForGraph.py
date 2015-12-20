@@ -10,7 +10,7 @@ import logging
 class VhdlListenerForGraph(VhdlListener):
 
     def __init__(self):
-        logging.basicConfig(filename='.\\testfiles\\runtime.log',
+        logging.basicConfig(filename='runtime.log',
                             filemode='w',
                             level=logging.DEBUG)
         self.parsing_stack = Deque()
@@ -111,3 +111,11 @@ class VhdlListenerForGraph(VhdlListener):
         actual_part = self.parsing_stack.pop()
         self.parsing_stack.preview_top().actual = actual_part.identifier
         logging.info("POP  Actual")
+
+    # Process statement
+    def enterProcess_statement(self, ctx):
+        self.parsing_stack.push(Process())
+        logging.info("PUSH Process")
+
+    def exitProcess_statement(self, ctx):
+        logging.info("POP  Process")
