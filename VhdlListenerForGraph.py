@@ -3,7 +3,8 @@ from antlr_generated.VhdlListener import VhdlListener
 from vhdl_model.Component import Component
 from vhdl_model.Process import Process
 from utilities.Deque import Deque
-from utilities.NamedObject import NamedObject
+from utilities.DataObject import DataObject
+from collections import namedtuple
 import logging
 
 
@@ -31,7 +32,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     # label_colon
     def enterLabel_colon(self, ctx):
-        self.parsing_stack.push(NamedObject("Label", "identifier"))
+        self.parsing_stack.push(DataObject('Label'))
         # logging.info("PUSH Label")
 
     def exitLabel_colon(self, ctx):
@@ -41,7 +42,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     # instantiated_unit
     def enterInstantiated_unit(self, ctx):
-        self.parsing_stack.push(NamedObject("InstantiatedUnit", "identifier"))
+        self.parsing_stack.push(DataObject('InstantiatedUnit'))
         # logging.info("PUSH InstantiatedUnit")
 
     def exitInstantiated_unit(self, ctx):
@@ -51,7 +52,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     # name
     def enterName(self, ctx):
-        self.parsing_stack.push(NamedObject("Name", "identifier"))
+        self.parsing_stack.push(DataObject('Name'))
         # logging.info("PUSH Name")
 
     def exitName(self, ctx):
@@ -74,7 +75,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     # port_map_aspect
     def enterPort_map_aspect(self, ctx):
-        self.parsing_stack.push(NamedObject("PortMap", "associations"))
+        self.parsing_stack.push(DataObject('PortMap'))
         self.parsing_stack.preview_top().associations = []
         # logging.info("PUSH PortMap")
 
@@ -98,7 +99,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     # formal_part
     def enterFormal_part(self, ctx):
-        self.parsing_stack.push(NamedObject("Formal", "identifier"))
+        self.parsing_stack.push(DataObject('Formal'))
         # logging.info("PUSH Formal")
 
     def exitFormal_part(self, ctx):
@@ -108,7 +109,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     # actual_part
     def enterActual_part(self, ctx):
-        self.parsing_stack.push(NamedObject("Actual", "identifier"))
+        self.parsing_stack.push(DataObject('Actual'))
         # logging.info("PUSH actual_part")
 
     def exitActual_part(self, ctx):

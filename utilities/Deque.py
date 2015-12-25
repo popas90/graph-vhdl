@@ -23,6 +23,7 @@ class Deque:
 
     def __log__(self, method, data):
         if self.logging:
+            # print(method + '  ' + str(data))
             logging.info(method + '  ' + str(data))
 
     def push_right(self, new_data):
