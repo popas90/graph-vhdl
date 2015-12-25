@@ -7,6 +7,3 @@ class Process:
 
     def add_label(self, label):
         self.label = label
-
-    def __repr__(self):
-        return "Process, label: {0}".format(self.label)
