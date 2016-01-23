@@ -1,1 +1,0 @@
-Using Antlr4, parses synthesizable VHDL and generates a DOT representation of the top-level architecture.
