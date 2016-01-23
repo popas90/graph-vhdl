@@ -123,7 +123,7 @@ class VhdlListenerForGraph(VhdlListener):
         # logging.info("PUSH process_statement")
 
     def exitProcess_statement(self, ctx):
-        self.instances_list.append(self.parsing_stack.pop())
+        self.processes_list.append(self.parsing_stack.pop())
         # logging.info("POP  process_statement")
 
     # sensitivity_list
