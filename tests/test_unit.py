@@ -26,3 +26,8 @@ def test_identify_instances():
 def test_no_instances():
     listener = parse_file_setup('./tests/testfiles/d_flop_behav.vhd')
     nose.tools.eq_(len(listener.instances_list), 0)
+
+
+def test_one_process():
+    listener = parse_file_setup('./tests/testfiles/ac_behave.vhd')
+    nose.tools.eq_(len(listener.processes_list), 1)
