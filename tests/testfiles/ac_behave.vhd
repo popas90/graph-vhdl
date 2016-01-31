@@ -1,6 +1,6 @@
 --! @file
 --! @brief Accumulator (AC)
---! @details is a buffer register that stores intermediate amswers during a computer run. 
+--! @details is a buffer register that stores intermediate amswers during a computer run.
 --! It is connected directly to the W-bus (3-state) and Adder-Subtractor/ALU (2-state).
 
 LIBRARY ieee;
@@ -20,7 +20,7 @@ END AC ;
 
 ARCHITECTURE behave OF AC IS
 BEGIN
-process (clr,clk,la,ea,d)
+main: process (clr,clk,la,ea,d)
 begin
  if clr = '1' then
     q_alu <= (others => '0');
@@ -32,4 +32,3 @@ begin
  end if;
 end process;
 END behave;
-

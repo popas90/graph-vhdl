@@ -7,14 +7,11 @@ class Component:
         self.output_ports = []
         self.associations = []
 
-    def add_name(self, name):
-        self.name = name
-
-    def add_label(self, label):
-        self.label = label
-
     def add_input_port(self, input_port):
         self.input_ports.append(input_port)
 
     def add_output_port(self, output_port):
         self.output_ports.append(output_port)
+
+    # def __repr__(self):
+    #    return "Component, label: " + (self.label) + ", name: " + (self.name)

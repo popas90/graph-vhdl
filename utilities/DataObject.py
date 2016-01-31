@@ -8,4 +8,4 @@ class DataObject:
         self.identifier = ''
 
     def __str__(self):
-        return (self.type)
+        return self.type + self.identifier
