@@ -1,6 +1,3 @@
-from collections import namedtuple
-
-
 class DataObject:
 
     def __init__(self, tp):
@@ -8,4 +5,7 @@ class DataObject:
         self.identifier = ''
 
     def __str__(self):
-        return self.type + self.identifier
+        if self.identifier != '':
+            return self.type + ' "' + self.identifier + '"'
+        else:
+            return self.type

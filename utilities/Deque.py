@@ -21,19 +21,22 @@ class Deque:
         self.right = None
         self.logging = True
 
-    def __log__(self, method, data):
+    def _log(self, method, data):
         if self.logging:
-            logging.info(method + '  ' + str(data))
+            logging.info(method + '  ' + self._add_indent() + str(data))
+
+    def _add_indent(self):
+        return '·' * self.size
 
     def push_right(self, new_data):
-        self.__log__('  []<-', new_data)
+        self._log('  []<-', new_data)
         new_right = DequeNode(new_data, self.right, None)
         self.right = new_right
         self.left = self.left if self.size > 0 else self.right
         self.size += 1
 
     def push_left(self, new_data):
-        self.__log__('  ->[]', new_data)
+        self._log('  ->[]', new_data)
         new_left = DequeNode(new_data, None, self.left)
         self.left = new_left
         self.right = self.right if self.size > 0 else self.left
@@ -45,7 +48,7 @@ class Deque:
         self.right = self.right.left
         self.size -= 1
         self.left = None if self.size == 0 else self.left
-        self.__log__('  []->', old_right.data)
+        self._log('  []->', old_right.data)
         return old_right.data
 
     def pop_left(self):
@@ -54,7 +57,7 @@ class Deque:
         self.left = self.left.right
         self.size -= 1
         self.right = None if self.size == 0 else self.right
-        self.__log__('  <-[]', old_left.data)
+        self._log('  <-[]', old_left.data)
         return old_left.data
 
     def peek_left(self):

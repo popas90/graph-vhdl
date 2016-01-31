@@ -14,8 +14,8 @@ class VhdlListenerForGraph(VhdlListener):
     def __init__(self):
         logging.basicConfig(filename='runtime.log',
                             filemode='w',
-                            level=logging.DEBUG)
-        self.parsing_stack = deque()  # Deque(logging=True)
+                            level=logging.INFO)
+        self.parsing_stack = Deque(logging=True)  # deque()
         # TODO maybe a hashmap would be better here ?
         self.instances_list = []
         self.processes_list = []
@@ -24,13 +24,10 @@ class VhdlListenerForGraph(VhdlListener):
         return self.parsing_stack.pop()
 
     def peek(self):
-        if len(self.parsing_stack) == 0:
-            return None
-        else:
-            return self.parsing_stack[-1]
+        return self.parsing_stack.preview_top()
 
     def push(self, new_elem):
-        self.parsing_stack.append(new_elem)
+        self.parsing_stack.push(new_elem)
 
     # component_instantiation_statement
     def enterComponent_instantiation_statement(self, ctx):

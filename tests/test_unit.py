@@ -23,6 +23,7 @@ def test_two_instances():
     nose.tools.eq_(len(listener.instances_list), 2)
     nose.tools.eq_(listener.instances_list[0].name, 'xor2')
     nose.tools.eq_(listener.instances_list[0].label, 'u0')
+    nose.tools.eq_(listener.instances_list[0].associations, [])
     nose.tools.eq_(listener.instances_list[1].name, 'inv')
     nose.tools.eq_(listener.instances_list[1].label, 'u1')
 
