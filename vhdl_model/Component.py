@@ -9,7 +9,7 @@ class Component:
 
     def __repr__(self):
         if self.label != '' and self.name != '':
-            return 'Component -> label: "' + (self.label)
-            + '", name: "' + (self.name) + '"'
+            return 'Component -> label: "' + (self.label) + \
+                '", name: "' + (self.name) + '"'
         else:
             return 'Component'

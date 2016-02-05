@@ -2,8 +2,10 @@ from antlr4 import *
 from antlr_generated.VhdlListener import VhdlListener
 from vhdl_model.Component import Component
 from vhdl_model.Process import Process
+from vhdl_model.Association import Association
 from utilities.Deque import Deque
 from utilities.DataObject import DataObject
+from utilities.DataContainer import DataContainer
 from collections import namedtuple
 from collections import deque
 import logging
@@ -50,7 +52,9 @@ class VhdlListenerForGraph(VhdlListener):
 
     def exitName(self, ctx):
         name = self.pop()
-        self.peek().identifier = name.identifier
+        top = self.peek()
+        if hasattr(top, 'identifier'):
+            self.peek().identifier = name.identifier
 
     # label_colon
     def enterLabel_colon(self, ctx):
@@ -71,8 +75,8 @@ class VhdlListenerForGraph(VhdlListener):
 
     # port_map_aspect
     def enterPort_map_aspect(self, ctx):
-        self.push(DataObject('PortMap'))
-        self.peek().associations = []
+        self.push(DataContainer('PortMap'))
+        self.peek().elements = []
 
     def exitPort_map_aspect(self, ctx):
         port_map = self.pop()
@@ -81,12 +85,13 @@ class VhdlListenerForGraph(VhdlListener):
 
     # association_element
     def enterAssociation_element(self, ctx):
-        self.push(namedtuple("Association", ["formal", "actual"]))
+        # self.push(namedtuple("Association", ["formal", "actual"]))
+        self.push(Association())
 
     def exitAssociation_element(self, ctx):
         association = self.pop()
-        if isinstance(self.peek(), Component):
-            self.peek().associations.append(association)
+        if isinstance(self.peek(), DataContainer):
+            self.peek().elements.append(association)
 
     # formal_part
     def enterFormal_part(self, ctx):
