@@ -1,8 +1,11 @@
-class Association:
+from utilities.EqualityMixin import EqualityMixin
 
-    def __init__(self):
-        self.formal = ''
-        self.actual = ''
+
+class Association(EqualityMixin):
+
+    def __init__(self, act='', frm=''):
+        self.actual = act
+        self.formal = frm
 
     def __repr__(self):
         if self.formal != '' and self.actual != '':

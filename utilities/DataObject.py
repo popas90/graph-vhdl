@@ -1,10 +1,13 @@
-class DataObject:
+from utilities.EqualityMixin import EqualityMixin
 
-    def __init__(self, tp):
+
+class DataObject(EqualityMixin):
+
+    def __init__(self, tp, ident=''):
         self.type = tp
-        self.identifier = ''
+        self.identifier = ident
 
-    def __str__(self):
+    def __repr__(self):
         if self.identifier != '':
             return self.type + ' "' + self.identifier + '"'
         else:

@@ -1,11 +1,11 @@
-class Instance:
+from utilities.EqualityMixin import EqualityMixin
+
+
+class Instance(EqualityMixin):
 
     def __init__(self):
         self.label = ""
         self.name = ""
-        self.input_ports = []
-        self.output_ports = []
-        self.associations = []
         self.generic_map = None
         self.port_map = None
 

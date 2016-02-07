@@ -2,6 +2,8 @@ from antlr4 import *
 from antlr_generated.VhdlLexer import VhdlLexer
 from antlr_generated.VhdlParser import VhdlParser
 from VhdlListenerForGraph import VhdlListenerForGraph
+from vhdl_model.Association import Association
+from utilities.DataObject import DataObject
 import nose
 
 
@@ -20,12 +22,17 @@ def parse_file_setup(file_path):
 
 def test_two_instances():
     listener = parse_file_setup('./tests/testfiles/struct_with_components.vhd')
+    port_map0 = [Association("a"), Association("b"), Association("tmp")]
+    port_map1 = [Association("tmp"), Association("c")]
     nose.tools.eq_(len(listener.instances_list), 2)
     nose.tools.eq_(listener.instances_list[0].name, 'xor2')
     nose.tools.eq_(listener.instances_list[0].label, 'u0')
-    nose.tools.eq_(listener.instances_list[0].associations, [])
+    nose.tools.eq_(listener.instances_list[0].generic_map, None)
+    nose.tools.eq_(listener.instances_list[0].port_map.elements, port_map0)
     nose.tools.eq_(listener.instances_list[1].name, 'inv')
     nose.tools.eq_(listener.instances_list[1].label, 'u1')
+    nose.tools.eq_(listener.instances_list[1].generic_map, None)
+    nose.tools.eq_(listener.instances_list[1].port_map.elements, port_map1)
 
 
 def test_zero_instances():
@@ -35,8 +42,13 @@ def test_zero_instances():
 
 def test_one_process():
     listener = parse_file_setup('./tests/testfiles/ac_behave.vhd')
+    sensitivity_list0 = [DataObject('Name', 'clr'), DataObject('Name', 'clk'),
+                         DataObject('Name', 'la'), DataObject('Name', 'ea'),
+                         DataObject('Name', 'd')]
     nose.tools.eq_(len(listener.processes_list), 1)
     nose.tools.eq_(listener.processes_list[0].label, 'main')
+    nose.tools.eq_(listener.processes_list[0].sensitivity_list.elements,
+                   sensitivity_list0)
 
 
 def test_zero_processes():
