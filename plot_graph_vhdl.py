@@ -14,4 +14,4 @@ parser.add_argument("vhdl_file", help="top-level synthesizable file")
 vhdl_file = parser.parse_args().vhdl_file
 file_path = os.path.join(os.getcwd(), vhdl_file)
 print(file_path)
-print(parse_file(file_path).instances_list)
+parse_file(file_path)

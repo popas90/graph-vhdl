@@ -1,6 +1,6 @@
 from antlr4 import *
 from antlr_generated.VhdlListener import VhdlListener
-from vhdl_model.Component import Component
+from vhdl_model.Instance import Instance
 from vhdl_model.Process import Process
 from vhdl_model.Association import Association
 from utilities.Deque import Deque
@@ -31,9 +31,9 @@ class VhdlListenerForGraph(VhdlListener):
     def push(self, new_elem):
         self.parsing_stack.push(new_elem)
 
-    # component_instantiation_statement
+    # Component_instantiation_statement
     def enterComponent_instantiation_statement(self, ctx):
-        self.push(Component())
+        self.push(Instance())
 
     def exitComponent_instantiation_statement(self, ctx):
         self.instances_list.append(self.pop())
@@ -73,14 +73,20 @@ class VhdlListenerForGraph(VhdlListener):
     def exitIdentifier(self, ctx):
         pass
 
+    # generic_map_aspect
+    def enterGeneric_map_aspect(self, ctx):
+        self.push(DataContainer('GenericMap'))
+
+    def exitGeneric_map_aspect(self, ctx):
+        generic_map = self.pop()
+        self.peek().generic_map = generic_map
+
     # port_map_aspect
     def enterPort_map_aspect(self, ctx):
         self.push(DataContainer('PortMap'))
-        self.peek().elements = []
 
     def exitPort_map_aspect(self, ctx):
         port_map = self.pop()
-        # TODO add port_map property to Component as a list of associations
         self.peek().port_map = port_map
 
     # association_element
