@@ -42,13 +42,16 @@ def test_zero_instances():
 
 def test_one_process():
     listener = parse_file_setup('./tests/testfiles/ac_behave.vhd')
-    sensitivity_list0 = [DataObject('Name', 'clr'), DataObject('Name', 'clk'),
-                         DataObject('Name', 'la'), DataObject('Name', 'ea'),
-                         DataObject('Name', 'd')]
+    sensitivity_list = [DataObject('Name', 'clr'), DataObject('Name', 'clk'),
+                        DataObject('Name', 'la'), DataObject('Name', 'ea'),
+                        DataObject('Name', 'd')]
+    outputs_list = {DataObject('Target', 'q_data'),
+                    DataObject('Target', 'q_alu')}
     nose.tools.eq_(len(listener.processes_list), 1)
     nose.tools.eq_(listener.processes_list[0].label, 'main')
     nose.tools.eq_(listener.processes_list[0].sensitivity_list.elements,
-                   sensitivity_list0)
+                   sensitivity_list)
+    nose.tools.eq_(listener.processes_list[0].outputs, outputs_list)
 
 
 def test_zero_processes():

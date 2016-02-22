@@ -5,6 +5,8 @@ class Process:
         self.sensitivity_list = []
         self.declarations = []
         self.statements = []
+        self.inputs = set()
+        self.outputs = set()
 
     def __str__(self):
         if self.label != '':

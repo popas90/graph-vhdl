@@ -131,3 +131,11 @@ class VhdlListenerForGraph(VhdlListener):
     def exitSensitivity_list(self, ctx):
         sensitivity_list = self.pop()
         self.peek().sensitivity_list = sensitivity_list
+
+    # target
+    def enterTarget(self, ctx):
+        self.push(DataObject('Target'))
+
+    def exitTarget(self, ctx):
+        target = self.pop()
+        self.peek().outputs.add(target)
