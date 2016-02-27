@@ -2,7 +2,7 @@ class Process:
 
     def __init__(self):
         self.label = ""
-        self.sensitivity_list = []
+        self.sensitivity_list = set()
         self.declarations = []
         self.statements = []
         self.inputs = set()

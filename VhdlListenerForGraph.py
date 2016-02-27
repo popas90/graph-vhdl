@@ -56,7 +56,7 @@ class VhdlListenerForGraph(VhdlListener):
         if isinstance(top, DataObject):
             self.peek().identifier = name.identifier
         if isinstance(top, DataContainer):
-            self.peek().elements.append(name)
+            self.peek().elements.append(name.identifier)
 
     # label_colon
     def enterLabel_colon(self, ctx):
@@ -132,7 +132,8 @@ class VhdlListenerForGraph(VhdlListener):
 
     def exitSensitivity_list(self, ctx):
         sensitivity_list = self.pop()
-        self.peek().sensitivity_list = sensitivity_list
+        for signal in sensitivity_list.elements:
+            self.peek().sensitivity_list.add(signal)
 
     # target
     def enterTarget(self, ctx):
@@ -140,7 +141,7 @@ class VhdlListenerForGraph(VhdlListener):
 
     def exitTarget(self, ctx):
         target = self.pop()
-        self.peek().outputs.add(target)
+        self.peek().outputs.add(target.identifier)
 
     # waveform
     def enterWaveform(self, ctx):
