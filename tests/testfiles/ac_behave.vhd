@@ -24,7 +24,7 @@ main: process (clr,clk,la,ea,d)
 begin
  if clr = '1' then
     q_alu <= (others => '0');
-	q_data <= (others => '0');
+	q_data <= ea;
  elsif rising_edge(clk) then
  	if la = '0' then
 		q_alu <= d; q_data <= d;

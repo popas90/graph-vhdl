@@ -71,6 +71,8 @@ class VhdlListenerForGraph(VhdlListener):
         top = self.peek()
         if hasattr(top, 'identifier'):
             top.identifier = str(ctx.BASIC_IDENTIFIER())
+        if isinstance(top, DataContainer):
+            self.peek().elements.append(str(ctx.BASIC_IDENTIFIER()))
 
     def exitIdentifier(self, ctx):
         pass
@@ -139,3 +141,12 @@ class VhdlListenerForGraph(VhdlListener):
     def exitTarget(self, ctx):
         target = self.pop()
         self.peek().outputs.add(target)
+
+    # waveform
+    def enterWaveform(self, ctx):
+        self.push(DataContainer('Waveform'))
+
+    def exitWaveform(self, ctx):
+        waveform = self.pop()
+        for signal in waveform.elements:
+            self.peek().inputs.add(signal)
